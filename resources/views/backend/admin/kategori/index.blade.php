@@ -127,6 +127,10 @@
             $("#form-kategori").show(200);
         }
 
+        function batalkan(){
+            $('#form-kategori').hide(300);
+        }
+
         function hapusKategori(id){
             $('#modalhapus').modal('show');
             $('#id_hapus').val(id);

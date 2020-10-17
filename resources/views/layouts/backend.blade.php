@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
-    <title>Prisma LPPM V2 | @yield('title') </title>
+    <title>Kosaku.id | @yield('title') </title>
     <link rel="shortcut icon" href="{{ asset('assets/backend/images/logo.png') }}">
 
     <!-- Bootstrap -->
@@ -70,7 +70,7 @@
         @endif
         <div class="left_col scroll-view" style="background: #013C62 !important;">
             <div class="navbar nav_title" style="border-bottom: 1px white solid;; margin:0; padding-bottom:5px 0px !important; background:#013C62;">
-                <a href="index.html" class="site_title" style="font-weight:600;"><i class="fa fa-home"></i> <span>PRISMA UNIB</span></a>
+                <a href="index.html" class="site_title" style="font-weight:600;"><i class="fa fa-home"></i> <span>Kosaku.id</span></a>
               </div>
             <div class="clearfix"></div>
 
@@ -165,7 +165,7 @@
         <!-- footer content -->
         <footer style="overflow:hidden;">
           <div class="pull-right">
-            Lembaga Pengembangan Teknologi Informasi dan Kominikasi <a href="https://colorlib.com">Universitas Bengkulu</a>
+            PT.Kosaku Jaya Mandiri 
           </div>
           <div class="clearfix"></div>
         </footer>
