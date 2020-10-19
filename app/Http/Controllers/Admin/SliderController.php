@@ -27,7 +27,7 @@ class SliderController extends Controller
         ]);
         $sliders = [];
         foreach ($request->file('slider') as $file) {
-            $sliderUrl = $file->store('foto_slider/');
+            $sliderUrl = $file->store('public/foto_slider/');
             $sliders[] = [
                 'gambar'    =>  $sliderUrl,
                 'title'    =>  $request->title,
