@@ -25,7 +25,7 @@ class SliderController extends Controller
             'slider' =>  'required|mimes:jpg,jpeg,png|max:2000',
         ]);
         $slider = $request->file('slider');
-        $sliderUrl = $slider->store('public/foto_slider/');
+        $sliderUrl = $slider->store('foto_slider/');
         Slider::create([
             'gambar'    =>  $sliderUrl,
             'title'    =>  $request->title,
