@@ -22,8 +22,7 @@ class SliderController extends Controller
         $this->validate($request,[
             'title' =>  'required',
             'slogan' =>  'required',
-            'slider'   =>  'required',
-            'slider.*' =>  'mimes:jpg,jpeg,png|max:2000',
+            'slider' =>  'required|mimes:jpg,jpeg,png|max:2000',
         ]);
         $slider = $request->file('slider');
         $sliderUrl = $slider->store('public/foto_slider/');
