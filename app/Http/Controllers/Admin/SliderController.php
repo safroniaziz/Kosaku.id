@@ -25,17 +25,13 @@ class SliderController extends Controller
             'slider'   =>  'required',
             'slider.*' =>  'mimes:jpg,jpeg,png|max:2000',
         ]);
-        $sliders = [];
-        foreach ($request->file('slider') as $file) {
-            $sliderUrl = $file->store('public/foto_slider');
-            $sliders[] = [
-                'gambar'    =>  $sliderUrl,
-                'title'    =>  $request->title,
-                'slogan'    =>  $request->slogan,
-            ];
-        }
-        // return $sliders;
-        Slider::insert($sliders);
+        $slider = $request->file('slider');
+        $sliderUrl = $slider->store('public/foto_slider/');
+        Slider::create([
+            'gambar'    =>  $sliderUrl,
+            'title'    =>  $request->title,
+            'slogan'    =>  $request->slogan,
+        ]);
         return redirect()->route('admin.slider')->with(['success'    =>  'Data slider sudah ditambahkan !']);
     }
 
