@@ -84,7 +84,7 @@
 
                     <li class="dropdown">
                         <a tabindex="0" href="#" data-toggle="dropdown" data-submenu="" aria-expanded="false">
-                            <i class="fa fa-list"></i> Menu<span class="caret"></span>
+                            <i class="fa fa-list"></i> Kosaku<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="agent-listing-row-sidebar.html">Tentang Kami</a></li>
@@ -157,7 +157,7 @@
 <!-- Banner end -->
 
 <!-- Featured properties start -->
-<div class="content-area featured-properties">
+<div class="content-area featured-properties"  style="padding-bottom: 10px !important; padding-top:50px !important;>
     <div class="container">
         <!-- Main title -->
         <div class="main-title">
@@ -687,8 +687,27 @@
 </div>
 <!-- Featured properties end -->
 
+<!-- Listings parallax start -->
+<div class="listings-parallax  overview-bgi">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-sm-8 col-xs-12">
+                <h1>We are Here to Help You</h1>
+                <P>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown.</P>
+                <a href="#" class="btn button-sm button-theme">Read More</a>
+            </div>
+            <div class="col-lg-offset-3 col-lg-3 col-sm-4 col-xs-12">
+                <div class="contect-agent-photo">
+                    <img src="http://placehold.it/262x308" alt="avatar-6" class="img-responsive">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Listings parallax end -->
+
 <!-- Our service start -->
-<div class="mb-50 our-service">
+<div class="mb-50 our-service" style="margin-top: 50px !important; ">
     <div class="container">
         <!-- Main title -->
         <div class="main-title">
@@ -726,7 +745,6 @@
             </div>
         </div>
 		<a href="#" class="btn button-md button-theme">Baca Selengkapnya</a>
-		<hr style="width: 50%;">
     </div>
 </div>
 <!-- Our service end -->
@@ -1073,14 +1091,13 @@
 				<a href="#" class="btn button-md button-theme">Tampilkan Semua Rekomendasi</a>
 			</div>
 		</div>
-		<hr style="width: 50%;">
     </div>
 </div>
 <!-- Partners block end -->
 
 <div class="clearfix"></div>
 <!-- Categories strat -->
-<div class="categories">
+<div class="categories" style="padding-bottom: 50px !important">
     <div class="container">
         <!-- Main title -->
         <div class="main-title">
@@ -1367,7 +1384,7 @@
 <!-- Agent section end -->
 
 <!-- Testimonial section start-->
-<div class="testimonials-3 overview-bgi" style="background-image: url({{ asset('assets/images/tes2.jpg') }})">
+<div class="testimonials-3 overview-bgi" style="background-image: url({{ asset('assets/images/tes2.jpg') }}); margin-bottom:50px !important;">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -1565,63 +1582,8 @@
 <!-- Testimonial  end -->
 <div class="clearfix"></div>
 
-<!-- Intro section strat -->
-<div class="intro-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-9 col-sm-9 col-xs-12">
-                <img src="{{ asset('assets/images/playstore.png') }}" alt="logo-2">
-                <h3>Ingin Lebih Gampang? Download kosaku.id Versi Android </h3>
-            </div>
-
-            <div class="col-md-3 col-sm-3 col-xs-12">
-                <a href="submit-property.html" class="btn button-md button-theme"><i class="fa fa-download"></i>&nbsp; Download</a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Intro section end -->
-
-
-<!-- Counters strat -->
-<div class="counters mb-5 overview-bgi" style="background:url({{ asset('assets/images/tes2.jpg') }})">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-sm-6 bordered-right">
-                <div class="counter-box">
-                    <i class="flaticon-tag"></i>
-                    <h1 class="counter">967</h1>
-                    <p>Listings diskon 50%</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 bordered-right">
-                <div class="counter-box">
-                    <i class="flaticon-symbol-1"></i>
-                    <h1 class="counter">1276</h1>
-                    <p>Listings For Rent</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 bordered-right">
-                <div class="counter-box">
-                    <i class="flaticon-people"></i>
-                    <h1 class="counter">396</h1>
-                    <p>Agents</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="counter-box">
-                    <i class="flaticon-people-1"></i>
-                    <h1 class="counter">177</h1>
-                    <p>Brokers</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Counters end -->
-
 <!-- Blog start -->
-<div class="blog content-area">
+<div class="blog content-area ">
     <div class="container">
         <!-- Main title -->
         <div class="main-title">
@@ -1711,6 +1673,44 @@
 </div>
 <!-- Blog end -->
 
+
+<!-- Counters strat -->
+<div class="counters mb-5 overview-bgi" style="background:url({{ asset('assets/images/tes2.jpg') }}); margin-bottom:50px !important;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6 bordered-right">
+                <div class="counter-box">
+                    <i class="flaticon-tag"></i>
+                    <h1 class="counter">967</h1>
+                    <p>Listings diskon 50%</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 bordered-right">
+                <div class="counter-box">
+                    <i class="flaticon-symbol-1"></i>
+                    <h1 class="counter">1276</h1>
+                    <p>Listings For Rent</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 bordered-right">
+                <div class="counter-box">
+                    <i class="flaticon-people"></i>
+                    <h1 class="counter">396</h1>
+                    <p>Agents</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="counter-box">
+                    <i class="flaticon-people-1"></i>
+                    <h1 class="counter">177</h1>
+                    <p>Brokers</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Counters end -->
+
 <!-- Partners block start -->
 <div class="partners-block">
     <div class="container">
@@ -1763,6 +1763,23 @@
     </div>
 </div>
 <!-- Partners block end -->
+
+<!-- Intro section strat -->
+<div class="intro-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 col-sm-9 col-xs-12">
+                <img src="{{ asset('assets/images/playstore.png') }}" alt="logo-2">
+                <h3>Ingin Lebih Gampang? Download kosaku.id Versi Android </h3>
+            </div>
+
+            <div class="col-md-3 col-sm-3 col-xs-12">
+                <a href="submit-property.html" class="btn button-md button-theme"><i class="fa fa-download"></i>&nbsp; Download</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Intro section end -->
 
 <!-- Footer start -->
 <footer class="main-footer clearfix">

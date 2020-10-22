@@ -27,30 +27,30 @@ Route::group(['prefix'  => '/semua_produk'],function(){
     Route::get('/','FrontendController@semuaProduk')->name('produk.semua');
 });
 
-Route::group(['prefix'  => 'admin/'],function(){
+Route::group(['prefix'  => 'rumah_kosaku/'],function(){
     Route::get('/','Admin\DashboardController@index')->name('admin.dashboard');
 });
 
-Route::group(['prefix'  => 'admin/wilayah'],function(){
+Route::group(['prefix'  => 'rumah_kosaku/wilayah'],function(){
     Route::get('/provinsi','Admin\WilayahController@provinsi')->name('admin.wilayah.provinsi');
     Route::post('/provinsi/','Admin\WilayahController@provinsiPost')->name('admin.wilayah.provinsi.post');
     Route::delete('provinsi/delete','Admin\WilayahController@provinsiDelete')->name('admin.wilayah.provinsi.delete');
 });
 
-Route::group(['prefix'  => 'admin/wilayah'],function(){
+Route::group(['prefix'  => 'rumah_kosaku/wilayah'],function(){
     Route::get('/kota','Admin\WilayahController@kota')->name('admin.wilayah.kota');
     Route::post('/kota/','Admin\WilayahController@kotaPost')->name('admin.wilayah.kota.post');
     Route::delete('kota/delete','Admin\WilayahController@kotaDelete')->name('admin.wilayah.kota.delete');
 });
 
-Route::group(['prefix'  => 'admin/wilayah'],function(){
+Route::group(['prefix'  => 'rumah_kosaku/wilayah'],function(){
     Route::get('/kecamatan','Admin\WilayahController@kecamatan')->name('admin.wilayah.kecamatan');
     Route::post('/kecamatan/','Admin\WilayahController@kecamatanPost')->name('admin.wilayah.kecamatan.post');
     Route::delete('kecamatan/delete','Admin\WilayahController@kecamatanDelete')->name('admin.wilayah.kecamatan.delete');
     Route::get('/kecamatan/cari_kota','Admin\WilayahController@cariKota')->name('admin.wilayah.kecamatan.cari_kota');
 });
 
-Route::group(['prefix'  => 'admin/wilayah'],function(){
+Route::group(['prefix'  => 'rumah_kosaku/wilayah'],function(){
     Route::get('/kelurahan','Admin\WilayahController@kelurahan')->name('admin.wilayah.kelurahan');
     Route::post('/kelurahan/','Admin\WilayahController@kelurahanPost')->name('admin.wilayah.kelurahan.post');
     Route::delete('kelurahan/delete','Admin\WilayahController@kelurahanDelete')->name('admin.wilayah.kelurahan.delete');
@@ -59,7 +59,7 @@ Route::group(['prefix'  => 'admin/wilayah'],function(){
     Route::get('/kelurahan/cari_kelurahan','Admin\WilayahController@cariKelurahan')->name('admin.wilayah.kelurahan.cari_kelurahan');
 });
 
-Route::group(['prefix'  => 'admin/kategori'],function(){
+Route::group(['prefix'  => 'rumah_kosaku/kategori'],function(){
     Route::get('/','Admin\KategoriController@index')->name('admin.kategori');
     Route::post('/','Admin\KategoriController@post')->name('admin.kategori.post');
     Route::delete('/delete','Admin\KategoriController@delete')->name('admin.kategori.delete');
@@ -67,7 +67,7 @@ Route::group(['prefix'  => 'admin/kategori'],function(){
     Route::patch('/{id}/nonaktifkan_status','Admin\KategoriController@nonaktifkanStatus')->name('admin.kategori.non_aktifkan_status');
 });
 
-Route::group(['prefix'  => 'admin/data_kostan_putri'],function(){
+Route::group(['prefix'  => 'rumah_kosaku/data_kostan_putri'],function(){
     Route::get('/','Admin\ProdukController@index')->name('admin.produk_putri');
     Route::get('/tambahkan_produk','Admin\ProdukController@add')->name('admin.produk_putri.add');
     Route::post('/','Admin\ProdukController@post')->name('admin.produk_putri.post');
@@ -82,14 +82,14 @@ Route::group(['prefix'  => 'admin/data_kostan_putri'],function(){
     Route::patch('/{id}/update','Admin\ProdukController@update')->name('admin.produk_putri.update');
 });
 
-Route::group(['prefix'  => 'admin/slider'],function(){
+Route::group(['prefix'  => 'rumah_kosaku/slider'],function(){
     Route::get('/','Admin\SliderController@index')->name('admin.slider');
     Route::get('/tambah_slider','Admin\SliderController@add')->name('admin.slider.add');
     Route::post('/','Admin\SliderController@post')->name('admin.slider.post');
     Route::delete('/delete','Admin\SliderController@delete')->name('admin.slider.delete');
 });
 
-Route::group(['prefix'  => 'admin/keunggulan'],function(){
+Route::group(['prefix'  => 'rumah_kosaku/keunggulan'],function(){
     Route::get('/','Admin\KeunggulanController@index')->name('admin.keunggulan');
     Route::get('/tambah_keunggulan','Admin\KeunggulanController@add')->name('admin.keunggulan.add');
     Route::post('/','Admin\KeunggulanController@post')->name('admin.keunggulan.post');
@@ -98,7 +98,7 @@ Route::group(['prefix'  => 'admin/keunggulan'],function(){
     Route::delete('/delete','Admin\KeunggulanController@delete')->name('admin.keunggulan.delete');
 });
 
-Route::group(['prefix'  => 'admin/jabatan'],function(){
+Route::group(['prefix'  => 'rumah_kosaku/jabatan'],function(){
     Route::get('/','Admin\JabatanController@index')->name('admin.jabatan');
     Route::post('/','Admin\JabatanController@post')->name('admin.jabatan.post');
     Route::delete('/delete','Admin\JabatanController@delete')->name('admin.jabatan.delete');
