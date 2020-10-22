@@ -124,7 +124,7 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             @foreach ($sliders as $slider)
-				<div class="item @if($index == '1') {{ 'active' }} @endif item-100vh">
+				<div class="item item-100vh">
 					<img src="{{ asset('storage/'.$slider->gambar) }}" alt="banner-slider-1">
 					<div class="carousel-caption banner-slider-inner">
 						<div class="banner-content container banner-content-left">
