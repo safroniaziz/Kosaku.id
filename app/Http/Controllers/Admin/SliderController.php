@@ -28,6 +28,7 @@ class SliderController extends Controller
         $sliderUrl = $slider->store('public/foto_slider');
         $sliderUrl2 = $slider->store('foto_slider');
         Slider::create([
+            'gambar'    =>  $sliderUrl,
             'title'    =>  $request->title,
             'slogan'    =>  $request->slogan,
         ]);
