@@ -507,9 +507,9 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-sm-8 col-xs-12">
-                <h1>We are Here to Help You</h1>
-                <P>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown.</P>
-                <a href="#" class="btn button-sm button-theme">Read More</a>
+                <h1>Kami disini akan membantu anda</h1>
+                <P>Kami berusaha untuk memberikan fitur-fitur yang akan memudahkan pencari kost dan pemilik kost sehingga selalu terhubung secara digital baik melalui website maupun aplikasi mobile (Android & IOS) </P>
+                <a href="#" class="btn button-sm button-theme">Baca Selengkapnya</a>
             </div>
             <div class="col-lg-offset-3 col-lg-3 col-sm-4 col-xs-12">
                 <div class="contect-agent-photo">
