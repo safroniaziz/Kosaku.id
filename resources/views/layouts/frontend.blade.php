@@ -130,7 +130,7 @@
 						<div class="banner-content container banner-content-left">
 							<h1 data-animation="animated fadeInDown delay-05s"><span>{{ $slider->title }} </span> </h1>
 							<p data-animation="animated fadeInUp delay-1s">{{ $slider->slogan }}</p>
-							<a href="#" class="btn button-md button-theme" data-animation="animated fadeInUp delay-15s">Download Kosaku Android</a>
+							<a href="#" class="btn button-md button-theme" data-animation="animated fadeInUp delay-15s">Download Versi Android</a>
 							<a href="#" class="btn button-md border-button-theme" data-animation="animated fadeInUp delay-15s">Daftar Produk Kostan</a>
 						</div>
 					</div>
@@ -156,12 +156,421 @@
 </div>
 <!-- Banner end -->
 
-<!-- Featured properties start -->
-<div class="content-area featured-properties"  style="padding-bottom: 10px !important; padding-top:50px !important;>
+<!-- Recently properties start -->
+<div class="mb-50 recently-properties chevron-icon" style="padding-top: 50px !important">
     <div class="container">
         <!-- Main title -->
         <div class="main-title">
-            <h1>PRODUK YANG DITAWARKAN</h1>
+            <h1><span>Rekomendasi</span> Kostan</h1>
+        </div>
+        <div class="row">
+            <div class="carousel our-partners slide" id="ourPartners2">
+                <div class="col-lg-12 mrg-btm-30">
+                    <a class="right carousel-control" href="#ourPartners2" data-slide="prev"><i class="fa fa-chevron-left icon-prev"></i></a>
+                    <a class="right carousel-control" href="#ourPartners2" data-slide="next"><i class="fa fa-chevron-right icon-next"></i></a>
+                </div>
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <!-- Property 2 start -->
+                            <div class="property-2">
+                                <!-- Property img -->
+                                <div class="property-img">
+                                    <div class="featured">
+                                        Featured
+                                    </div>
+                                    <div class="price-ratings">
+                                        <div class="price">$150,000</div>
+                                        <div class="ratings">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </div>
+                                    </div>
+                                    <img src="{{ asset('assets/images/tes.jpg') }}" alt="rp" class="img-responsive">
+                                    <div class="property-overlay">
+                                        <a href="properties-details.html" class="overlay-link">
+                                            <i class="fa fa-link"></i>
+                                        </a>
+                                        <a class="overlay-link property-video" title="Lexus GS F">
+                                            <i class="fa fa-video-camera"></i>
+                                        </a>
+                                        <div class="property-magnify-gallery">
+                                            <a href="http://placehold.it/750x540" class="overlay-link">
+                                                <i class="fa fa-expand"></i>
+                                            </a>
+                                            <a href="http://placehold.it/750x540" class="hidden"></a>
+                                            <a href="http://placehold.it/750x540" class="hidden"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- content -->
+                                <div class="content">
+                                    <!-- title -->
+                                    <h4 class="title">
+                                        <a href="properties-details.html">Big Head House</a>
+                                    </h4>
+                                    <div class="progress mb-0" style="height:7px;">
+                                        <div class="progress-bar" style="width:40%;height:20px"></div>
+                                    </div>
+                                    <div>
+                                        <span class="pull-left" style="color: #95c41f"><i class="fa fa-refresh fa-spin"></i>&nbsp;2/12 kamar</span>
+                                        <span class="pull-right" style="color: #95c41f"><i class="fa fa-refresh fa-spin"></i>&nbsp;2/12 kamar</span>
+                                    </div>
+                                    <br>
+                                    <!-- Property address -->
+                                    <h3 class="property-address">
+                                        <a href="properties-details.html">
+                                            <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City,
+                                        </a>
+                                    </h3>
+                                </div>
+                                <!-- Facilities List -->
+                                <ul class="facilities-list clearfix">
+                                    <li>
+                                        <i class="flaticon-square-layouting-with-black-square-in-east-area"></i>
+                                        <span>4800 sq ft</span>
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-bed"></i>
+                                        <span>3</span>
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-holidays"></i>
+                                        <span>2</span>
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-vehicle"></i>
+                                        <span>1</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Property 2 end -->
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <!-- Property 2 start -->
+                            <div class="property-2">
+                                <!-- Property img -->
+                                <div class="property-img">
+                                    <div class="featured">
+                                        Featured
+                                    </div>
+                                    <div class="price-ratings">
+                                        <div class="price">$150,000</div>
+                                        <div class="ratings">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </div>
+                                    </div>
+                                    <img src="{{ asset('assets/images/tes.jpg') }}" alt="rp" class="img-responsive">
+                                    <div class="property-overlay">
+                                        <a href="properties-details.html" class="overlay-link">
+                                            <i class="fa fa-link"></i>
+                                        </a>
+                                        <a class="overlay-link property-video" title="Lexus GS F">
+                                            <i class="fa fa-video-camera"></i>
+                                        </a>
+                                        <div class="property-magnify-gallery">
+                                            <a href="http://placehold.it/750x540" class="overlay-link">
+                                                <i class="fa fa-expand"></i>
+                                            </a>
+                                            <a href="http://placehold.it/750x540" class="hidden"></a>
+                                            <a href="http://placehold.it/750x540" class="hidden"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- content -->
+                                <div class="content">
+                                    <!-- title -->
+                                    <h4 class="title">
+                                        <a href="properties-details.html">Masons Villas</a>
+                                    </h4>
+                                    <div class="progress mb-0" style="height:7px;">
+                                        <div class="progress-bar" style="width:40%;height:20px"></div>
+                                    </div>
+                                    <div>
+                                        <span class="pull-left" style="color: #95c41f"><i class="fa fa-refresh fa-spin"></i>&nbsp;2/12 kamar</span>
+                                        <span class="pull-right" style="color: #95c41f"><i class="fa fa-refresh fa-spin"></i>&nbsp;2/12 kamar</span>
+                                    </div>
+                                    <br>
+                                    <!-- Property address -->
+                                    <h3 class="property-address">
+                                        <a href="properties-details.html">
+                                            <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City,
+                                        </a>
+                                    </h3>
+                                </div>
+                                <!-- Facilities List -->
+                                <ul class="facilities-list clearfix">
+                                    <li>
+                                        <i class="flaticon-square-layouting-with-black-square-in-east-area"></i>
+                                        <span>4800 sq ft</span>
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-bed"></i>
+                                        <span>3</span>
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-holidays"></i>
+                                        <span>2</span>
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-vehicle"></i>
+                                        <span>1</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Property 2 end -->
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <!-- Property 2 start -->
+                            <div class="property-2">
+                                <!-- Property img -->
+                                <div class="property-img">
+                                    <div class="featured">
+                                        Featured
+                                    </div>
+                                    <div class="price-ratings">
+                                        <div class="price">$150,000</div>
+                                        <div class="ratings">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </div>
+                                    </div>
+                                    <img src="{{ asset('assets/images/tes.jpg') }}" alt="rp" class="img-responsive">
+                                    <div class="property-overlay">
+                                        <a href="properties-details.html" class="overlay-link">
+                                            <i class="fa fa-link"></i>
+                                        </a>
+                                        <a class="overlay-link property-video" title="Lexus GS F">
+                                            <i class="fa fa-video-camera"></i>
+                                        </a>
+                                        <div class="property-magnify-gallery">
+                                            <a href="http://placehold.it/750x540" class="overlay-link">
+                                                <i class="fa fa-expand"></i>
+                                            </a>
+                                            <a href="http://placehold.it/750x540" class="hidden"></a>
+                                            <a href="http://placehold.it/750x540" class="hidden"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- content -->
+                                <div class="content">
+                                    <!-- title -->
+                                    <h4 class="title">
+                                        <a href="properties-details.html">Park Avenue</a>
+                                    </h4>
+                                    <div class="progress mb-0" style="height:7px;">
+                                        <div class="progress-bar" style="width:40%;height:20px"></div>
+                                    </div>
+                                    <div>
+                                        <span class="pull-left" style="color: #95c41f"><i class="fa fa-refresh fa-spin"></i>&nbsp;2/12 kamar</span>
+                                        <span class="pull-right" style="color: #95c41f"><i class="fa fa-refresh fa-spin"></i>&nbsp;2/12 kamar</span>
+                                    </div>
+                                    <br>
+                                    <!-- Property address -->
+                                    <h3 class="property-address">
+                                        <a href="properties-details.html">
+                                            <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City,
+                                        </a>
+                                    </h3>
+                                </div>
+                                <!-- Facilities List -->
+                                <ul class="facilities-list clearfix">
+                                    <li>
+                                        <i class="flaticon-square-layouting-with-black-square-in-east-area"></i>
+                                        <span>4800 sq ft</span>
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-bed"></i>
+                                        <span>3</span>
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-holidays"></i>
+                                        <span>2</span>
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-vehicle"></i>
+                                        <span>1</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Property 2 end -->
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <!-- Property 2 start -->
+                            <div class="property-2">
+                                <!-- Property img -->
+                                <div class="property-img">
+                                    <div class="featured">
+                                        Featured
+                                    </div>
+                                    <div class="price-ratings">
+                                        <div class="price">$150,000</div>
+                                        <div class="ratings">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </div>
+                                    </div>
+                                    <img src="{{ asset('assets/images/tes.jpg') }}" alt="rp" class="img-responsive">
+                                    <div class="property-overlay">
+                                        <a href="properties-details.html" class="overlay-link">
+                                            <i class="fa fa-link"></i>
+                                        </a>
+                                        <a class="overlay-link property-video" title="Lexus GS F">
+                                            <i class="fa fa-video-camera"></i>
+                                        </a>
+                                        <div class="property-magnify-gallery">
+                                            <a href="http://placehold.it/750x540" class="overlay-link">
+                                                <i class="fa fa-expand"></i>
+                                            </a>
+                                            <a href="http://placehold.it/750x540" class="hidden"></a>
+                                            <a href="http://placehold.it/750x540" class="hidden"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- content -->
+                                <div class="content">
+                                    <!-- title -->
+                                    <h4 class="title">
+                                        <a href="properties-details.html">Sweet Family Home</a>
+                                    </h4>
+                                    <div class="progress mb-0" style="height:7px;">
+                                        <div class="progress-bar" style="width:40%;height:20px"></div>
+                                    </div>
+                                    <div>
+                                        <span class="pull-left" style="color: #95c41f"><i class="fa fa-refresh fa-spin"></i>&nbsp;2/12 kamar</span>
+                                        <span class="pull-right" style="color: #95c41f"><i class="fa fa-refresh fa-spin"></i>&nbsp;2/12 kamar</span>
+                                    </div>
+                                    <br>
+                                    <!-- Property address -->
+                                    <h3 class="property-address">
+                                        <a href="properties-details.html">
+                                            <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City,
+                                        </a>
+                                    </h3>
+                                </div>
+                                <!-- Facilities List -->
+                                <ul class="facilities-list clearfix">
+                                    <li>
+                                        <i class="flaticon-square-layouting-with-black-square-in-east-area"></i>
+                                        <span>4800 sq ft</span>
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-bed"></i>
+                                        <span>3</span>
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-holidays"></i>
+                                        <span>2</span>
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-vehicle"></i>
+                                        <span>1</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Property 2 end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<a href="#" class="btn button-md button-theme">Tampilkan Semua Rekomendasi</a>
+			</div>
+		</div>
+    </div>
+</div>
+<!-- Partners block end -->
+
+<!-- Listings parallax start -->
+<div class="listings-parallax  overview-bgi">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-sm-8 col-xs-12">
+                <h1>We are Here to Help You</h1>
+                <P>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown.</P>
+                <a href="#" class="btn button-sm button-theme">Read More</a>
+            </div>
+            <div class="col-lg-offset-3 col-lg-3 col-sm-4 col-xs-12">
+                <div class="contect-agent-photo">
+                    <img src="http://placehold.it/262x308" alt="avatar-6" class="img-responsive">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Listings parallax end -->
+
+<!-- Our service start -->
+<div class=" our-service" style="margin-top: 50px !important; ">
+    <div class="container">
+        <!-- Main title -->
+        <div class="main-title">
+            <h1><span>Kenapa harus pesan</span> melalui kosaku ?</h1>
+        </div>
+
+        <div class="row mgn-btm wow">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 wow fadeInLeft delay-04s">
+                <div class="content">
+                    <i class="flaticon-apartment"></i>
+                    <h4>Keuntungan Pertama</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et</P>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 wow fadeInLeft delay-04s">
+                <div class="content">
+                    <i class="flaticon-internet"></i>
+                    <h4>Keuntungan Kedua</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et</P>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 wow fadeInRight delay-04s">
+                <div class="content">
+                    <i class="flaticon-vehicle"></i>
+                    <h4>Keuntungan Ketiga</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et</P>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 wow fadeInRight delay-04s">
+                <div class="content">
+                    <i class="flaticon-symbol"></i>
+                    <h4>Keuntungan Keempat</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et</P>
+                </div>
+            </div>
+        </div>
+		<a href="#" class="btn button-md button-theme">Baca Selengkapnya</a>
+    </div>
+</div>
+<!-- Our service end -->
+
+
+<!-- Featured properties start -->
+<div class="content-area featured-properties"  style="padding-bottom: 10px !important;>
+    <div class="container">
+        <!-- Main title -->
+        <div class="main-title">
+            <h1>SEMUA PRODUK YANG DITAWARKAN</h1>
         </div>
         <ul class="list-inline-listing filters filters-listing-navigation">
             <li class="active btn filtr-button filtr" data-filter="all"><i class="fa fa-home"></i>&nbsp; Putri</li>
@@ -687,414 +1096,6 @@
 </div>
 <!-- Featured properties end -->
 
-<!-- Listings parallax start -->
-<div class="listings-parallax  overview-bgi">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 col-sm-8 col-xs-12">
-                <h1>We are Here to Help You</h1>
-                <P>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown.</P>
-                <a href="#" class="btn button-sm button-theme">Read More</a>
-            </div>
-            <div class="col-lg-offset-3 col-lg-3 col-sm-4 col-xs-12">
-                <div class="contect-agent-photo">
-                    <img src="http://placehold.it/262x308" alt="avatar-6" class="img-responsive">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Listings parallax end -->
-
-<!-- Our service start -->
-<div class="mb-50 our-service" style="margin-top: 50px !important; ">
-    <div class="container">
-        <!-- Main title -->
-        <div class="main-title">
-            <h1><span>Apa keuntungan jika memesan</span> melalui kosaku ?</h1>
-        </div>
-
-        <div class="row mgn-btm wow">
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 wow fadeInLeft delay-04s">
-                <div class="content">
-                    <i class="flaticon-apartment"></i>
-                    <h4>Keuntungan Pertama</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et</P>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 wow fadeInLeft delay-04s">
-                <div class="content">
-                    <i class="flaticon-internet"></i>
-                    <h4>Keuntungan Kedua</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et</P>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 wow fadeInRight delay-04s">
-                <div class="content">
-                    <i class="flaticon-vehicle"></i>
-                    <h4>Keuntungan Ketiga</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et</P>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 wow fadeInRight delay-04s">
-                <div class="content">
-                    <i class="flaticon-symbol"></i>
-                    <h4>Keuntungan Keempat</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et</P>
-                </div>
-            </div>
-        </div>
-		<a href="#" class="btn button-md button-theme">Baca Selengkapnya</a>
-    </div>
-</div>
-<!-- Our service end -->
-
-<!-- Recently properties start -->
-<div class="mb-50 recently-properties chevron-icon">
-    <div class="container">
-        <!-- Main title -->
-        <div class="main-title">
-            <h1><span>Rekomendasi</span> Kostan</h1>
-        </div>
-        <div class="row">
-            <div class="carousel our-partners slide" id="ourPartners2">
-                <div class="col-lg-12 mrg-btm-30">
-                    <a class="right carousel-control" href="#ourPartners2" data-slide="prev"><i class="fa fa-chevron-left icon-prev"></i></a>
-                    <a class="right carousel-control" href="#ourPartners2" data-slide="next"><i class="fa fa-chevron-right icon-next"></i></a>
-                </div>
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                            <!-- Property 2 start -->
-                            <div class="property-2">
-                                <!-- Property img -->
-                                <div class="property-img">
-                                    <div class="featured">
-                                        Featured
-                                    </div>
-                                    <div class="price-ratings">
-                                        <div class="price">$150,000</div>
-                                        <div class="ratings">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-o"></i>
-                                        </div>
-                                    </div>
-                                    <img src="{{ asset('assets/images/tes.jpg') }}" alt="rp" class="img-responsive">
-                                    <div class="property-overlay">
-                                        <a href="properties-details.html" class="overlay-link">
-                                            <i class="fa fa-link"></i>
-                                        </a>
-                                        <a class="overlay-link property-video" title="Lexus GS F">
-                                            <i class="fa fa-video-camera"></i>
-                                        </a>
-                                        <div class="property-magnify-gallery">
-                                            <a href="http://placehold.it/750x540" class="overlay-link">
-                                                <i class="fa fa-expand"></i>
-                                            </a>
-                                            <a href="http://placehold.it/750x540" class="hidden"></a>
-                                            <a href="http://placehold.it/750x540" class="hidden"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- content -->
-                                <div class="content">
-                                    <!-- title -->
-                                    <h4 class="title">
-                                        <a href="properties-details.html">Big Head House</a>
-                                    </h4>
-                                    <div class="progress mb-0" style="height:7px;">
-                                        <div class="progress-bar" style="width:40%;height:20px"></div>
-                                    </div>
-                                    <div>
-                                        <span class="pull-left" style="color: #95c41f"><i class="fa fa-refresh fa-spin"></i>&nbsp;2/12 kamar</span>
-                                        <span class="pull-right" style="color: #95c41f"><i class="fa fa-refresh fa-spin"></i>&nbsp;2/12 kamar</span>
-                                    </div>
-                                    <br>
-                                    <!-- Property address -->
-                                    <h3 class="property-address">
-                                        <a href="properties-details.html">
-                                            <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City,
-                                        </a>
-                                    </h3>
-                                </div>
-                                <!-- Facilities List -->
-                                <ul class="facilities-list clearfix">
-                                    <li>
-                                        <i class="flaticon-square-layouting-with-black-square-in-east-area"></i>
-                                        <span>4800 sq ft</span>
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-bed"></i>
-                                        <span>3</span>
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-holidays"></i>
-                                        <span>2</span>
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-vehicle"></i>
-                                        <span>1</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- Property 2 end -->
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                            <!-- Property 2 start -->
-                            <div class="property-2">
-                                <!-- Property img -->
-                                <div class="property-img">
-                                    <div class="featured">
-                                        Featured
-                                    </div>
-                                    <div class="price-ratings">
-                                        <div class="price">$150,000</div>
-                                        <div class="ratings">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-o"></i>
-                                        </div>
-                                    </div>
-                                    <img src="{{ asset('assets/images/tes.jpg') }}" alt="rp" class="img-responsive">
-                                    <div class="property-overlay">
-                                        <a href="properties-details.html" class="overlay-link">
-                                            <i class="fa fa-link"></i>
-                                        </a>
-                                        <a class="overlay-link property-video" title="Lexus GS F">
-                                            <i class="fa fa-video-camera"></i>
-                                        </a>
-                                        <div class="property-magnify-gallery">
-                                            <a href="http://placehold.it/750x540" class="overlay-link">
-                                                <i class="fa fa-expand"></i>
-                                            </a>
-                                            <a href="http://placehold.it/750x540" class="hidden"></a>
-                                            <a href="http://placehold.it/750x540" class="hidden"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- content -->
-                                <div class="content">
-                                    <!-- title -->
-                                    <h4 class="title">
-                                        <a href="properties-details.html">Masons Villas</a>
-                                    </h4>
-                                    <div class="progress mb-0" style="height:7px;">
-                                        <div class="progress-bar" style="width:40%;height:20px"></div>
-                                    </div>
-                                    <div>
-                                        <span class="pull-left" style="color: #95c41f"><i class="fa fa-refresh fa-spin"></i>&nbsp;2/12 kamar</span>
-                                        <span class="pull-right" style="color: #95c41f"><i class="fa fa-refresh fa-spin"></i>&nbsp;2/12 kamar</span>
-                                    </div>
-                                    <br>
-                                    <!-- Property address -->
-                                    <h3 class="property-address">
-                                        <a href="properties-details.html">
-                                            <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City,
-                                        </a>
-                                    </h3>
-                                </div>
-                                <!-- Facilities List -->
-                                <ul class="facilities-list clearfix">
-                                    <li>
-                                        <i class="flaticon-square-layouting-with-black-square-in-east-area"></i>
-                                        <span>4800 sq ft</span>
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-bed"></i>
-                                        <span>3</span>
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-holidays"></i>
-                                        <span>2</span>
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-vehicle"></i>
-                                        <span>1</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- Property 2 end -->
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                            <!-- Property 2 start -->
-                            <div class="property-2">
-                                <!-- Property img -->
-                                <div class="property-img">
-                                    <div class="featured">
-                                        Featured
-                                    </div>
-                                    <div class="price-ratings">
-                                        <div class="price">$150,000</div>
-                                        <div class="ratings">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-o"></i>
-                                        </div>
-                                    </div>
-                                    <img src="{{ asset('assets/images/tes.jpg') }}" alt="rp" class="img-responsive">
-                                    <div class="property-overlay">
-                                        <a href="properties-details.html" class="overlay-link">
-                                            <i class="fa fa-link"></i>
-                                        </a>
-                                        <a class="overlay-link property-video" title="Lexus GS F">
-                                            <i class="fa fa-video-camera"></i>
-                                        </a>
-                                        <div class="property-magnify-gallery">
-                                            <a href="http://placehold.it/750x540" class="overlay-link">
-                                                <i class="fa fa-expand"></i>
-                                            </a>
-                                            <a href="http://placehold.it/750x540" class="hidden"></a>
-                                            <a href="http://placehold.it/750x540" class="hidden"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- content -->
-                                <div class="content">
-                                    <!-- title -->
-                                    <h4 class="title">
-                                        <a href="properties-details.html">Park Avenue</a>
-                                    </h4>
-                                    <div class="progress mb-0" style="height:7px;">
-                                        <div class="progress-bar" style="width:40%;height:20px"></div>
-                                    </div>
-                                    <div>
-                                        <span class="pull-left" style="color: #95c41f"><i class="fa fa-refresh fa-spin"></i>&nbsp;2/12 kamar</span>
-                                        <span class="pull-right" style="color: #95c41f"><i class="fa fa-refresh fa-spin"></i>&nbsp;2/12 kamar</span>
-                                    </div>
-                                    <br>
-                                    <!-- Property address -->
-                                    <h3 class="property-address">
-                                        <a href="properties-details.html">
-                                            <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City,
-                                        </a>
-                                    </h3>
-                                </div>
-                                <!-- Facilities List -->
-                                <ul class="facilities-list clearfix">
-                                    <li>
-                                        <i class="flaticon-square-layouting-with-black-square-in-east-area"></i>
-                                        <span>4800 sq ft</span>
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-bed"></i>
-                                        <span>3</span>
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-holidays"></i>
-                                        <span>2</span>
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-vehicle"></i>
-                                        <span>1</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- Property 2 end -->
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                            <!-- Property 2 start -->
-                            <div class="property-2">
-                                <!-- Property img -->
-                                <div class="property-img">
-                                    <div class="featured">
-                                        Featured
-                                    </div>
-                                    <div class="price-ratings">
-                                        <div class="price">$150,000</div>
-                                        <div class="ratings">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-o"></i>
-                                        </div>
-                                    </div>
-                                    <img src="{{ asset('assets/images/tes.jpg') }}" alt="rp" class="img-responsive">
-                                    <div class="property-overlay">
-                                        <a href="properties-details.html" class="overlay-link">
-                                            <i class="fa fa-link"></i>
-                                        </a>
-                                        <a class="overlay-link property-video" title="Lexus GS F">
-                                            <i class="fa fa-video-camera"></i>
-                                        </a>
-                                        <div class="property-magnify-gallery">
-                                            <a href="http://placehold.it/750x540" class="overlay-link">
-                                                <i class="fa fa-expand"></i>
-                                            </a>
-                                            <a href="http://placehold.it/750x540" class="hidden"></a>
-                                            <a href="http://placehold.it/750x540" class="hidden"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- content -->
-                                <div class="content">
-                                    <!-- title -->
-                                    <h4 class="title">
-                                        <a href="properties-details.html">Sweet Family Home</a>
-                                    </h4>
-                                    <div class="progress mb-0" style="height:7px;">
-                                        <div class="progress-bar" style="width:40%;height:20px"></div>
-                                    </div>
-                                    <div>
-                                        <span class="pull-left" style="color: #95c41f"><i class="fa fa-refresh fa-spin"></i>&nbsp;2/12 kamar</span>
-                                        <span class="pull-right" style="color: #95c41f"><i class="fa fa-refresh fa-spin"></i>&nbsp;2/12 kamar</span>
-                                    </div>
-                                    <br>
-                                    <!-- Property address -->
-                                    <h3 class="property-address">
-                                        <a href="properties-details.html">
-                                            <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City,
-                                        </a>
-                                    </h3>
-                                </div>
-                                <!-- Facilities List -->
-                                <ul class="facilities-list clearfix">
-                                    <li>
-                                        <i class="flaticon-square-layouting-with-black-square-in-east-area"></i>
-                                        <span>4800 sq ft</span>
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-bed"></i>
-                                        <span>3</span>
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-holidays"></i>
-                                        <span>2</span>
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-vehicle"></i>
-                                        <span>1</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- Property 2 end -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-		</div>
-		<div class="row">
-			<div class="col-md-12 text-center">
-				<a href="#" class="btn button-md button-theme">Tampilkan Semua Rekomendasi</a>
-			</div>
-		</div>
-    </div>
-</div>
-<!-- Partners block end -->
-
 <div class="clearfix"></div>
 <!-- Categories strat -->
 <div class="categories" style="padding-bottom: 50px !important">
@@ -1384,7 +1385,7 @@
 <!-- Agent section end -->
 
 <!-- Testimonial section start-->
-<div class="testimonials-3 overview-bgi" style="background-image: url({{ asset('assets/images/tes2.jpg') }}); margin-bottom:50px !important;">
+<div class="testimonials-3 overview-bgi" style="background-image: url({{ asset('assets/images/tes2.jpg') }});>
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -1583,7 +1584,7 @@
 <div class="clearfix"></div>
 
 <!-- Blog start -->
-<div class="blog content-area ">
+<div class="blog content-area " style="padding-top: 50px !important">
     <div class="container">
         <!-- Main title -->
         <div class="main-title">
