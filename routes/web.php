@@ -23,9 +23,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['prefix'  => '/semua_produk'],function(){
-    Route::get('/','FrontendController@semuaProduk')->name('produk.semua');
-});
+Route::get('/produk/semua', 'FrontendController@semuaProduk')->name('produk.semua');
 
 Route::group(['prefix'  => 'rumah_kosaku/'],function(){
     Route::get('/','Admin\DashboardController@index')->name('admin.dashboard');

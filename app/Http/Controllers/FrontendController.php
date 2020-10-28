@@ -9,7 +9,7 @@ class FrontendController extends Controller
 {
     public function index(){
         $sliders = Slider::all();
-        return view('layouts/frontend',compact('sliders'));
+        return view('frontend.index',compact('sliders'));
     }
 
     public function semuaProduk(){
