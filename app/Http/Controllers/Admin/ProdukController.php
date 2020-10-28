@@ -163,7 +163,7 @@ class ProdukController extends Controller
     public function galeriPost(Request $request, $id,$slug){
         $this->validate($request,[
             'foto_detail'   =>  'required',
-            'foto_detail.*' =>  'mimes:jpg,jpeg,png|max:100',
+            'foto_detail.*' =>  'mimes:jpg,jpeg,png|max:500',
         ]);
 
         $galeris = [];
