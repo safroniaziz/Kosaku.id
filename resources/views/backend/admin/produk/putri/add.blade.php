@@ -87,7 +87,7 @@
             var op=" ";
             $.ajax({
             type :'get',
-            url: "{{ url('admin/wilayah/kecamatan/cari_kota') }}",
+            url: "{{ url('rumah_kosaku/wilayah/kecamatan/cari_kota') }}",
             data:{'provinsi_id':provinsi_id},
                 success:function(data){
                     // alert(data['prodi'][0].prodiKodeUniv);
@@ -110,7 +110,7 @@
             var op=" ";
             $.ajax({
             type :'get',
-            url: "{{ url('admin/wilayah/kelurahan/cari_kecamatan') }}",
+            url: "{{ url('rumah_kosaku/wilayah/kelurahan/cari_kecamatan') }}",
             data:{'kota_id':kota_id},
                 success:function(data){
                     // alert(data['prodi'][0].prodiKodeUniv);
@@ -133,7 +133,7 @@
             var op=" ";
             $.ajax({
             type :'get',
-            url: "{{ url('admin/wilayah/kelurahan/cari_kelurahan') }}",
+            url: "{{ url('rumah_kosaku/wilayah/kelurahan/cari_kelurahan') }}",
             data:{'kecamatan_id':kecamatan_id},
                 success:function(data){
                     // alert(data['prodi'][0].prodiKodeUniv);

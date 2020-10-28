@@ -13,6 +13,6 @@ class FrontendController extends Controller
     }
 
     public function semuaProduk(){
-        return view('frontend/produk.semua');
+        return view('layouts.produks');
     }
 }

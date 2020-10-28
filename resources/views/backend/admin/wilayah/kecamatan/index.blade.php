@@ -163,7 +163,7 @@
             var op=" ";
             $.ajax({
             type :'get',
-            url: "{{ url('admin/wilayah/kecamatan/cari_kota') }}",
+            url: "{{ url('rumah_kosaku/wilayah/kecamatan/cari_kota') }}",
             data:{'provinsi_id':provinsi_id},
                 success:function(data){
                     // alert(data['prodi'][0].prodiKodeUniv);

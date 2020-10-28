@@ -203,24 +203,33 @@
                             <h1>Kontak Kami</h1>
                         </div>
                         <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's printing and
+                            Kosaku.id adalah platform pencarian kost-kostan digital pertama di Bengkulu yang berbasis teknologi website dan android. Kosaku.id adalah produk dari PT. Kosaku Jaya Mandiri, yang mana sudah memiliki legalitas dan terdaftar sebagai perusahaan wajib pajak.
                         </p>
                         <ul class="personal-info">
                             <li>
                                 <i class="fa fa-map-marker"></i>
-                                Address: 20/F Green Road, Dhanmondi, Dhaka
+                                Alamat : Jl. Mayjen Sutoyo, No.53, Tanah Patah, Kota Bengkulu
                             </li>
                             <li>
                                 <i class="fa fa-envelope"></i>
-                                Email:<a href="mailto:sales@hotelempire.com">info@themevessel.com</a>
+                                Email:<a href="mailto:sales@hotelempire.com">kosakujaya@gmail.com & hello@kosaku.id</a>
                             </li>
                             <li>
                                 <i class="fa fa-phone"></i>
-                                Phone: <a href="tel:+55-417-634-7071">+55 4XX-634-7071</a>
+                                Telephone: <a href="tel:+55-417-634-7071">0823-7213-3572</a>
                             </li>
                             <li>
                                 <i class="fa fa-fax"></i>
-                                Fax: +55 4XX-634-7071
+                                Sosial Media :
+                                <a href="https://www.instagram.com/kosaku.id/" target="_blank">
+                                    <img src="{{ asset('assets/images/instagram.png') }}" width="30" alt="">
+                                </a>
+                                <a href="https://www.facebook.com/kosakujaya.mandiri.3">
+                                    <img src="{{ asset('assets/images/facebook.png') }}" width="30" alt="">
+                                </a>
+                                <a href="https://www.youtube.com/channel/UC-2W4xlP1mW5BsDO7Q0nUzQ">
+                                    <img src="{{ asset('assets/images/youtube.png') }}" width="30" alt="">
+                                </a>
                             </li>
                         </ul>
                     </div>
