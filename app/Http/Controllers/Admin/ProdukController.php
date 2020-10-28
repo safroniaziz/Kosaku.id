@@ -44,7 +44,7 @@ class ProdukController extends Controller
             'jenis_kategori'   =>  'required',
             'jenis_kerja_sama'   =>  'required',
             'deskripsi'   =>  'required',
-            'foto_thumbnail'   =>  'required|mimes:jpg,jpeg,png|max:100',
+            'foto_thumbnail'   =>  'required|mimes:jpg,jpeg,png|max:500',
             'kamar_mandi_dalam'   =>  'required',
             'dapur_dalam'   =>  'required',
             'kamar_mandi_umum'   =>  'required',
