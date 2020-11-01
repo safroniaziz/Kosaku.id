@@ -21,7 +21,6 @@
                 @endforeach
                 
             </div>
-
             <!-- Controls -->
             <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
                 <span class="slider-mover-left" aria-hidden="true">
