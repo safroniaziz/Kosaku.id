@@ -6,6 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Produk extends Model
 {
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        // your other new column
+    ];
+    
     protected $fillable = [
         'provinsi_id',
         'kota_id',
@@ -18,7 +24,6 @@ class Produk extends Model
         'jumlah_kamar',
         'kamar_kosong',
         'luas_kamar',
-        'alamat_singkat',
         'alamat_lengkap',
         'latitude',
         'longitude',
@@ -45,5 +50,8 @@ class Produk extends Model
         'jarak_polisi_terdekat',
         'jarak_puskesmas',
         'jarak_pasar',
+        'status',
+        'area_kampus',
+        'diskon'
     ];
 }

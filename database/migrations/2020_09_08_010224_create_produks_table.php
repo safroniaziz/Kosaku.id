@@ -26,7 +26,6 @@ class CreateProduksTable extends Migration
             $table->bigInteger('jumlah_kamar');
             $table->bigInteger('kamar_kosong');
             $table->string('luas_kamar');
-            $table->text('alamat_singkat');
             $table->text('alamat_lengkap');
             $table->string('latitude');
             $table->string('longitude');

@@ -163,11 +163,7 @@
                                             <td style="width: 2%"> : </td>
                                             <td>{!! $details[0]->deskripsi !!}</td>
                                         </tr>
-                                        <tr>
-                                            <th style="width: 20%">Alamat Singkat</th>
-                                            <td style="width: 2%"> : </td>
-                                            <td>{{ $details[0]->alamat_lengkap }}</td>
-                                        </tr>
+                                  
                                         <tr>
                                             <th style="width: 20%">Alamat Lengkap</th>
                                             <td style="width: 2%"> : </td>

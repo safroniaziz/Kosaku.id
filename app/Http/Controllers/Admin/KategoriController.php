@@ -15,7 +15,8 @@ class KategoriController extends Controller
 
     public function post(Request $request){
         $this->validate($request,[
-            'nm_kategori'   =>  'required'
+            'nm_kategori'   =>  'required',
+            'status'    =>  '1'
         ]);
         Kategori::create([
             'nm_kategori'   =>  $request->nm_kategori,

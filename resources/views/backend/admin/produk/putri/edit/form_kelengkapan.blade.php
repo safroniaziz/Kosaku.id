@@ -18,6 +18,27 @@
     @endif
 </div>
 <div class="form-group col-md-4">
+    <label for="exampleInputEmail1">Sekitaran Kampus</label>
+    <select name="area_kampus" class="form-control">
+        <option disabled selected>-- pilih area kampus --</option>
+        <option value="tidakada  {{ $produk->area_kampus == "tidakada" ? 'selected' : '' }}">TIdak Ada</option>
+        <option value="unib"  {{ $produk->area_kampus == "unib" ? 'selected' : '' }}>Kampus UNIB</option>
+        <option value="unibpgsd"  {{ $produk->area_kampus == "unibpgsd" ? 'selected' : '' }}>Kampus UNIB PGSD</option>
+        <option value="unibpenjaskes"  {{ $produk->area_kampus == "unibpenjaskes" ? 'selected' : '' }}>Kampus UNIB Penjaskes</option>
+        <option value="unibpoltekkes"  {{ $produk->area_kampus == "unibpoltekkes" ? 'selected' : '' }}>Kampus UNIB Poltekkes </option>
+        <option value="umb1"  {{ $produk->area_kampus == "umb1" ? 'selected' : '' }}>Kampus UMB Kampus 1 </option>
+        <option value="umb2"  {{ $produk->area_kampus == "umb2" ? 'selected' : '' }}>Kampus UMB Kampus 2 </option>
+        <option value="umb3"  {{ $produk->area_kampus == "umb3" ? 'selected' : '' }}>Kampus UMB Kampus 3 </option>
+        <option value="umb4"  {{ $produk->area_kampus == "umb4" ? 'selected' : '' }}>Kampus UMB Kampus 4 </option>
+        <option value="iain"  {{ $produk->area_kampus == "iain" ? 'selected' : '' }}>Kampus IAIN </option>
+        <option value="unihaz"  {{ $produk->area_kampus == "unihaz" ? 'selected' : '' }}>Kampus UNIHAZ </option>
+        <option value="unived"  {{ $produk->area_kampus == "unived" ? 'selected' : '' }}>Kampus UNIVED </option>
+    </select>
+    @if ($errors->has('area_kampus'))
+        <small class="form-text text-danger">{{ $errors->first('area_kampus') }}</small>
+    @endif
+</div>
+<div class="form-group col-md-4">
     <label for="exampleInputEmail1">Nama Kost-Kostan</label>
     <input type="text" name="nm_vendor" value="{{ $produk->nm_vendor }}" class="tags form-control" />
     @if ($errors->has('nm_vendor'))
@@ -74,6 +95,14 @@
 </div>
 
 <div class="form-group col-md-4">
+    <label for="exampleInputEmail1">Diskon :</a> </label>
+    <input type="number" name="diskon" value="{{ $produk->diskon }}" class="form-control">
+    @if ($errors->has('diskon'))
+        <small class="form-text text-danger">{{ $errors->first('diskon') }}</small>
+    @endif
+</div>
+
+<div class="form-group col-md-4">
     <label for="exampleInputEmail1">Jenis Kost-kostan :</a> </label>
     <select name="jenis_kategori" class="form-control">
         <option disabled selected>-- pilih jenis kost-kostan --</option>
@@ -103,14 +132,6 @@
     <input type="file" name="foto_thumbnail" value="{{ $produk->foto_thumbnail }}" style="padding-bottom: 30px !important;" class="form-control" enctype="multipart/form-data">
     @if ($errors->has('foto_thumbnail'))
         <small class="form-text text-danger">{{ $errors->first('foto_thumbnail') }}</small>
-    @endif
-</div>
-
-<div class="form-group col-md-12">
-    <label for="exampleInputEmail1">Alamat Singkat :</a> </label>
-    <textarea name="alamat_singkat" id="" cols="30" rows="3" class="form-control">{{ $produk->alamat_singkat }}</textarea>
-    @if ($errors->has('alamat_singkat'))
-        <small class="form-text text-danger">{{ $errors->first('alamat_singkat') }}</small>
     @endif
 </div>
 

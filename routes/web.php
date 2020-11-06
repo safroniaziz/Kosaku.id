@@ -14,16 +14,20 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-// Route::get('/',function(){
-//     return view('layouts.produk');
-// });
-Route::get('/', 'FrontendController@index')->name('home');
+Route::get('/',function(){
+    return view('layouts.soon');
+});
+// Route::get('/', 'FrontendController@index')->name('home');
 
 Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/produk/semua', 'FrontendController@semuaProduk')->name('produk.semua');
+
+Route::group(['prefix'  => 'produk/'],function(){
+    Route::get('/semua', 'ProdukFrontendController@semuaProduk')->name('produk.semua');
+    Route::get('/{id}/{slug}','ProdukFrontendController@detail')->name('produk.detail');
+});
 
 Route::group(['prefix'  => 'rumah_kosaku/'],function(){
     Route::get('/','Admin\DashboardController@index')->name('admin.dashboard');

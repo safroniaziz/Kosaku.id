@@ -2700,7 +2700,6 @@ footer .footer-item .newsletter {
 
 /** LISTINGS PARALLAX AREA START **/
 .listings-parallax {
-    background: url(http://placehold.it/1920x378);
     z-index: 0;
     background-position: center center;
     background-repeat: no-repeat;

@@ -27,6 +27,7 @@ class ProdukController extends Controller
     public function post(Request $request){
         $this->validate($request,[
             'provinsi_id'   =>  'required',
+            'area_kampus'   =>  'required',
             'kota_id'   =>  'required',
             'kecamatan_id'   =>  'required',
             'kelurahan_id'   =>  'required',
@@ -36,7 +37,6 @@ class ProdukController extends Controller
             'jumlah_kamar'   =>  'required',
             'kamar_kosong'   =>  'required',
             'luas_kamar'   =>  'required',
-            'alamat_singkat'   =>  'required',
             'alamat_lengkap'   =>  'required',
             'latitude'   =>  'required',
             'longitude'   =>  'required',
@@ -63,6 +63,7 @@ class ProdukController extends Controller
             'jarak_polisi_terdekat'   =>  'required',
             'jarak_puskesmas'   =>  'required',
             'jarak_pasar'   =>  'required',
+            'diskon'   =>  'required',
         ]);
 
         $slug_vendor = Str::slug($request->nm_vendor);
@@ -81,7 +82,6 @@ class ProdukController extends Controller
             'jumlah_kamar'  =>  $request->jumlah_kamar,
             'kamar_kosong'  =>  $request->kamar_kosong,
             'luas_kamar'    =>  $request->luas_kamar,
-            'alamat_singkat'    =>  $request->alamat_singkat,
             'alamat_lengkap'    =>  $request->alamat_lengkap,
             'latitude'  =>  $request->latitude,
             'longitude' =>  $request->longitude,
@@ -108,6 +108,9 @@ class ProdukController extends Controller
             'jarak_polisi_terdekat' =>  $request->jarak_polisi_terdekat,
             'jarak_puskesmas'   =>  $request->jarak_puskesmas,
             'jarak_pasar'   =>  $request->jarak_pasar,
+            'area_kampus'   =>  $request->area_kampus,
+            'diskon'   =>  $request->diskon,
+            'status'        =>  '1',
         ]);
 
         return redirect()->route('admin.produk_putri')->with(['success' =>  'Data berhasil ditambahkan !']);
@@ -196,6 +199,7 @@ class ProdukController extends Controller
     public function update(Request $request, $id){
         $this->validate($request,[
             'provinsi_id'   =>  'required',
+            'area_kampus'   =>  'required',
             'kota_id'   =>  'required',
             'kecamatan_id'   =>  'required',
             'kelurahan_id'   =>  'required',
@@ -206,7 +210,6 @@ class ProdukController extends Controller
             'kamar_kosong'   =>  'required',
             'luas_kamar'   =>  'required',
             'alamat_lengkap'   =>  'required',
-            'alamat_singkat'   =>  'required',
             'latitude'   =>  'required',
             'longitude'   =>  'required',
             'harga_sewa'   =>  'required',
@@ -231,15 +234,18 @@ class ProdukController extends Controller
             'jarak_polisi_terdekat'   =>  'required',
             'jarak_puskesmas'   =>  'required',
             'jarak_pasar'   =>  'required',
+            'diskon'        =>  'required',
         ]);
 
         $slug_vendor = Str::slug($request->nm_vendor);
         $file_lama = Produk::where('id',$id)->select('foto_thumbnail')->first();
+        $slug = Str::slug($request->nm_vendor);
         if (!empty(request()->file('foto_thumbnail'))) {
             Storage::delete($file_lama->foto_thumbnail);
             $thumbnailUrl = $request->foto_thumbnail->store('foto_thumbnail/'.$slug_vendor);
             Produk::where('id',$id)->update([
                 'kategori_id'   =>  $request->kategori_id,
+                'area_kampus'   =>  $request->area_kampus,
                 'provinsi_id'   =>  $request->provinsi_id,
                 'kota_id'   =>  $request->kota_id,
                 'kecamatan_id'   =>  $request->kecamatan_id,
@@ -250,7 +256,6 @@ class ProdukController extends Controller
                 'jumlah_kamar'  =>  $request->jumlah_kamar,
                 'kamar_kosong'  =>  $request->kamar_kosong,
                 'luas_kamar'    =>  $request->luas_kamar,
-                'alamat_singkat'    =>  $request->alamat_singkat,
                 'alamat_lengkap'    =>  $request->alamat_lengkap,
                 'latitude'  =>  $request->latitude,
                 'longitude' =>  $request->longitude,
@@ -277,11 +282,14 @@ class ProdukController extends Controller
                 'jarak_polisi_terdekat' =>  $request->jarak_polisi_terdekat,
                 'jarak_puskesmas'   =>  $request->jarak_puskesmas,
                 'jarak_pasar'   =>  $request->jarak_pasar,
+                'diskon'   =>  $request->diskon,
+                'status'        =>  '1',
             ]);
         }
         else{
             Produk::where('id',$id)->update([
                 'kategori_id'   =>  $request->kategori_id,
+                'area_kampus'   =>  $request->area_kampus,
                 'provinsi_id'   =>  $request->provinsi_id,
                 'kota_id'   =>  $request->kota_id,
                 'kecamatan_id'   =>  $request->kecamatan_id,
@@ -316,10 +324,11 @@ class ProdukController extends Controller
                 'jarak_pusat_kota'  =>  $request->jarak_pusat_kota,
                 'jarak_polisi_terdekat' =>  $request->jarak_polisi_terdekat,
                 'jarak_puskesmas'   =>  $request->jarak_puskesmas,
+                'diskon'   =>  $request->diskon,
                 'jarak_pasar'   =>  $request->jarak_pasar,
             ]);
         }
         
-        return redirect()->route('admin.produk_putri.detail')->with(['success' =>  'Data berhasil ditambahkan !']);
+        return redirect()->route('admin.produk_putri.detail',[$id,$slug])->with(['success' =>  'Data berhasil ditambahkan !']);
     }
 }
