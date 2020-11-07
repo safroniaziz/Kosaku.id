@@ -71,7 +71,12 @@
                         </a>
                     </li>
                     <li class="dropdown">
-                        <a tabindex="0" href="{{ route('produk.semua') }}" data-submenu="" aria-expanded="false">
+                        <a tabindex="0" href="{{ route('produk.semua') }}"  data-submenu="" aria-expanded="false">
+                            <i class="fa fa-home"></i>&nbsp;Kost-Kostan
+                        </a>
+                    </li>
+                    {{-- <li class="dropdown">
+                        <a tabindex="0" href="#" data-toggle="dropdown" data-submenu="" aria-expanded="false">
                             <i class="fa fa-list"></i> Produk<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
@@ -80,7 +85,7 @@
                             <li><a href="agent-listing-row-sidebar.html">Agent List Sidebarbar</a></li>
                             <li><a href="agent-single.html">Agent Detail</a></li>
                         </ul>
-                    </li>
+                    </li> --}}
 
                     <li class="dropdown">
                         <a tabindex="0" href="#" data-toggle="dropdown" data-submenu="" aria-expanded="false">
@@ -120,66 +125,12 @@
 
 @yield('content')
 
-<!-- Partners block start -->
-<div class="partners-block">
-    <div class="container">
-        <h3>Daftar kerja sama</h3>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="carousel our-partners slide" id="ourPartners">
-                    <div class="carousel-inner">
-                        <div class="item active">
-                            <div class="col-xs-12 col-sm-6 col-md-3 partner-box">
-                                <a href="#">
-                                    <img src="{{ asset('assets/images/tes2.jpg') }}" alt="partner">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="col-xs-12 col-sm-6 col-md-3 partner-box">
-                                <a href="#">
-                                    <img src="{{ asset('assets/images/tes2.jpg') }}" alt="partner-2">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="col-xs-12 col-sm-6 col-md-3 partner-box">
-                                <a href="#">
-                                    <img src="{{ asset('assets/images/tes2.jpg') }}" alt="partner-3">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="col-xs-12 col-sm-6 col-md-3 partner-box">
-                                <a href="#">
-                                    <img src="{{ asset('assets/images/tes2.jpg') }}" alt="partner-4">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="col-xs-12 col-sm-6 col-md-3 partner-box">
-                                <a href="#">
-                                    <img src="{{ asset('assets/images/tes2.jpg') }}" alt="partner-5">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="left carousel-control" href="#ourPartners" data-slide="prev"><i class="fa fa-chevron-left icon-prev"></i></a>
-                    <a class="right carousel-control" href="#ourPartners" data-slide="next"><i class="fa fa-chevron-right icon-next"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Partners block end -->
-
 <!-- Intro section strat -->
 <div class="intro-section">
     <div class="container">
         <div class="row">
             <div class="col-md-9 col-sm-9 col-xs-12">
-                <img src="{{ asset('assets/images/playstore.png') }}" alt="logo-2">
-                <h3>Ingin Lebih Gampang? Download kosaku.id Versi Android </h3>
+                <h3><i class="fa fa-download"></i>&nbsp;Ingin Lebih Gampang? Download kosaku.id Versi Android </h3>
             </div>
 
             <div class="col-md-3 col-sm-3 col-xs-12">
@@ -197,7 +148,7 @@
         <div class="footer-info">
             <div class="row">
                 <!-- About us -->
-                <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
+                <div class="col-lg-6 col-md-5 col-sm-8 col-xs-12">
                     <div class="footer-item">
                         <div class="main-title-2">
                             <h1>Kontak Kami</h1>
@@ -234,111 +185,40 @@
                         </ul>
                     </div>
                 </div>
-                <!-- Links -->
-                <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
-                    <div class="footer-item">
-                        <div class="main-title-2">
-                            <h1>Links</h1>
-                        </div>
-                        <ul class="links">
-                            <li>
-                                <a href="index.html">Home</a>
-                            </li>
-                            <li>
-                                <a href="about.html">About Us</a>
-                            </li>
-                            <li>
-                                <a href="contact.html">Contact Us</a>
-                            </li>
-                            <li>
-                                <a href="blog-single-sidebar-right.html">Blog</a>
-                            </li>
-                            <li>
-                                <a href="blog-single-sidebar-right.html">Services</a>
-                            </li>
-                            <li>
-                                <a href="properties-list-rightside.html">properties Listing</a>
-                            </li>
-                            <li>
-                                <a href="properties-grid-rightside.html">properties Grid</a>
-                            </li>
-                            <li>
-                                <a href="properties-details.html">properties Details</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
                 <!-- Recent cars -->
                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                     <div class="footer-item popular-posts">
                         <div class="main-title-2">
-                            <h1>Popular Posts</h1>
+                            <h1>Kost Rekomendasi</h1>
                         </div>
-                        <div class="media">
-                            <div class="media-left">
-                                <img class="media-object" src="http://placehold.it/70x70" alt="small-properties-1">
-                            </div>
-                            <div class="media-body">
-                                <h3 class="media-heading">
-                                    <a href="properties-details.html">Sweet Family Home</a>
-                                </h3>
-                                <p>February 27, 2018</p>
-                                <div class="price">
-                                    $734,000
+                        @foreach ($rekomendasis as $item)
+                            <div class="media">
+                                <div class="media-left">
+                                    <img class="media-object" src="{{ asset('storage/'.$item->foto_thumbnail) }}" alt="small-properties-1">
+                                </div>
+                                <div class="media-body">
+                                    <h3 class="media-heading">
+                                        <a href="properties-details.html">{{ $item->nm_vendor }}</a>
+                                    </h3>
+                                    <p>{{ $rekomendasi->nm_kelurahan }},{{ $rekomendasi->nm_kecamatan }},{{ $rekomendasi->nm_kota }}</p>
+                                    <div class="price">
+                                        Rp.{{ number_format($item->harga_sewa) }}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="media">
-                            <div class="media-left">
-                                <img class="media-object" src="http://placehold.it/70x70" alt="small-properties-2">
-                            </div>
-                            <div class="media-body">
-                                <h3 class="media-heading">
-                                    <a href="properties-details.html">Modern Family Home</a>
-                                </h3>
-                                <p>February 27, 2018</p>
-                                <div class="price">
-                                    $734,000
-                                </div>
-                            </div>
-                        </div>
-                        <div class="media">
-                            <div class="media-left">
-                                <img class="media-object" src="http://placehold.it/70x70" alt="small-properties-3">
-                            </div>
-                            <div class="media-body">
-                                <h3 class="media-heading">
-                                    <a href="properties-details.html">Beautiful Single Home</a>
-                                </h3>
-                                <p>February 27, 2018</p>
-                                <div class="price">
-                                    $734,000
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
                 <!-- Subscribe -->
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="footer-item">
                         <div class="main-title-2">
-                            <h1>Subscribe</h1>
+                            <h1>Pesan Kostan</h1>
                         </div>
                         <div class="newsletter clearfix">
                             <p>
-                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                                Silahkan Pilih Kostan Yang Anda Inginkan, Anda Akan Diarahkan Ke Akun Whatsapp Admin Kosaku.ID
                             </p>
-
-                            <form action="#" method="post">
-                                <div class="form-group">
-                                    <input class="nsu-field btn-block" id="nsu-email-0" type="text" name="email" placeholder="Email Address" required="">
-                                </div>
-                                <div class="form-group mb-0">
-                                    <button type="submit" class="button-sm button-theme btn-block">
-                                        Subscribe
-                                    </button>
-                                </div>
-                            </form>
                         </div>
                     </div>
                 </div>
@@ -352,37 +232,11 @@
 <div class="copy-right">
     <div class="container">
         <div class="row clearfix">
-            <div class="col-md-8 col-sm-12">
-                &copy;  2017 <a href="http://themevessel.com/" target="_blank">Theme Vessel</a>. Trademarks and brands are the property of their respective owners.
+            <div class="col-md-11 col-sm-12">
+                &copy;  2020 <a href="https://kosaku.id" target="_blank">Kosaku.ID</a>. Platform Pencarian Kost-Kostan Online
             </div>
-            <div class="col-md-4 col-sm-12">
-                <ul class="social-list clearfix">
-                    <li>
-                        <a href="#" class="facebook">
-                            <i class="fa fa-facebook"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="twitter">
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="linkedin">
-                            <i class="fa fa-linkedin"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="google">
-                            <i class="fa fa-google-plus"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="rss">
-                            <i class="fa fa-rss"></i>
-                        </a>
-                    </li>
-                </ul>
+            <div class="col-md-1 col-sm-12">
+                <a href="https://kosaku.id">Kosaku.ID</a>
             </div>
         </div>
     </div>

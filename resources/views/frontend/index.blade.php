@@ -13,8 +13,8 @@
                             <div class="banner-content container banner-content-left">
                                 <h1 data-animation="animated fadeInDown delay-05s"><span>{{ $slider->title }} </span> </h1>
                                 <p data-animation="animated fadeInUp delay-1s">{{ $slider->slogan }}</p>
-                                <a href="#" class="btn button-md button-theme" data-animation="animated fadeInUp delay-15s">Download Versi Android</a>
-                                <a href="#" class="btn button-md border-button-theme" data-animation="animated fadeInUp delay-15s">Daftar Produk Kostan</a>
+                                <a href="" class="btn button-md button-theme" data-animation="animated fadeInUp delay-15s">Download Versi Android</a>
+                                <a href="{{ route('produk.semua') }}" class="btn button-md border-button-theme" data-animation="animated fadeInUp delay-15s">Daftar Produk Kostan</a>
                             </div>
                         </div>
                     </div>
@@ -46,6 +46,11 @@
                 <h1><span>Rekomendasi</span> Kostan</h1>
             </div>
             <div class="row">
+                <div class="col-md-12">
+                    <div class="alert alert-info">
+                        Perhatian : Khusus Kost-Kostan Rekomendasi, Maka Customer Akan Mendapatkan Penjemputan Barang Gratis Seputar Kota Bengkulu, dan Gratis Isi Ulang Air Galon Sebanyak 15 Kali
+                    </div>
+                </div>
                 <div class="carousel our-partners slide" id="ourPartners2">
                     <div class="col-lg-12 mrg-btm-20">
                         {{-- <a class="right carousel-control" href="#ourPartners2" data-slide="prev"><i class="fa fa-chevron-left icon-prev"></i></a>
@@ -77,7 +82,7 @@
                                         <div class="content">
                                             <!-- title -->
                                             <h4 class="title">
-                                                <a href="{{ route('produk.detail',[$rekomendasi->id,$rekomendasi->slug]) }}">{{ $rekomendasi->nm_vendor }}</a>
+                                                <a href="{{ route('produk.detail',[$rekomendasi->slug]) }}">{{ $rekomendasi->nm_vendor }}</a>
                                             </h4>
                                             <div class="progress mb-0" style="height:7px;">
                                                 <div class="progress-bar" style="width:{{ $rekomendasi->persentase }}%;height:15px"></div>
@@ -88,14 +93,14 @@
                                             <br>
                                             <!-- Property address -->
                                             <h3 class="property-address">
-                                                <a href="{{ route('produk.detail',[$rekomendasi->id,$rekomendasi->slug]) }}">
+                                                <a href="{{ route('produk.detail',[$rekomendasi->slug]) }}">
                                                     <i class="fa fa-map-marker"></i>{{ $rekomendasi->nm_kelurahan }},{{ $rekomendasi->nm_kecamatan }},{{ $rekomendasi->nm_kota }}
                                                 </a>
                                             </h3>
                                         </div>
                                         <!-- Facilities List -->
                                         <ul class="facilities-list clearfix">
-                                            <a href="{{ route('produk.detail',[$rekomendasi->id,$rekomendasi->slug]) }}" style="cursor: pointer">
+                                            <a href="{{ route('produk.detail',[$rekomendasi->slug]) }}" style="cursor: pointer">
                                             <li style="font-size:12px;">
                                                 <i class="fa fa-info-circle"></i>
                                                 <span>
@@ -122,7 +127,7 @@
     </div>
     <!-- Partners block end -->
     <!-- Listings parallax start -->
-    <div class="listings-parallax  overview-bgi" style=" background=size:auto ; background-image: url({{ asset('assets/frontend/img/bgkomputer.png') }})">
+    <div class="listings-parallax  overview-bgi" style="background-image: url({{ asset('assets/frontend/img/bgkomputer.png') }})">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-sm-8 col-xs-12">
@@ -205,7 +210,7 @@
                                     <div class="property-tag button alt featured">{{ $all->jenis_kategori == 'putri' ? 'Khusus Putri' : ($all->jenis_kategori == 'putra' ? 'Khusus Putra' : 'Campuran') }}</div>
                                     <div class="property-tag button sale">{{ $all->nm_kategori }}</div>
                                     <div class="property-price">Rp.{{ number_format($all->harga_sewa) }}</div>
-                                    <img src="{{ asset('assets/images/tes.jpg') }}" alt="fp" class="img-responsive">
+                                    <img src="{{ asset('storage/'.$all->foto_thumbnail) }}" alt="fp" class="img-responsive">
                                     <div class="property-overlay">
                                         
                                     </div>
@@ -214,7 +219,7 @@
                                 <div class="property-content">
                                     <!-- title -->
                                     <h1 class="title">
-                                        <a href="properties-details.html">{{ $all->nm_vendor }}</a>
+                                        <a href="{{ route('produk.detail',[$all->slug]) }}">{{ $all->nm_vendor }}</a>
                                     </h1>
                                     <div class="progress mb-0" style="height:7px;">
                                         <div class="progress-bar" style="width:40%;height:20px"></div>
@@ -226,7 +231,7 @@
                                     
                                     <!-- Property address -->
                                     <h3 class="property-address">
-                                        <a href="properties-details.html">
+                                        <a href="{{ route('produk.detail',[$all->slug]) }}">
                                             <i class="fa fa-map-marker"></i>{{ $rekomendasi->nm_kelurahan }},{{ $rekomendasi->nm_kecamatan }},{{ $rekomendasi->nm_kota }}
                                         </a>
                                     </h3>
@@ -237,22 +242,23 @@
                                             <span>WIFI</span>
                                         </li>
                                         <li>
-                                            <i class="{{ $all->wifi == "1" ? 'fa fa-check-circle' : 'fa fa-close' }}"></i>
+                                            <i class="{{ $all->ac == "1" ? 'fa fa-check-circle' : 'fa fa-close' }}"></i>
                                             <span>AC</span>
                                         </li>
                                         <li>
-                                            <i class="{{ $all->wifi == "1" ? 'fa fa-check-circle' : 'fa fa-close' }}"></i>
+                                            <i class="{{ $all->lahan_parkir == "1" ? 'fa fa-check-circle' : 'fa fa-close' }}"></i>
                                             <span>Lahan Parkir </span>
                                         </li>
                                         <li>
-                                            <i class="{{ $all->wifi == "1" ? 'fa fa-check-circle' : 'fa fa-close' }}"></i>
+                                            <i class="{{ $all->pengamanan == "1" ? 'fa fa-check-circle' : 'fa fa-close'  }}"></i>
                                             <span>Penjaga Kost</span>
                                         </li>
                                         <li>
-                                            <i class="{{ $all->wifi == "1" ? 'fa fa-check-circle' : 'fa fa-close' }}"></i>
+                                            <i class="{{ $all->listrik == "1" ? 'fa fa-check-circle' : 'fa fa-close' }}"></i>
+                                            <span>Listrik</span>
                                         </li>
                                         <li>
-                                            <i class="{{ $all->wifi == "1" ? 'fa fa-check-circle' : 'fa fa-close' }}"></i>
+                                            <i class="{{ $all->air == "1" ? 'fa fa-check-circle' : 'fa fa-close' }}"></i>
                                             <span> Air Bersih</span>
                                         </li>
                                     </ul>
@@ -287,7 +293,7 @@
         <div class="container">
             <!-- Main title -->
             <div class="main-title">
-                <h1>Cari Berdasarkan Daerah Kampus</h1>
+                <h1>Cari Kostan Sekitar Kampus</h1>
             </div>
             <div class="clearfix"></div>
             <div class="row wow">
@@ -295,10 +301,10 @@
                     <div class="row">
                         <div class="col-sm-6 col-pad wow fadeInLeft delay-04s">
                             <div class="category">
-                                <div class="category_bg_box cat-1-bg">
+                                <div class="category_bg_box cat-1-bg" style="background-image: url({{ asset('assets/images/unib.jpg') }})">
                                     <div class="category-overlay">
                                         <div class="category-content">
-                                            <div class="category-subtitle">14 Properties</div>
+                                            <div class="category-subtitle">{{ $unib }} Data Tersedia</div>
                                             <h3 class="category-title">
                                                 <a href="#">Kampus UNIB</a>
                                             </h3>
@@ -310,10 +316,10 @@
 
                         <div class="col-sm-6 col-pad wow fadeInLeft delay-04s">
                             <div class="category">
-                                <div class="category_bg_box cat-2-bg">
+                                <div class="category_bg_box cat-2-bg" style="background-image: url({{ asset('assets/images/umb.jpeg') }})">
                                     <div class="category-overlay">
                                         <div class="category-content">
-                                            <div class="category-subtitle">24 Properties</div>
+                                            <div class="category-subtitle">{{ $umb }} Data Tersedia</div>
                                             <h3 class="category-title">
                                                 <a href="#">Kampus UMB</a>
                                             </h3>
@@ -325,10 +331,10 @@
 
                         <div class="col-sm-6 col-pad wow fadeInLeft delay-04s">
                             <div class="category">
-                                <div class="category_bg_box cat-2-bg">
+                                <div class="category_bg_box cat-2-bg" style="background-image: url({{ asset('assets/images/iain.jpeg') }})">
                                     <div class="category-overlay">
                                         <div class="category-content">
-                                            <div class="category-subtitle">24 Properties</div>
+                                            <div class="category-subtitle">{{ $iain }} Data Tersedia</div>
                                             <h3 class="category-title">
                                                 <a href="#">Kampus IAIN</a>
                                             </h3>
@@ -340,10 +346,10 @@
 
                         <div class="col-sm-6 col-pad wow fadeInLeft delay-04s">
                             <div class="category">
-                                <div class="category_bg_box cat-2-bg">
+                                <div class="category_bg_box cat-2-bg" style="background-image: url({{ asset('assets/images/unived.jpg') }})">
                                     <div class="category-overlay">
                                         <div class="category-content">
-                                            <div class="category-subtitle">24 Properties</div>
+                                            <div class="category-subtitle">{{ $unived }} Data Tersedia</div>
                                             <h3 class="category-title">
                                                 <a href="#">Kampus Dehasen</a>
                                             </h3>
@@ -357,10 +363,10 @@
 
                 <div class="col-lg-5 col-md-5 col-sm-12 col-pad wow fadeInRight delay-04s">
                     <div class="category">
-                        <div class="category_bg_box category_long_bg cat-4-bg">
+                        <div class="category_bg_box category_long_bg cat-4-bg" style="background-image: url({{ asset('assets/images/unihaz.jpg') }})">
                             <div class="category-overlay">
                                 <div class="category-content">
-                                    <div class="category-subtitle">14 Properties</div>
+                                    <div class="category-subtitle">{{ $unihaz }} Data Tersedia</div>
                                     <h3 class="category-title"><a href="#">Kampus UNIHAZ</a></h3>
                                 </div>
                             </div>
@@ -387,26 +393,26 @@
                     </div>
                     <div class="carousel-inner">
                         <div class="item active">
-                            <div class="col-lg-3 col-md-3col-sm-6 col-xs-12">
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                                 <!-- Agent 1 start -->
                                 <div class="agent-1">
                                     <!-- Agent img -->
                                     <a href="properties-details.html" class="agent-img">
-                                        <img src="{{ asset('assets/images/logo.png') }}" alt="team-1" class="img-responsive">
+                                        <img src="{{ asset('assets/images/afdal.jpg') }}" alt="team-1" class="img-responsive">
                                     </a>
                                     <!-- Agent content -->
                                     <div class="agent-content">
-                                        <h5><a href="agent-single.html">Afdal Perdana, S.T</a></h5>
+                                        <h5><a href="">Afdal Perdana, S.T</a></h5>
                                         <h6>Chief Executive Officer (CEO)</h6>
                                         <ul class="social-list clearfix">
                                             <li>
-                                                <a href="#" class="facebook">
+                                                <a href="https://www.facebook.com/afdal.s.jail" class="facebook">
                                                     <i class="fa fa-facebook"></i>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#" class="google">
-                                                    <i class="fa fa-gmail"></i>
+                                                <a href="https://www.instagram.com/afdal_perdana/" class="google">
+                                                    <i class="fa fa-instagram"></i>
                                                 </a>
                                             </li>
                                         </ul>
@@ -416,26 +422,26 @@
                             </div>
                         </div>
                         <div class="item">
-                            <div class="col-lg-3 col-md-3col-sm-6 col-xs-12">
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                                 <!-- Agent 1 start -->
                                 <div class="agent-1">
                                     <!-- Agent img -->
                                     <a href="properties-details.html" class="agent-img">
-                                        <img src="{{ asset('assets/images/logo.png') }}" alt="team-2" class="img-responsive">
+                                        <img src="{{ asset('assets/images/hadi.jpg') }}" alt="team-2" class="img-responsive">
                                     </a>
                                     <!-- Agent content -->
                                     <div class="agent-content">
-                                        <h5><a href="agent-single.html">Karen Paran</a></h5>
-                                        <h6>Creative Director</h6>
+                                        <h5><a href="">Hadi Pratama</a></h5>
+                                        <h6>Chief Operational Marketing</h6>
                                         <ul class="social-list clearfix">
                                             <li>
-                                                <a href="#" class="facebook">
+                                                <a href="https://www.facebook.com/hady.pratama.982" class="facebook">
                                                     <i class="fa fa-facebook"></i>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#" class="google">
-                                                    <i class="fa fa-google-plus"></i>
+                                                <a href="https://www.instagram.com/hadipratama.asa/" class="google">
+                                                    <i class="fa fa-instagram"></i>
                                                 </a>
                                             </li>
                                         </ul>
@@ -445,26 +451,26 @@
                             </div>
                         </div>
                         <div class="item">
-                            <div class="col-lg-3 col-md-3col-sm-6 col-xs-12">
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                                 <!-- Agent 1 start -->
                                 <div class="agent-1">
                                     <!-- Agent img -->
                                     <a href="properties-details.html" class="agent-img">
-                                        <img src="{{ asset('assets/images/logo.png') }}" alt="team-3" class="img-responsive">
+                                        <img src="{{ asset('assets/images/witri.jpg') }}" alt="team-3" class="img-responsive">
                                     </a>
                                     <!-- Agent content -->
                                     <div class="agent-content">
-                                        <h5><a href="agent-single.html">John Maikel</a></h5>
-                                        <h6>Office Manager</h6>
+                                        <h5><a href="">Witri Eka Mardiana</a></h5>
+                                        <h6>Chief Financial Officer</h6>
                                         <ul class="social-list clearfix">
                                             <li>
-                                                <a href="#" class="facebook">
+                                                <a href="https://www.facebook.com/witri.e.mardiana.7" class="facebook">
                                                     <i class="fa fa-facebook"></i>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#" class="google">
-                                                    <i class="fa fa-google-plus"></i>
+                                                <a href="https://www.instagram.com/witriekamardiana/" class="google">
+                                                    <i class="fa fa-instagram"></i>
                                                 </a>
                                             </li>
                                         </ul>
@@ -474,26 +480,84 @@
                             </div>
                         </div>
                         <div class="item">
-                            <div class="col-lg-3 col-md-3col-sm-6 col-xs-12">
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                                 <!-- Agent 1 start -->
                                 <div class="agent-1">
                                     <!-- Agent img -->
                                     <a href="properties-details.html" class="agent-img">
-                                        <img src="{{ asset('assets/images/logo.png') }}" alt="team-4" class="img-responsive">
+                                        <img src="{{ asset('assets/images/irfan.jpg') }}" alt="team-4" class="img-responsive">
                                     </a>
                                     <!-- Agent content -->
                                     <div class="agent-content">
-                                        <h5><a href="agent-single.html">Eliane Pereira</a></h5>
-                                        <h6>Support Manager</h6>
+                                        <h5><a href="">Irfan Jeminko</a></h5>
+                                        <h6>Chief Marketing Officer</h6>
                                         <ul class="social-list clearfix">
                                             <li>
-                                                <a href="#" class="facebook">
+                                                <a href="https://www.facebook.com/search/top?q=irfan%20jeminko" class="facebook">
                                                     <i class="fa fa-facebook"></i>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#" class="google">
-                                                    <i class="fa fa-google-plus"></i>
+                                                <a href="https://www.instagram.com/irfan_jeminko/" class="google">
+                                                    <i class="fa fa-instagram"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- Agent 1 end -->
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                <!-- Agent 1 start -->
+                                <div class="agent-1">
+                                    <!-- Agent img -->
+                                    <a href="properties-details.html" class="agent-img">
+                                        <img src="{{ asset('assets/images/safroni.jpg') }}" alt="team-4" class="img-responsive">
+                                    </a>
+                                    <!-- Agent content -->
+                                    <div class="agent-content">
+                                        <h5><a href="">Safroni Aziz Suprianto</a></h5>
+                                        <h6>Chief Technology Officer</h6>
+                                        <ul class="social-list clearfix">
+                                            <li>
+                                                <a href="https://www.facebook.com/profile.php?id=100010418316583" class="facebook">
+                                                    <i class="fa fa-facebook"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.instagram.com/safroniaziz/" class="google">
+                                                    <i class="fa fa-instagram"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- Agent 1 end -->
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                <!-- Agent 1 start -->
+                                <div class="agent-1">
+                                    <!-- Agent img -->
+                                    <a href="properties-details.html" class="agent-img">
+                                        <img src="{{ asset('assets/images/yudi.jpg') }}" alt="team-4" class="img-responsive">
+                                    </a>
+                                    <!-- Agent content -->
+                                    <div class="agent-content">
+                                        <h5><a href="">Yudi Setiawan, S.T., M.Eng</a></h5>
+                                        <h6>Technology Manager Officeer</h6>
+                                        <ul class="social-list clearfix">
+                                            <li>
+                                                <a href="https://www.facebook.com/yudi.setiawan.7" class="facebook">
+                                                    <i class="fa fa-facebook"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.instagram.com/yudistiawn/" class="google">
+                                                    <i class="fa fa-instagram"></i>
                                                 </a>
                                             </li>
                                         </ul>
@@ -510,7 +574,7 @@
     <!-- Agent section end -->
 
     <!-- Testimonial section start-->
-    <div class="testimonials-3 overview-bgi" style="background-image: url({{ asset('assets/images/tes2.jpg') }});>
+    <div class="testimonials-3 overview-bgi" style="background-image: url({{ asset('assets/images/bgtestimoni.jpg') }});>
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -531,77 +595,20 @@
                                                 <sup>
                                                     <i class="fa fa-quote-left"></i>
                                                 </sup>
-                                                Aliquam dictum elit vitae mauris facilisis, at dictum urna dignissim. Donec vel lectus vel felis lacinia luctus vitae iaculis arcu. Mauris mattis, massa eu porta ultricies.
+                                                Dikondisi pandemi kost abrar pada awalnya belum terisi penuh. Dan membuat owner kesulitan dalam mencari penyewa kost.Oleh karena itu, pondokan abrar bermitra dengan kosaku.id agar dapat terisi walau diera pandemi.
                                                 <sub>
                                                     <i class="fa fa-quote-right"></i>
                                                 </sub>
                                             </div>
                                             <div class="author-name">
-                                                John Antony
+                                                Pemilik Pondokan Abrar
                                             </div>
-                                            <ul class="rating">
-                                                <li>
-                                                    <i class="fa fa-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fa fa-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fa fa-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fa fa-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fa fa-star-half-full"></i>
-                                                </li>
-                                            </ul>
+                                            
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="item content clearfix">
-                                <div class="row">
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                        <div class="avatar">
-                                            <img src="{{ asset('assets/images/logo.png') }}" alt="avatar-2" class="img-responsive">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                        <div class="testimonials-info">
-                                            <div class="text">
-                                                <sup>
-                                                    <i class="fa fa-quote-left"></i>
-                                                </sup>
-                                                Aliquam dictum elit vitae mauris facilisis, at dictum urna dignissim. Donec vel lectus vel felis lacinia luctus vitae iaculis arcu. Mauris mattis, massa eu porta ultricies.
-                                                <sub>
-                                                    <i class="fa fa-quote-right"></i>
-                                                </sub>
-                                            </div>
-                                            <div class="author-name">
-                                                John Mery
-                                            </div>
-                                            <ul class="rating">
-                                                <li>
-                                                    <i class="fa fa-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fa fa-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fa fa-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fa fa-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fa fa-star-half-full"></i>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            
                             <div class="item content clearfix">
                                 <div class="row">
                                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
@@ -615,73 +622,14 @@
                                                 <sup>
                                                     <i class="fa fa-quote-left"></i>
                                                 </sup>
-                                                Aliquam dictum elit vitae mauris facilisis, at dictum urna dignissim. Donec vel lectus vel felis lacinia luctus vitae iaculis arcu. Mauris mattis, massa eu porta ultricies.
+                                                Sangat terbantu dalam mencari kost-kostan di masa yang sulit ini, terlebih merebaknya virus covid19 yang sangat membatasi ruang gerak mahasiswa
                                                 <sub>
                                                     <i class="fa fa-quote-right"></i>
                                                 </sub>
                                             </div>
                                             <div class="author-name">
-                                                John Top
+                                                Tya Aprilia Ningsih
                                             </div>
-                                            <ul class="rating">
-                                                <li>
-                                                    <i class="fa fa-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fa fa-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fa fa-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fa fa-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fa fa-star-half-full"></i>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item content clearfix">
-                                <div class="row">
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                        <div class="avatar">
-                                            <img src="{{ asset('assets/images/logo.png') }}" alt="avatar-3" class="img-responsive">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 ">
-                                        <div class="testimonials-info">
-                                            <div class="text">
-                                                <sup>
-                                                    <i class="fa fa-quote-left"></i>
-                                                </sup>
-                                                Aliquam dictum elit vitae mauris facilisis, at dictum urna dignissim. Donec vel lectus vel felis lacinia luctus vitae iaculis arcu. Mauris mattis, massa eu porta ultricies.
-                                                <sup>
-                                                    <i class="fa fa-quote-right"></i>
-                                                </sup>
-                                            </div>
-                                            <div class="author-name">
-                                                John Pitarshon
-                                            </div>
-                                            <ul class="rating">
-                                                <li>
-                                                    <i class="fa fa-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fa fa-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fa fa-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fa fa-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fa fa-star-half-full"></i>
-                                                </li>
-                                            </ul>
                                         </div>
                                     </div>
                                 </div>
@@ -713,10 +661,11 @@
         <div class="container">
             <!-- Main title -->
             <div class="main-title">
-                <h1><span>Artikel</span> dari kami</h1>
+                <h1><span>Artikel</span> Blog </h1>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-6 wow fadeInLeft delay-04s">
+                <h4 style="text-align: center">Belum ada artikel saat ini</h4>
+                {{-- <div class="col-lg-4 col-md-4 col-sm-6 wow fadeInLeft delay-04s">
                     <div class="thumbnail blog-box-2 clearfix">
                         <div class="blog-photo">
                             <img src="{{ asset('assets/images/tes.jpg') }}" alt="blog-1" class="img-responsive">
@@ -793,7 +742,7 @@
                             <a href="blog-single-sidebar-right.html" class="read-more">Read More...</a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
@@ -801,39 +750,66 @@
 
 
     <!-- Counters strat -->
-    <div class="counters mb-5 overview-bgi" style="background:url({{ asset('assets/images/tes2.jpg') }}); margin-bottom:50px !important;">
+    <div class="counters mb-5 overview-bgi" style="background:url({{ asset('assets/images/bglistings.jpg') }}); margin-bottom:50px !important;">
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-sm-6 bordered-right">
                     <div class="counter-box">
-                        <i class="flaticon-tag"></i>
-                        <h1 class="counter">967</h1>
-                        <p>Listings diskon 50%</p>
+                        <i class="fa fa-female"></i>
+                        <h1 class="counter">{{ $putri }}</h1>
+                        <p>Kost Putri</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 bordered-right">
                     <div class="counter-box">
-                        <i class="flaticon-symbol-1"></i>
-                        <h1 class="counter">1276</h1>
-                        <p>Listings For Rent</p>
+                        <i class="fa fa-male"></i>
+                        <h1 class="counter">{{ $putra }}</h1>
+                        <p>Kost Putra</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 bordered-right">
                     <div class="counter-box">
                         <i class="flaticon-people"></i>
-                        <h1 class="counter">396</h1>
-                        <p>Agents</p>
+                        <h1 class="counter">{{ $campuran }}</h1>
+                        <p>Kost Campuran</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="counter-box">
-                        <i class="flaticon-people-1"></i>
-                        <h1 class="counter">177</h1>
-                        <p>Brokers</p>
+                        <i class="fa fa-home"></i>
+                        <h1 class="counter">{{ $total_kamar->total_kamar }}</h1>
+                        <p>Total Kamar Kosong</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Counters end -->
+
+    <!-- Partners block start -->
+    <div class="partners-block">
+        <div class="container">
+            <h3>Daftar kerja sama</h3>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="carousel our-partners slide" id="ourPartners">
+                        <div class="carousel-inner">
+                            @foreach ($kerjasama as $index=>$item)
+                                <div class="item @if($index == '1') {{ 'active' }} @endif">
+                                    <div class="col-xs-12 col-sm-6 col-md-3 partner-box">
+                                        <a href="#">
+                                            <i class="fa fa-home"></i>&nbsp;{{ $item->nm_vendor }}
+                                        </a>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                        <a class="left carousel-control" href="#ourPartners" data-slide="prev"><i class="fa fa-chevron-left icon-prev"></i></a>
+                        <a class="right carousel-control" href="#ourPartners" data-slide="next"><i class="fa fa-chevron-right icon-next"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Partners block end -->
 @endsection

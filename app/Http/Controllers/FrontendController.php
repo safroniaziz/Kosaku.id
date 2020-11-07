@@ -22,7 +22,19 @@ class FrontendController extends Controller
                         DB::raw('kamar_kosong / jumlah_kamar * 100 as persentase'))
                         ->where('status','1')
                         ->take(6)->get();
-        return view('frontend.index',compact('sliders','rekomendasis','allkategoris'));
+        $unib = count(Produk::where('area_kampus','like','%'.'unib'.'%')->get());
+        $umb = count(Produk::where('area_kampus','like','%'.'umb'.'%')->get());
+        $iain = count(Produk::where('area_kampus','like','%'.'iain'.'%')->get());
+        $unihaz = count(Produk::where('area_kampus','like','%'.'unihaz'.'%')->get());
+        $unived = count(Produk::where('area_kampus','like','%'.'unived'.'%')->get());
+
+        $putri = Count(Produk::where('jenis_kategori','putri')->where('status','1')->get());
+        $putra = Count(Produk::where('jenis_kategori','putra')->where('status','1')->get());
+        $campuran = Count(Produk::where('status','1')->get());
+        $total_kamar = Produk::where('status','1')->select(DB::raw('SUM(kamar_kosong) as total_kamar'))->first();
+
+        $kerjasama = Produk::select('nm_vendor')->where('status','1')->get();
+        return view('frontend.index',compact('sliders','rekomendasis','allkategoris','unib','umb','iain','unihaz','unived','putra','putri','campuran','total_kamar','kerjasama'));
     }
 
     
