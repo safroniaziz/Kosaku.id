@@ -212,7 +212,9 @@
                                 <div class="property-img">
                                     <div class="property-tag button alt featured">{{ $all->jenis_kategori == 'putri' ? 'Khusus Putri' : ($all->jenis_kategori == 'putra' ? 'Khusus Putra' : 'Campuran') }}</div>
                                     <div class="property-tag button sale">{{ $all->nm_kategori }}</div>
-                                    <div class="property-price">Rp.{{ number_format($all->harga_sewa) }}</div>
+                                    <div class="property-price">
+                                        <a style="color:black">Rp.{{ number_format($all->harga_sewa) }}</a>
+                                    </div>
                                     <img src="{{ asset('storage/'.$all->foto_thumbnail) }}" alt="fp" class="img-responsive">
                                     <div class="property-overlay">
                                         
