@@ -52,71 +52,71 @@
                     </div>
                 </div>
                 <div class="carousel our-partners slide" id="ourPartners2">
-                    <div class="col-lg-12 mrg-btm-20">
+                    <div class="col-lg-12 mrg-btm-30">
                         <a class="right carousel-control" href="#ourPartners2" data-slide="prev"><i class="fa fa-chevron-left icon-prev"></i></a>
                         <a class="right carousel-control" href="#ourPartners2" data-slide="next"><i class="fa fa-chevron-right icon-next"></i></a>
                     </div>
                     <div class="carousel-inner">
                         @foreach ($rekomendasis as $index=>$rekomendasi)
-                            <div class="@if($index == '1') {{ 'active' }} @endif">
-                                <div class="col-lg-3 col-md-3col-sm-6 col-xs-12">
-                                    <!-- Property 2 start -->
-                                    <div class="property-2">
-                                        <!-- Property img -->
-                                        <div class="property-img">
-                                            <div class="featured">
-                                                {{ $rekomendasi->nm_kategori }}
+                        <div class="item  @if($index == '1') {{ 'active' }} @endif">
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                <!-- Property 2 start -->
+                                <div class="property-2">
+                                    <!-- Property img -->
+                                    <div class="property-img">
+                                        <div class="featured">
+                                            {{ $rekomendasi->nm_kategori }}
+                                        </div>
+                                        <div class="price-ratings">
+                                            <div class="price">
+                                                <h6 style="color: white; font-size:12px; color:#000; text-decoration:line-through">Rp.{{ number_format($rekomendasi->harga_sewa,2) }}</h6>
+                                                <h6 style="color: white; font-size:12px; color:#000;">Rp.{{ number_format($rekomendasi->harga_sewa - $rekomendasi->diskon,2) }}</h6>
                                             </div>
-                                            <div class="price-ratings">
-                                                <div class="price">
-                                                    <h6 style="color: white; font-size:12px; color:#000; text-decoration:line-through">Rp.{{ number_format($rekomendasi->harga_sewa,2) }}</h6>
-                                                    <h6 style="color: white; font-size:12px; color:#000;">Rp.{{ number_format($rekomendasi->harga_sewa - $rekomendasi->diskon,2) }}</h6>
-                                                </div>
-                                                <div class="ratings" style="color: white; text-transform:uppercase;">
-                                                    KHUSUS {{ $rekomendasi->jenis_kategori }}
-                                                </div>
-                                            </div>
-                                            <img src="{{ asset('storage/'.$rekomendasi->foto_thumbnail) }}" alt="rp" class="img-responsive">
-                                            <div class="property-overlay">
-                                               
+                                            <div class="ratings" style="color: white; text-transform:uppercase;">
+                                                KHUSUS {{ $rekomendasi->jenis_kategori }}
                                             </div>
                                         </div>
-                                        <!-- content -->
-                                        <div class="content">
-                                            <!-- title -->
-                                            <h4 class="title">
-                                                <a href="{{ route('produk.detail',[$rekomendasi->slug]) }}">{{ $rekomendasi->nm_vendor }}</a>
-                                            </h4>
-                                            <div class="progress mb-0" style="height:7px;">
-                                                <div class="progress-bar" style="width:{{ $rekomendasi->persentase }}%;height:15px"></div>
-                                            </div>
-                                            <div>
-                                                <span class="pull-left" style="color: #95c41f"><i class="fa fa-refresh fa-spin"></i>&nbsp;Ada {{ $rekomendasi->kamar_kosong }} Kamar Kosong Dari {{ $rekomendasi->jumlah_kamar }}</span>
-                                            </div>
-                                            <br>
-                                            <!-- Property address -->
-                                            <h3 class="property-address">
-                                                <a href="{{ route('produk.detail',[$rekomendasi->slug]) }}">
-                                                    <i class="fa fa-map-marker"></i>{{ $rekomendasi->nm_kelurahan }},{{ $rekomendasi->nm_kecamatan }},{{ $rekomendasi->nm_kota }}
-                                                </a>
-                                            </h3>
+                                        <img src="{{ asset('storage/'.$rekomendasi->foto_thumbnail) }}" alt="rp" class="img-responsive">
+                                        <div class="property-overlay">
+                                           
                                         </div>
-                                        <!-- Facilities List -->
-                                        <ul class="facilities-list clearfix">
-                                            <a href="{{ route('produk.detail',[$rekomendasi->slug]) }}" style="cursor: pointer">
-                                            <li style="font-size:12px;">
-                                                <i class="fa fa-info-circle"></i>
-                                                <span>
-                                                   Selengkapnya
-                                            </li>
-                                            <li style="font-size: 11px;">
-                                                <i class="fa fa-clock-o"></i> &nbsp;{{ \Carbon\Carbon::parse($rekomendasi->created_at)->diffForHumans() }}
-                                            </li></a>
-                                        </ul>
                                     </div>
-                                    <!-- Property 2 end -->
+                                    <!-- content -->
+                                    <div class="content">
+                                        <!-- title -->
+                                        <h4 class="title">
+                                            <a href="{{ route('produk.detail',[$rekomendasi->slug]) }}">{{ $rekomendasi->nm_vendor }}</a>
+                                        </h4>
+                                        <div class="progress mb-0" style="height:7px;">
+                                            <div class="progress-bar" style="width:{{ $rekomendasi->persentase }}%;height:15px"></div>
+                                        </div>
+                                        <div>
+                                            <span class="pull-left" style="color: #95c41f"><i class="fa fa-refresh fa-spin"></i>&nbsp;Ada {{ $rekomendasi->kamar_kosong }} Kamar Kosong Dari {{ $rekomendasi->jumlah_kamar }}</span>
+                                        </div>
+                                        <br>
+                                        <!-- Property address -->
+                                        <h3 class="property-address">
+                                            <a href="{{ route('produk.detail',[$rekomendasi->slug]) }}">
+                                                <i class="fa fa-map-marker"></i>{{ $rekomendasi->nm_kelurahan }},{{ $rekomendasi->nm_kecamatan }},{{ $rekomendasi->nm_kota }}
+                                            </a>
+                                        </h3>
+                                    </div>
+                                    <!-- Facilities List -->
+                                    <ul class="facilities-list clearfix">
+                                        <a href="{{ route('produk.detail',[$rekomendasi->slug]) }}" style="cursor: pointer">
+                                        <li style="font-size:12px;">
+                                            <i class="fa fa-info-circle"></i>
+                                            <span>
+                                               Selengkapnya
+                                        </li>
+                                        <li style="font-size: 11px;">
+                                            <i class="fa fa-clock-o"></i> &nbsp;{{ \Carbon\Carbon::parse($rekomendasi->created_at)->diffForHumans() }}
+                                        </li></a>
+                                    </ul>
                                 </div>
+                                <!-- Property 2 end -->
                             </div>
+                        </div>
                         @endforeach
                     </div>
                 </div>
