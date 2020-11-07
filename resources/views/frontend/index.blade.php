@@ -69,8 +69,8 @@
                                             </div>
                                             <div class="price-ratings">
                                                 <div class="price">
-                                                    <h6 style="color: white; font-size:12px; text-decoration:line-through">Rp.{{ number_format($rekomendasi->harga_sewa,2) }}</h6>
-                                                    <h6 style="color: white; font-size:12px;">Rp.{{ number_format($rekomendasi->harga_sewa - $rekomendasi->diskon,2) }}</h6>
+                                                    <h6 style="color: white; font-size:12px; color:#000; text-decoration:line-through">Rp.{{ number_format($rekomendasi->harga_sewa,2) }}</h6>
+                                                    <h6 style="color: white; font-size:12px; color:#000;">Rp.{{ number_format($rekomendasi->harga_sewa - $rekomendasi->diskon,2) }}</h6>
                                                 </div>
                                                 <div class="ratings" style="color: white; text-transform:uppercase;">
                                                     KHUSUS {{ $rekomendasi->jenis_kategori }}
