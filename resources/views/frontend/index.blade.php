@@ -225,14 +225,14 @@
                                         <div class="progress-bar" style="width:40%;height:20px"></div>
                                     </div>
                                     <div>
-                                        <span class="pull-left" style="color: #95c41f"><i class="fa fa-refresh fa-spin"></i>&nbsp;Ada {{ $rekomendasi->kamar_kosong }} Kamar Kosong Dari {{ $rekomendasi->jumlah_kamar }} Kamar Tersedia</span>
+                                        <span class="pull-left" style="color: #95c41f"><i class="fa fa-refresh fa-spin"></i>&nbsp;Ada {{ $all->kamar_kosong }} Kamar Kosong Dari {{ $all->jumlah_kamar }} Kamar Tersedia</span>
                                     </div>
                                     <br>
                                     
                                     <!-- Property address -->
                                     <h3 class="property-address">
                                         <a href="{{ route('produk.detail',[$all->slug]) }}">
-                                            <i class="fa fa-map-marker"></i>{{ $rekomendasi->nm_kelurahan }},{{ $rekomendasi->nm_kecamatan }},{{ $rekomendasi->nm_kota }}
+                                            <i class="fa fa-map-marker"></i>{{ $all->nm_kelurahan }},{{ $all->nm_kecamatan }},{{ $all->nm_kota }}
                                         </a>
                                     </h3>
                                     <!-- Facilities List -->
