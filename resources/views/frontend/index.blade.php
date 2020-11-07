@@ -268,7 +268,7 @@
                                             <a href="#"><i class="fa fa-user"></i>Admin Kosaku</a>
                                         </span>
                                         <span class="right">
-                                            <i class="fa fa-calendar"></i>{{ \Carbon\Carbon::parse($rekomendasi->created_at)->diffForHumans() }}
+                                            <i class="fa fa-calendar"></i>{{ \Carbon\Carbon::parse($all->created_at)->diffForHumans() }}
                                         </span>
                                     </div>
                                 </div>
