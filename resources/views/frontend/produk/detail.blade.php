@@ -23,8 +23,8 @@
                     </div>
                     <div class="pull-right">
                         <h3><span>
-                            <a style="color:black; font-size:12px; text-decoration:line-through">Rp.{{ number_format($produk->harga_sewa) }}</a>
-                            <a style="color:black; font-size:12px;">Rp.{{ number_format($produk->harga_sewa - $produk->diskon) }}</a>    
+                            <b style="color:black; font-size:12px; text-decoration:line-through">Rp.{{ number_format($produk->harga_sewa) }}</b>
+                            <b style="color:black; font-size:12px;">Rp.{{ number_format($produk->harga_sewa - $produk->diskon) }}</b>    
                         </span></h3>
                         <h5>
                             Per Tahun
