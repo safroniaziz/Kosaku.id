@@ -285,7 +285,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <a href="#" class="btn button-md button-theme">Telusuri Semua Produk</a>
+                    <a href="{{ route('produk.semua') }}" class="btn button-md button-theme">Telusuri Semua Produk</a>
                 </div>
             </div>
             <hr style="width: 50%;">
