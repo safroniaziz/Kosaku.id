@@ -145,7 +145,7 @@
                                                 </div>
                                             </div>
                                             <p>
-                                                <a href="#" class="btn button-md button-theme">Pesan dan Tanyakan Pada Kami</a>
+                                                <a class="btn button-md button-theme" href="https://api.whatsapp.com/send?phone=6285709586249&text=Hallo%20Kosaku%20Saya%20Mau%20Bertanya%20Mengenai%20Kostan%20Yang%20Ada%20Di%20Website%20Nih."><i class="fa fa-whatsapp"></i>&nbsp; Hubungi Kami</a>
                                             </p>
                                         </div>
                                     </div>
