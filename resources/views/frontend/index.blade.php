@@ -53,8 +53,8 @@
                 </div>
                 <div class="carousel our-partners slide" id="ourPartners2">
                     <div class="col-lg-12 mrg-btm-20">
-                        {{-- <a class="right carousel-control" href="#ourPartners2" data-slide="prev"><i class="fa fa-chevron-left icon-prev"></i></a>
-                        <a class="right carousel-control" href="#ourPartners2" data-slide="next"><i class="fa fa-chevron-right icon-next"></i></a> --}}
+                        <a class="right carousel-control" href="#ourPartners2" data-slide="prev"><i class="fa fa-chevron-left icon-prev"></i></a>
+                        <a class="right carousel-control" href="#ourPartners2" data-slide="next"><i class="fa fa-chevron-right icon-next"></i></a>
                     </div>
                     <div class="carousel-inner">
                         @foreach ($rekomendasis as $index=>$rekomendasi)
