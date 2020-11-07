@@ -45,7 +45,10 @@
                             <div class="property-img">
                                 <div class="property-tag button alt featured">{{ $rekomendasi->jenis_kategori == 'putri' ? 'Khusus Putri' : ($rekomendasi->jenis_kategori == 'putra' ? 'Khusus Putra' : 'Campuran') }}</div>
                                 <div class="property-tag button sale">{{ $rekomendasi->nm_kategori }}</div>
-                                <div class="property-price">Rp.{{ number_format($rekomendasi->harga_sewa) }}</div>
+                                <div class="property-price">
+                                    <a style="color:black; font-size:12px; text-decoration:line-through">Rp.{{ number_format($all->harga_sewa) }}</a>
+                                    <a style="color:black; font-size:12px;">Rp.{{ number_format($all->harga_sewa - $all->diskon) }}</a>
+                                </div>
                                 <img src="{{ asset('storage/'.$rekomendasi->foto_thumbnail) }}" alt="fp" class="img-responsive">
                                 <div class="property-overlay">
                                 </div>
@@ -140,7 +143,10 @@
                             <div class="property-img">
                                 <div class="property-tag button alt featured">{{ $all->jenis_kategori == 'putri' ? 'Khusus Putri' : ($all->jenis_kategori == 'putra' ? 'Khusus Putra' : 'Campuran') }}</div>
                                 <div class="property-tag button sale">{{ $all->nm_kategori }}</div>
-                                <div class="property-price">Rp.{{ number_format($all->harga_sewa) }}</div>
+                                <div class="property-price">
+                                    <a style="color:black; font-size:12px; text-decoration:line-through">Rp.{{ number_format($all->harga_sewa) }}</a>
+                                    <a style="color:black; font-size:12px;">Rp.{{ number_format($all->harga_sewa - $all->diskon) }}</a>
+                                </div>
                                 <img src="{{ asset('storage/'.$all->foto_thumbnail) }}" alt="fp" class="img-responsive">
                                 <div class="property-overlay">
                                 </div>

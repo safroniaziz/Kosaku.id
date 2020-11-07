@@ -7,7 +7,7 @@
     KHUSUS {{ $produk->jenis_kategori }}
 @endsection
 @section('third-title')
-    Rp.{{ number_format($produk->harga_sewa) }}
+    Rp.{{ number_format($produk->harga_sewa -$produk->diskon) }}
 @endsection
 @section('produk-content')
     <div class="container">
@@ -22,7 +22,10 @@
                         </p>
                     </div>
                     <div class="pull-right">
-                        <h3><span>Rp.{{ number_format($produk->harga_sewa) }},00</span></h3>
+                        <h3><span>
+                            <a style="color:black; font-size:12px; text-decoration:line-through">Rp.{{ number_format($all->harga_sewa) }}</a>
+                            <a style="color:black; font-size:12px;">Rp.{{ number_format($all->harga_sewa - $all->diskon) }}</a>    
+                        </span></h3>
                         <h5>
                             Per Tahun
                         </h5>
