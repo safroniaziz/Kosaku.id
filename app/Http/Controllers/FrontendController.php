@@ -16,7 +16,7 @@ class FrontendController extends Controller
                         DB::raw('kamar_kosong / jumlah_kamar * 100 as persentase'))
                         ->where('status','1')
                         ->where('jenis_kerja_sama','premium')
-                        ->take(4)->get();
+                        ->get();
         $allkategoris = DB::table('produks_view')
                         ->select('id','nm_vendor','jumlah_kamar','wifi','ac','lahan_parkir','listrik','air','pengamanan','foto_thumbnail','diskon','nm_kategori','slug','jenis_kategori','harga_sewa','kamar_kosong','nm_kota','nm_provinsi','nm_kecamatan','nm_kelurahan','created_at',
                         DB::raw('kamar_kosong / jumlah_kamar * 100 as persentase'))
