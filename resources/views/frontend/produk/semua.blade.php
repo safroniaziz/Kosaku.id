@@ -136,7 +136,7 @@
                 <!-- Property grid start -->
                 <div class="row">
                     @foreach ($produks as $all)
-                    <div class="col-lg-6 col-md-4 col-sm-4 col-xs-12 wow fadeInUp delay-03s">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 wow fadeInUp delay-03s">
                         <!-- Property start -->
                         <div class="property">
                             <!-- Property img -->
