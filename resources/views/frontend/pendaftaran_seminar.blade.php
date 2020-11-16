@@ -70,7 +70,7 @@
                             <i class="fa fa-home"></i>&nbsp;Home
                         </a>
                     </li>
-                    <li class="dropdown active">
+                    <li class="dropdown">
                         <a tabindex="0" href="{{ route('produk.semua') }}"  data-submenu="" aria-expanded="false">
                             <i class="fa fa-home"></i>&nbsp;Kost-Kostan
                         </a>
@@ -102,7 +102,7 @@
                             <i class="fa fa-book"></i>&nbsp; Artikel
                         </a>
 					</li>
-					<li class="dropdown">
+                    <li class="dropdown active">
                         <a tabindex="0" href="{{ route('pendaftaran_seminar') }}"  data-submenu="" aria-expanded="false">
                             <i class="fa fa-home"></i>&nbsp;Seminar Kosaku
                         </a>
@@ -128,10 +128,10 @@
     <div class="overlay">
         <div class="container">
             <div class="breadcrumb-area">
-                <h1>@yield('produk-title')</h1>
+                <h1>PENDAFTARAN SEMINAR BEASISWA KOSAKU.ID</h1>
                 <ul class="breadcrumbs">
-                    <li><a href="index.html" style="text-transform: uppercase">@yield('second-title')</a></li>
-                    <li class="active">@yield('third-title')</li>
+                    <li><a href="index.html" style="text-transform: uppercase">Sabtu, 21 November 2020</a></li>
+                    <li class="active">ZOOM VIDEO CONFERENCE</li>
                 </ul>
             </div>
         </div>
@@ -140,53 +140,97 @@
 <!-- Sub Banner end -->
 
 <!-- Properties details page start -->
-<div class="content-area properties-details-page" style="padding-top: 30px !important;">
-    @yield('produk-content')
+<div class="content-area properties-details-page" style="padding-top: 20px !important; padding-bottom:0px !important">
+    <div class="properties-section-body content-area" style="padding-top: 20px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    @if ($message = Session::get('success'))
+                        <div class="alert alert-success alert-block" id="berhasil">
+                            <strong><i class="fa fa-info-circle"></i>&nbsp;Berhasil: </strong> {{ $message }}
+                        </div>
+                        @elseif ($message2 = Session::get('error'))
+                        <div class="alert alert-danger alert-block" id="berhasil">
+                            <strong><i class="fa fa-info-circle"></i>&nbsp;Gagal: </strong> {{ $message2 }}
+                        </div>
+                        @else
+                        <div class="alert alert-info">
+                            <h4>SYARAT DAN KETENTUAN</h4>
+                            Silahkan Follow Instagram <a href="https://www.instagram.com/kosaku.id/">Kosaku.id</a>, lalu tag 3 temanmu di kolom komentar yaa ....
+                        </div>
+                    @endif
+                </div>
+                <form action="{{ route('pendaftaran_seminar.post') }}" method="POST">
+                    {{ csrf_field() }} {{ method_field('POST') }}
+                    <div class="form-group col-md-6">
+                        <label for="exampleInputEmail1">Nama Peserta :</a> </label>
+                        <input type="text" name="nm_peserta" value="{{ old('nm_peserta') }}" class="form-control">
+                        @if ($errors->has('nm_peserta'))
+                            <small class="form-text text-danger">{{ $errors->first('nm_peserta') }}</small>
+                        @endif
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="exampleInputEmail1">Pilih Seminar :</a> </label>
+                        <select name="seminar_id" class="form-control" id="">
+                            @foreach ($seminars as $seminar)
+                                <option value="{{ $seminar->id }}">{{ $seminar->nm_seminar }}</option>
+                            @endforeach
+                        </select>
+                        @if ($errors->has('seminar_id'))
+                            <small class="form-text text-danger">{{ $errors->first('seminar_id') }}</small>
+                        @endif
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="exampleInputEmail1">Nomor Induk Mahasiswa :</a> </label>
+                        <input type="text" name="nim" value="{{ old('nim') }}" class="form-control">
+                        @if ($errors->has('nim'))
+                            <small class="form-text text-danger">{{ $errors->first('nim') }}</small>
+                        @endif
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="exampleInputEmail1">Program Studi :</a> </label>
+                        <input type="text" name="prodi" value="{{ old('prodi') }}" class="form-control">
+                        @if ($errors->has('prodi'))
+                            <small class="form-text text-danger">{{ $errors->first('prodi') }}</small>
+                        @endif
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="exampleInputEmail1">Fakultas :</a> </label>
+                        <input type="text" name="fakultas" value="{{ old('fakultas') }}" class="form-control">
+                        @if ($errors->has('fakultas'))
+                            <small class="form-text text-danger">{{ $errors->first('fakultas') }}</small>
+                        @endif
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="exampleInputEmail1">Universitas :</a> </label>
+                        <input type="text" name="universitas" value="{{ old('universitas') }}" class="form-control">
+                        @if ($errors->has('universitas'))
+                            <small class="form-text text-danger">{{ $errors->first('universitas') }}</small>
+                        @endif
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="exampleInputEmail1">Email Peserta :</a> </label>
+                        <input type="email" name="email" value="{{ old('email') }}" class="form-control">
+                        @if ($errors->has('email'))
+                            <small class="form-text text-danger">{{ $errors->first('email') }}</small>
+                        @endif
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="exampleInputEmail1">Buat Password :</a> </label>
+                        <input type="password" name="password" value="{{ old('password') }}" class="form-control">
+                        @if ($errors->has('password'))
+                            <small class="form-text text-danger">{{ $errors->first('password') }}</small>
+                        @endif
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <button type="submit" name="submit" class="btn button-md button-theme"><i class="fa fa-check-circle"></i>&nbsp; Daftar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- Properties details page end -->
-
-<!-- Partners block start -->
-<div class="partners-block">
-    <div class="container">
-        <h3>Daftar kerja sama</h3>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="carousel our-partners slide" id="ourPartners">
-                    <div class="carousel-inner">
-                        @foreach ($kerjasama as $index=>$item)
-                            <div class="item @if($index == '1') {{ 'active' }} @endif">
-                                <div class="col-xs-12 col-sm-6 col-md-3 partner-box">
-                                    <a href="#">
-                                        <i class="fa fa-home"></i>&nbsp;{{ $item->nm_vendor }}
-                                    </a>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                    <a class="left carousel-control" href="#ourPartners" data-slide="prev"><i class="fa fa-chevron-left icon-prev"></i></a>
-                    <a class="right carousel-control" href="#ourPartners" data-slide="next"><i class="fa fa-chevron-right icon-next"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Partners block end -->
-
-<!-- Intro section strat -->
-<div class="intro-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-9 col-sm-9 col-xs-12">
-                <h3><i class="fa fa-download"></i>&nbsp;Ingin Lebih Gampang? Download kosaku.id Versi Android </h3>
-            </div>
-
-            <div class="col-md-3 col-sm-3 col-xs-12">
-                <a href="submit-property.html" class="btn button-md button-theme"><i class="fa fa-download"></i>&nbsp; Download</a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Intro section end -->
 
 <!-- Footer start -->
 <footer class="main-footer clearfix">
@@ -195,7 +239,7 @@
         <div class="footer-info">
             <div class="row">
                 <!-- About us -->
-                <div class="col-lg-6 col-md-5 col-sm-8 col-xs-12">
+                <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12">
                     <div class="footer-item">
                         <div class="main-title-2">
                             <h1>Kontak Kami</h1>
@@ -230,30 +274,6 @@
                                 </a>
                             </li>
                         </ul>
-                    </div>
-                </div>
-                <!-- Recent cars -->
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                    <div class="footer-item popular-posts">
-                        <div class="main-title-2">
-                            <h1>Kost Rekomendasi</h1>
-                        </div>
-                        @foreach ($rekomendasis as $rekomendasi)
-                            <div class="media">
-                                <div class="media-left">
-                                    <img class="media-object" src="{{ asset('storage/'.$rekomendasi->foto_thumbnail) }}" alt="small-properties-1">
-                                </div>
-                                <div class="media-body">
-                                    <h3 class="media-heading">
-                                        <a href="properties-details.html">{{ $rekomendasi->nm_vendor }}</a>
-                                    </h3>
-                                    <p>{{ $rekomendasi->nm_kelurahan }},{{ $rekomendasi->nm_kecamatan }},{{ $rekomendasi->nm_kota }}</p>
-                                    <div class="price">
-                                        Rp.{{ number_format($rekomendasi->harga_sewa) }}
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
                     </div>
                 </div>
                 <!-- Subscribe -->

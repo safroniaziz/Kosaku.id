@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Auth;
 //     return view('layouts.soon');
 // });
 Route::get('/', 'FrontendController@index')->name('home');
+Route::get('/pendaftaran_seminar', 'FrontendController@pendaftaranSeminar')->name('pendaftaran_seminar');
+Route::post('/pendaftaran_seminar', 'FrontendController@pendaftaranSeminarPost')->name('pendaftaran_seminar.post');
 
 Auth::routes();
 

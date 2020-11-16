@@ -103,8 +103,8 @@
                         </a>
 					</li>
 					<li class="dropdown">
-                        <a tabindex="0" href="" data-toggle="dropdown" data-submenu="" aria-expanded="false">
-                            <i class="fa fa-desktop"></i>&nbsp;Kosaku Teknologi
+                        <a tabindex="0" href="{{ route('pendaftaran_seminar') }}"  data-submenu="" aria-expanded="false">
+                            <i class="fa fa-home"></i>&nbsp;Seminar Kosaku
                         </a>
                     </li>
                 </ul>

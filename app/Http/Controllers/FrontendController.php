@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\PesertaSeminar;
 use App\Produk;
+use App\Seminar;
 use App\Slider;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Exception;
 
 class FrontendController extends Controller
 {
@@ -37,5 +41,44 @@ class FrontendController extends Controller
         return view('frontend.index',compact('sliders','rekomendasis','allkategoris','unib','umb','iain','unihaz','unived','putra','putri','campuran','total_kamar','kerjasama'));
     }
 
-    
+    public function pendaftaranSeminar(){
+        $seminars = Seminar::all();
+        return view('frontend/pendaftaran_seminar',compact('seminars'));
+    }
+
+    public function pendaftaranSeminarPost(Request $request){
+        $this->validate($request,[
+            'seminar_id'    =>  'required',
+            'nm_peserta'    =>  'required',
+            'nim'    =>  'required',
+            'prodi'    =>  'required',
+            'fakultas'    =>  'required',
+            'universitas'    =>  'required',
+            'email'    =>  'required:email',
+            'password'    =>  'required',
+        ]);
+        DB::beginTransaction();
+        try {
+            PesertaSeminar::create([
+                'seminar_id'    =>  $request->seminar_id,
+                'nm_peserta'    =>  $request->nm_peserta,
+                'nim'    =>  $request->nim,
+                'prodi'    =>  $request->prodi,
+                'fakultas'    =>  $request->fakultas,
+                'universitas'    =>  $request->universitas,
+            ]);
+            User::create([
+                'name'  =>  $request->nm_peserta,
+                'email'  =>  $request->email,
+                'password'  =>  bcrypt($request->password),
+            ]); 
+            DB::commit();
+            return redirect()->route('pendaftaran_seminar')->with(['success'    =>  'Pendaftaran Berhasil, Silahkan Tunggu Pengumuman Selanjutnya di Instagram Kosaku.id !!']);
+        } catch (Exception $e) {
+            // Rollback Transaction
+            DB::rollback();
+            // ada yang error
+            return redirect()->route('pendaftaran_seminar')->with(['error'    =>  'Pendaftaran Gagal, Silahkan Coba Lagi !!']);
+        }
+    }
 }
