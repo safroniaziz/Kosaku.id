@@ -56,6 +56,7 @@ class FrontendController extends Controller
             'universitas'    =>  'required',
             'email'    =>  'required:email',
             'password'    =>  'required',
+            'telephone'    =>  'required',
         ]);
         DB::beginTransaction();
         try {
@@ -66,6 +67,7 @@ class FrontendController extends Controller
                 'prodi'    =>  $request->prodi,
                 'fakultas'    =>  $request->fakultas,
                 'universitas'    =>  $request->universitas,
+                'telephone'    =>  $request->telephone,
             ]);
             User::create([
                 'name'  =>  $request->nm_peserta,

@@ -209,6 +209,13 @@
                         @endif
                     </div>
                     <div class="form-group col-md-6">
+                        <label for="exampleInputEmail1">No. Telephone (WhatsApp Aktif) :</a> </label>
+                        <input type="text" name="telephone" value="{{ old('telephone') }}" class="form-control">
+                        @if ($errors->has('telephone'))
+                            <small class="form-text text-danger">{{ $errors->first('telephone') }}</small>
+                        @endif
+                    </div>
+                    <div class="form-group col-md-6">
                         <label for="exampleInputEmail1">Email Peserta :</a> </label>
                         <input type="email" name="email" value="{{ old('email') }}" class="form-control">
                         @if ($errors->has('email'))
