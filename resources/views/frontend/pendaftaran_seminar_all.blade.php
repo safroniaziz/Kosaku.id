@@ -163,7 +163,7 @@
                 <div class="col-md-12">
                     <a href="{{ route('pendaftaran_seminar') }}" class="btn btn-primary btn-sm"><i class="fa fa-arrow-left"></i>&nbsp; Form Pendaftaran</a>
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-12 table-responsive">
                     <table class="table table-hover table-striped">
                         <thead>
                             <th>No</th>
