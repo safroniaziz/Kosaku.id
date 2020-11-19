@@ -160,7 +160,7 @@
                         </div>
                     @endif
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-12" style="margin-bottom: 10px;">
                     <a href="{{ route('pendaftaran_seminar') }}" class="btn btn-primary btn-sm"><i class="fa fa-arrow-left"></i>&nbsp; Form Pendaftaran</a>
                 </div>
                 <div class="col-md-12 table-responsive">
