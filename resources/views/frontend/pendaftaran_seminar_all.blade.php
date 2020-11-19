@@ -166,6 +166,7 @@
                 <div class="col-md-12">
                     <table class="table table-hover table-striped">
                         <thead>
+                            <th>No</th>
                             <th>Nama Peserta</th>
                             <th>Nomor Induk Mahasiswa</th>
                             <th>Program Studi</th>
