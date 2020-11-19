@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Auth;
 // });
 Route::get('/', 'FrontendController@index')->name('home');
 Route::get('/pendaftaran_seminar', 'FrontendController@pendaftaranSeminar')->name('pendaftaran_seminar');
-Route::get('/pendaftaran_seminar/semua_pendaftar', 'FrontendController@pendaftaranSeminarAll')->name('pendaftaran_seminar.all');
+Route::get('/semua_pendaftar_seminar', 'FrontendController@pendaftaranSeminarAll')->name('pendaftaran_seminar.all');
 Route::post('/pendaftaran_seminar', 'FrontendController@pendaftaranSeminarPost')->name('pendaftaran_seminar.post');
 
 Auth::routes();
