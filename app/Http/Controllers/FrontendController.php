@@ -83,4 +83,9 @@ class FrontendController extends Controller
             return redirect()->route('pendaftaran_seminar')->with(['error'    =>  'Pendaftaran Gagal, Silahkan Coba Lagi !!']);
         }
     }
+
+    public function pendaftaranSeminarAll(){
+        $datas = PesertaSeminar::groupBy('nm_peserta')->get();
+        return view('frontend/pendaftaran_seminar_all',compact('datas'));
+    }
 }

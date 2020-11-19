@@ -161,81 +161,36 @@
                     @endif
                 </div>
                 <div class="col-md-12">
-                    <a href="{{ route('pendaftaran_seminar.all') }}" class="btn btn-primary btn-sm"><i class="fa fa-list"></i>&nbsp; Lihat Semua Pendaftar</a>
+                    <a href="{{ route('pendaftaran_seminar') }}" class="btn btn-primary btn-sm"><i class="fa fa-arrow-left"></i>&nbsp; Form Pendaftaran</a>
                 </div>
-                <form action="{{ route('pendaftaran_seminar.post') }}" method="POST">
-                    {{ csrf_field() }} {{ method_field('POST') }}
-                    <div class="form-group col-md-6">
-                        <label for="exampleInputEmail1">Nama Peserta :</a> </label>
-                        <input type="text" name="nm_peserta" value="{{ old('nm_peserta') }}" class="form-control">
-                        @if ($errors->has('nm_peserta'))
-                            <small class="form-text text-danger">{{ $errors->first('nm_peserta') }}</small>
-                        @endif
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="exampleInputEmail1">Pilih Seminar :</a> </label>
-                        <select name="seminar_id" class="form-control" id="">
-                            @foreach ($seminars as $seminar)
-                                <option value="{{ $seminar->id }}">{{ $seminar->nm_seminar }}</option>
+                <div class="col-md-12">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                            <th>Nama Peserta</th>
+                            <th>Nomor Induk Mahasiswa</th>
+                            <th>Program Studi</th>
+                            <th>Fakultas</th>
+                            <th>Universitas</th>
+                            <th>Telephone</th>
+                        </thead>
+                        <tbody>
+                            @php
+                                $no = 1;
+                            @endphp
+                            @foreach ($datas as $data)
+                                <tr>
+                                    <td>{{ $no++ }}</td>
+                                    <td>{{ $data->nm_peserta }}</td>
+                                    <td>{{ $data->nim }}</td>
+                                    <td>{{ $data->prodi }}</td>
+                                    <td>{{ $data->fakultas }}</td>
+                                    <td>{{ $data->universitas }}</td>
+                                    <td>{{ $data->telephone }}</td>
+                                </tr>
                             @endforeach
-                        </select>
-                        @if ($errors->has('seminar_id'))
-                            <small class="form-text text-danger">{{ $errors->first('seminar_id') }}</small>
-                        @endif
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="exampleInputEmail1">Nomor Induk Mahasiswa :</a> </label>
-                        <input type="text" name="nim" value="{{ old('nim') }}" class="form-control">
-                        @if ($errors->has('nim'))
-                            <small class="form-text text-danger">{{ $errors->first('nim') }}</small>
-                        @endif
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="exampleInputEmail1">Program Studi :</a> </label>
-                        <input type="text" name="prodi" value="{{ old('prodi') }}" class="form-control">
-                        @if ($errors->has('prodi'))
-                            <small class="form-text text-danger">{{ $errors->first('prodi') }}</small>
-                        @endif
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="exampleInputEmail1">Fakultas :</a> </label>
-                        <input type="text" name="fakultas" value="{{ old('fakultas') }}" class="form-control">
-                        @if ($errors->has('fakultas'))
-                            <small class="form-text text-danger">{{ $errors->first('fakultas') }}</small>
-                        @endif
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="exampleInputEmail1">Universitas :</a> </label>
-                        <input type="text" name="universitas" value="{{ old('universitas') }}" class="form-control">
-                        @if ($errors->has('universitas'))
-                            <small class="form-text text-danger">{{ $errors->first('universitas') }}</small>
-                        @endif
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="exampleInputEmail1">No. Telephone (WhatsApp Aktif) :</a> </label>
-                        <input type="text" name="telephone" value="{{ old('telephone') }}" class="form-control">
-                        @if ($errors->has('telephone'))
-                            <small class="form-text text-danger">{{ $errors->first('telephone') }}</small>
-                        @endif
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="exampleInputEmail1">Email Peserta :</a> </label>
-                        <input type="email" name="email" value="{{ old('email') }}" class="form-control">
-                        @if ($errors->has('email'))
-                            <small class="form-text text-danger">{{ $errors->first('email') }}</small>
-                        @endif
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="exampleInputEmail1">Buat Password :</a> </label>
-                        <input type="password" name="password" value="{{ old('password') }}" class="form-control">
-                        @if ($errors->has('password'))
-                            <small class="form-text text-danger">{{ $errors->first('password') }}</small>
-                        @endif
-                    </div>
-                    <div class="col-md-12 text-center">
-                        <button type="submit" name="submit" class="btn button-md button-theme"><i class="fa fa-check-circle"></i>&nbsp; Daftar</button>
-                    </div>
-                </form>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
