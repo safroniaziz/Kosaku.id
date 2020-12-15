@@ -267,6 +267,6 @@
 <script src="{{ asset('assets/frontend/js/ie10-viewport-bug-workaround.js') }}"></script>
 <!-- Custom javascript -->
 <script src="{{ asset('assets/frontend/js/ie10-viewport-bug-workaround.js') }}"></script>
-
+@stack('scripts')
 </body>
 </html>

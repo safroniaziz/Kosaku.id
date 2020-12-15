@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Kelurahan;
 use App\PesertaSeminar;
 use App\Produk;
+use App\Provinsi;
 use App\Seminar;
 use App\Slider;
 use App\User;
@@ -38,7 +40,9 @@ class FrontendController extends Controller
         $total_kamar = Produk::where('status','1')->select(DB::raw('SUM(kamar_kosong) as total_kamar'))->first();
 
         $kerjasama = Produk::select('nm_vendor')->where('status','1')->get();
-        return view('frontend.index',compact('sliders','rekomendasis','allkategoris','unib','umb','iain','unihaz','unived','putra','putri','campuran','total_kamar','kerjasama'));
+
+        $provinsis = Provinsi::all();
+        return view('frontend.index',compact('sliders','rekomendasis','allkategoris','unib','umb','iain','unihaz','unived','putra','putri','campuran','total_kamar','kerjasama','provinsis'));
     }
 
     public function pendaftaranSeminar(){

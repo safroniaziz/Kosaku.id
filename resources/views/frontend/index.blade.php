@@ -38,6 +38,95 @@
     </div>
     <!-- Banner end -->
 
+    <!-- Search area start -->
+<div class="search-area">
+    <div class="container">
+        <div class="search-area-inner">
+            <div class="search-contents ">
+                <form action="{{ route('produk.semua') }}" method="GET">
+                    {{ csrf_field() }} {{ method_field('GET') }}
+                    <div class="row">
+                        <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                            <select name="provinsi_id" class="form-control search-fields custom-select minimal" id="provinsi_id">
+                                <option value="semua">Semua Provinsi</option>
+                                @foreach ($provinsis as $provinsi)
+                                    <option value="{{ $provinsi->id }}">{{ $provinsi->nm_provinsi }}</option>
+                                @endforeach
+                            </select>
+                            @if ($errors->has('provinsi_id'))
+                                <small class="form-text text-danger">{{ $errors->first('provinsi_id') }}</small>
+                            @endif
+                        </div>
+                        <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                            <select name="kota_id" id="kota_id" class="form-control search-fields custom-select minimal">
+                                <option value="semua">Semua Kota</option>
+                            </select>
+                            @if ($errors->has('kota_id'))
+                                <small class="form-text text-danger">{{ $errors->first('kota_id') }}</small>
+                            @endif
+                        </div>
+                        <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                            <select name="kecamatan_id" id="kecamatan_id" class="form-control search-fields custom-select minimal">
+                                <option value="semua">Semua Kecamatan</option>
+                            </select>
+                            @if ($errors->has('kecamatan_id'))
+                                <small class="form-text text-danger">{{ $errors->first('kecamatan_id') }}</small>
+                            @endif
+                        </div>
+                        <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                            <select name="kelurahan_id" id="kelurahan_id" class="form-control search-fields custom-select minimal">
+                                <option value="semua">Semua Kelurahan</option>
+                            </select>
+                            @if ($errors->has('kelurahan_id'))
+                                <small class="form-text text-danger">{{ $errors->first('kelurahan_id') }}</small>
+                            @endif
+                        </div>
+
+                        <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                            <select name="jenis" id="jenis" class="form-control search-fields custom-select minimal">
+                                <option value="semua">Semua Kategori</option>
+                                <option value="pondokan">Pondokan</option>
+                                <option value="kontrakan">Kontrakan</option>
+                            </select>
+                            @if ($errors->has('jenis'))
+                                <small class="form-text text-danger">{{ $errors->first('jenis') }}</small>
+                            @endif
+                        </div>
+
+                        <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                            <select name="jenis" id="jenis" class="form-control search-fields custom-select minimal">
+                                <option value="semua">Campuran</option>
+                                <option selected value="putri">Khusus Putri</option>
+                                <option value="putra">Khusus Putra</option>
+                            </select>
+                            @if ($errors->has('jenis'))
+                                <small class="form-text text-danger">{{ $errors->first('jenis') }}</small>
+                            @endif
+                        </div>
+
+                        <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                            <select name="jenis" id="jenis" class="form-control search-fields custom-select minimal">
+                                <option value="semua">Semua Harga</option>
+                                <option value="4">1 - 4 Juta</option>
+                                <option value="7">5-7 Juta</option>
+                                <option value="8">>7 Juta</option>
+                            </select>
+                            @if ($errors->has('jenis'))
+                                <small class="form-text text-danger">{{ $errors->first('jenis') }}</small>
+                            @endif
+                        </div>
+
+                        <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                            <button type="submit" class="search-button">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Search area start -->
+
     <!-- Recently properties start -->
     <div class="mb-50 recently-properties chevron-icon" style="padding-top: 50px !important">
         <div class="container">
@@ -819,3 +908,76 @@
     </div>
     <!-- Partners block end -->
 @endsection
+
+@push('scripts')
+<script>
+    $(document).on('change','#provinsi_id',function(){
+        var provinsi_id = $(this).val();
+        var div = $(this).parent().parent();
+        var op=" ";
+        $.ajax({
+        type :'get',
+        url: "{{ url('rumah_kosaku/wilayah/kecamatan/cari_kota') }}",
+        data:{'provinsi_id':provinsi_id},
+            success:function(data){
+                op+='<option value="0" selected disabled>-- pilih kota --</option>';
+                for(var i=0; i<data.length;i++){
+                    // alert(data[i].id);
+                    // alert(data['jenis_publikasi'][i].provinsi_id);
+                    op+='<option value="'+data[i].id+'">'+data[i].nm_kota+'</option>';
+                }
+                div.find('#kota_id').html(" ");
+                div.find('#kota_id').append(op);
+            },
+                error:function(){
+            }
+        });
+    })
+
+    $(document).on('change','#kota_id',function(){
+        var kota_id = $(this).val();
+        var div = $(this).parent().parent();
+        var op=" ";
+        $.ajax({
+        type :'get',
+        url: "{{ url('rumah_kosaku/wilayah/kelurahan/cari_kecamatan') }}",
+        data:{'kota_id':kota_id},
+            success:function(data){
+                // alert(data['prodi'][0].prodiKodeUniv);
+                op+='<option value="0" selected disabled>-- pilih kecamatan --</option>';
+                for(var i=0; i<data.length;i++){
+                    // alert(data['jenis_publikasi'][i].kota_id);
+                    op+='<option value="'+data[i].id+'">'+data[i].nm_kecamatan+'</option>';
+                }
+                div.find('#kecamatan_id').html(" ");
+                div.find('#kecamatan_id').append(op);
+            },
+                error:function(){
+            }
+        });
+    });
+
+    $(document).on('change','#kecamatan_id',function(){
+        var kecamatan_id = $(this).val();
+        var div = $(this).parent().parent();
+        var op=" ";
+        $.ajax({
+        type :'get',
+        url: "{{ url('rumah_kosaku/wilayah/kelurahan/cari_kelurahan') }}",
+        data:{'kecamatan_id':kecamatan_id},
+            success:function(data){
+                // alert(data['prodi'][0].prodiKodeUniv);
+                op+='<option value="0" selected disabled>-- pilih kelurahan --</option>';
+                for(var i=0; i<data.length;i++){
+                    // alert(data['jenis_publikasi'][i].kecamatan_id);
+                    op+='<option value="'+data[i].id+'">'+data[i].nm_kelurahan+'</option>';
+                }
+                div.find('#kelurahan_id').html(" ");
+                div.find('#kelurahan_id').append(op);
+            },
+                error:function(){
+            }
+        });
+    });
+</script>
+@endpush
