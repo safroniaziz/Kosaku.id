@@ -156,13 +156,10 @@
                                         <div class="featured">
                                             {{ $rekomendasi->nm_kategori }}
                                         </div>
-                                        <div class="price-ratings">
+                                        <div class="price-ratings" style="right: 30% !important; background-color:#95c41f !important; text-align: center !important; bottom:60px !important;">
                                             <div class="price">
-                                                <h6 style="color: white; font-size:12px; color:#000; text-decoration:line-through">Rp.{{ number_format($rekomendasi->harga_sewa,2) }}</h6>
-                                                <h6 style="color: white; font-size:12px; color:#000;">Rp.{{ number_format($rekomendasi->harga_sewa - $rekomendasi->diskon,2) }}</h6>
-                                            </div>
-                                            <div class="ratings" style="color: white; text-transform:uppercase;">
-                                                KHUSUS {{ $rekomendasi->jenis_kategori }}
+                                                <h6 style="color: white; font-size:20px; color:#000; text-decoration:line-through">Rp.{{ number_format($rekomendasi->harga_sewa,2) }}</h6>
+                                                <h6 style="color: white; font-size:20px; color:#000;">Rp.{{ number_format($rekomendasi->harga_sewa - $rekomendasi->diskon,2) }}</h6>
                                             </div>
                                         </div>
                                         <img src="{{ asset('storage/'.$rekomendasi->foto_thumbnail) }}" alt="rp" class="img-responsive">
