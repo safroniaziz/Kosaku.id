@@ -71,9 +71,13 @@
                         </a>
                     </li>
                     <li class="dropdown">
-                        <a tabindex="0" href="{{ route('produk.semua') }}"  data-submenu="" aria-expanded="false">
-                            <i class="fa fa-home"></i>&nbsp;Kost-Kostan
+                        <a tabindex="0" href="#" data-toggle="dropdown" data-submenu="" aria-expanded="false">
+                            <i class="fa fa-product-hunt"></i> Kost-Kostan<span class="caret"></span>
                         </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ route('produk.rekomendasi') }}">Kost Rekomendasi</a></li>
+                            <li><a href="{{ route('produk.semua') }}">Semua Kost</a></li>
+                        </ul>
                     </li>
                     {{-- <li class="dropdown active">
                         <a tabindex="0" href="#" data-toggle="dropdown" data-submenu="" aria-expanded="false">

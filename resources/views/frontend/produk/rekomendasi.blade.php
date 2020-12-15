@@ -1,6 +1,6 @@
 @extends('layouts.produks')
 @section('produk-title')
-    Semua Kost-Kostan
+    Kost-Kostan Rekomendasi
 @endsection
 @section('second-title')
     Klik Untuk Informasi Lengkap
