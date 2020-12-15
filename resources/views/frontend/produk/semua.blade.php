@@ -53,17 +53,20 @@
                                 <div class="property-img">
                                     <div class="property-tag button alt featured">{{ $produk->jenis_kategori == 'putri' ? 'Khusus Putri' : ($produk->jenis_kategori == 'putra' ? 'Khusus Putra' : 'Campuran') }}</div>
                                     @if ($produk->diskon >0)
-                                        <div class="property-tag button sale">Sedang Diskon</div>
+                                        <div class="property-price" style="right: 3% !important; background-color:#95c41f !important; text-align: center !important; bottom:50px !important; padding:0px 10px;">
+                                            <div class="price">
+                                                <h6 style="color: white; font-size:15px; color:#000; text-decoration:line-through; padding:3px !important; color:white;">Rp.{{ number_format($produk->harga_sewa,2) }}</h6>
+                                                <h6 style="color: white; font-size:15px; color:#000; padding:3px !important; color:white;">Rp.{{ number_format($produk->harga_sewa - $produk->diskon,2) }}</h6>
+                                                
+                                            </div>
+                                        </div>
                                         @else
-                                        <div class="property-tag button sale">Harga Normal</div>
+                                        <div class="property-price" style="right: 3% !important; background-color:#95c41f !important; text-align: center !important; bottom:50px !important; padding: 0px 10px !important;">
+                                            <div class="price">
+                                                <h6 style="color: white; font-size:15px; color:#000; text-decoration:line-through; color:white;; padding:10px !important; color:white;">Rp.{{ number_format($produk->harga_sewa,2) }}</h6>
+                                            </div>
+                                        </div>
                                     @endif
-                                    <div class="property-price">
-                                        Rp.{{ number_format($produk->harga_sewa) }}
-                                    <b style="color:black; font-size:12px;">Rp.{{ number_format($produk->harga_sewa - $produk->diskon) }}</b>
-                                        @if ($produk->diskon>0)
-                                            
-                                        @endif
-                                    </div>
                                     <img src="{{ asset('storage/'.$produk->foto_thumbnail) }}" alt="fp" class="img-responsive">
                                     <div class="property-overlay">
                                         
@@ -113,13 +116,14 @@
                 <!-- Search contents sidebar start -->
                 <div class="sidebar-widget">
                     <div class="main-title-2">
-                        <h1><span>Pencarian</span> Produk</h1>
+                        <h1><span>Pencarian</span> Kost-Kostan</h1>
                     </div>
 
-                    <form method="GET">
+                    <form method="POST" action="{{ route('produk.semua.cari') }}">
+                        {{ csrf_field() }} {{ method_field('POST') }}
                         <div class="form-group">
-                            <select name="provinsi_id" class="form-control search-fields custom-select minimal" id="provinsi_id">
-                                <option value="semua">Semua Provinsi</option>
+                            <select name="provinsi_id" id="provinsi_id" class="form-control search-fields custom-select" style="appearance: auto;">
+                                <option disabled selected>-- pilih provinsi --</option>
                                 @foreach ($provinsis as $provinsi)
                                     <option value="{{ $provinsi->id }}">{{ $provinsi->nm_provinsi }}</option>
                                 @endforeach
@@ -129,24 +133,24 @@
                             @endif
                         </div>
                         <div class="form-group">
-                            <select name="kota_id" id="kota_id" class="form-control search-fields custom-select minimal">
-                                <option value="semua">Semua Kota</option>
+                            <select name="kota_id" id="kota_id" class="form-control search-fields custom-select" style="appearance: auto;">
+                                <option disabled selected>-- pilih kota --</option>
                             </select>
                             @if ($errors->has('kota_id'))
                                 <small class="form-text text-danger">{{ $errors->first('kota_id') }}</small>
                             @endif
                         </div>
                         <div class="form-group">
-                            <select name="kecamatan_id" id="kecamatan_id" class="form-control search-fields custom-select minimal">
-                                <option value="semua">Semua Kecamatan</option>
+                            <select name="kecamatan_id" id="kecamatan_id" class="form-control search-fields custom-select" style="appearance: auto;">
+                                <option disabled selected>-- pilih kecamatan --</option>
                             </select>
                             @if ($errors->has('kecamatan_id'))
                                 <small class="form-text text-danger">{{ $errors->first('kecamatan_id') }}</small>
                             @endif
                         </div>
                         <div class="form-group">
-                            <select name="kelurahan_id" id="kelurahan_id" class="form-control search-fields custom-select minimal">
-                                <option value="semua">Semua Kelurahan</option>
+                            <select name="kelurahan_id" id="kelurahan_id" class="form-control search-fields custom-select" style="appearance: auto;">
+                                <option disabled selected>-- pilih kelurahan --</option>
                             </select>
                             @if ($errors->has('kelurahan_id'))
                                 <small class="form-text text-danger">{{ $errors->first('kelurahan_id') }}</small>
@@ -154,19 +158,18 @@
                         </div>
 
                         <div class="form-group">
-                            <select name="jenis" id="jenis" class="form-control search-fields custom-select minimal">
-                                <option value="semua">Semua Kategori</option>
+                            <select name="kategori" id="kategori" class="form-control search-fields custom-select" style="appearance: auto;">
                                 <option value="pondokan">Pondokan</option>
                                 <option value="kontrakan">Kontrakan</option>
                             </select>
-                            @if ($errors->has('jenis'))
-                                <small class="form-text text-danger">{{ $errors->first('jenis') }}</small>
+                            @if ($errors->has('kategori'))
+                                <small class="form-text text-danger">{{ $errors->first('kategori') }}</small>
                             @endif
                         </div>
 
                         <div class="form-group">
-                            <select name="jenis" id="jenis" class="form-control search-fields custom-select minimal">
-                                <option value="semua">Campuran</option>
+                            <select name="jenis" id="jenis" class="form-control search-fields custom-select" style="appearance: auto;">
+                                <option value="campuran">Campuran</option>
                                 <option selected value="putri">Khusus Putri</option>
                                 <option value="putra">Khusus Putra</option>
                             </select>
@@ -176,19 +179,18 @@
                         </div>
 
                         <div class="form-group">
-                            <select name="jenis" id="jenis" class="form-control search-fields custom-select minimal">
-                                <option value="semua">Semua Harga</option>
+                            <select name="harga" id="harga" class="form-control search-fields custom-select" style="appearance: auto;">
                                 <option value="4">1 - 4 Juta</option>
                                 <option value="7">5-7 Juta</option>
                                 <option value="8">>7 Juta</option>
                             </select>
-                            @if ($errors->has('jenis'))
-                                <small class="form-text text-danger">{{ $errors->first('jenis') }}</small>
+                            @if ($errors->has('harga'))
+                                <small class="form-text text-danger">{{ $errors->first('harga') }}</small>
                             @endif
                         </div>
 
                         <div class="form-group mb-0">
-                            <button class="search-button">Search</button>
+                            <button type="submit" name="cari" class="search-button">Cari Produk</button>
                         </div>
                     </form>
                 </div>
@@ -250,6 +252,7 @@
 <script>
     $(document).on('change','#provinsi_id',function(){
         var provinsi_id = $(this).val();
+        alert(provinsi_id);
         var div = $(this).parent().parent();
         var op=" ";
         $.ajax({

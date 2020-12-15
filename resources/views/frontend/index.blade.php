@@ -43,11 +43,11 @@
     <div class="container">
         <div class="search-area-inner">
             <div class="search-contents ">
-                <form action="{{ route('produk.semua') }}" method="GET">
+                <form action="{{ route('produk.semua.cari') }}" method="GET">
                     {{ csrf_field() }} {{ method_field('GET') }}
                     <div class="row">
                         <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                            <select name="provinsi_id" class="form-control search-fields custom-select minimal" id="provinsi_id">
+                            <select name="provinsi_id" class="form-control search-fields custom-select" style="appearance: auto;" id="provinsi_id">
                                 <option value="semua">Semua Provinsi</option>
                                 @foreach ($provinsis as $provinsi)
                                     <option value="{{ $provinsi->id }}">{{ $provinsi->nm_provinsi }}</option>
@@ -58,7 +58,7 @@
                             @endif
                         </div>
                         <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                            <select name="kota_id" id="kota_id" class="form-control search-fields custom-select minimal">
+                            <select name="kota_id" id="kota_id" class="form-control search-fields custom-select" style="appearance: auto;">
                                 <option value="semua">Semua Kota</option>
                             </select>
                             @if ($errors->has('kota_id'))
@@ -66,7 +66,7 @@
                             @endif
                         </div>
                         <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                            <select name="kecamatan_id" id="kecamatan_id" class="form-control search-fields custom-select minimal">
+                            <select name="kecamatan_id" id="kecamatan_id" class="form-control search-fields custom-select" style="appearance: auto;">
                                 <option value="semua">Semua Kecamatan</option>
                             </select>
                             @if ($errors->has('kecamatan_id'))
@@ -74,7 +74,7 @@
                             @endif
                         </div>
                         <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                            <select name="kelurahan_id" id="kelurahan_id" class="form-control search-fields custom-select minimal">
+                            <select name="kelurahan_id" id="kelurahan_id" class="form-control search-fields custom-select" style="appearance: auto;">
                                 <option value="semua">Semua Kelurahan</option>
                             </select>
                             @if ($errors->has('kelurahan_id'))
@@ -83,7 +83,7 @@
                         </div>
 
                         <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                            <select name="jenis" id="jenis" class="form-control search-fields custom-select minimal">
+                            <select name="jenis" id="jenis" class="form-control search-fields custom-select" style="appearance: auto;">
                                 <option value="semua">Semua Kategori</option>
                                 <option value="pondokan">Pondokan</option>
                                 <option value="kontrakan">Kontrakan</option>
@@ -94,7 +94,7 @@
                         </div>
 
                         <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                            <select name="jenis" id="jenis" class="form-control search-fields custom-select minimal">
+                            <select name="jenis" id="jenis" class="form-control search-fields custom-select" style="appearance: auto;">
                                 <option value="semua">Campuran</option>
                                 <option selected value="putri">Khusus Putri</option>
                                 <option value="putra">Khusus Putra</option>
@@ -105,7 +105,7 @@
                         </div>
 
                         <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                            <select name="jenis" id="jenis" class="form-control search-fields custom-select minimal">
+                            <select name="jenis" id="jenis" class="form-control search-fields custom-select" style="appearance: auto;">
                                 <option value="semua">Semua Harga</option>
                                 <option value="4">1 - 4 Juta</option>
                                 <option value="7">5-7 Juta</option>
@@ -152,21 +152,33 @@
                                 <!-- Property 2 start -->
                                 <div class="property-2">
                                     <!-- Property img -->
-                                    <div class="property-img">
-                                        <div class="featured">
-                                            {{ $rekomendasi->nm_kategori }}
-                                        </div>
-                                        <div class="price-ratings" style="right: 30% !important; background-color:#95c41f !important; text-align: center !important; bottom:60px !important;">
-                                            <div class="price">
-                                                <h6 style="color: white; font-size:20px; color:#000; text-decoration:line-through">Rp.{{ number_format($rekomendasi->harga_sewa,2) }}</h6>
-                                                <h6 style="color: white; font-size:20px; color:#000;">Rp.{{ number_format($rekomendasi->harga_sewa - $rekomendasi->diskon,2) }}</h6>
+                                    <a href="{{ route('produk.detail',[$rekomendasi->slug]) }}">
+                                        <div class="property-img">
+                                            <div class="featured">
+                                                {{ $rekomendasi->nm_kategori }}
+                                            </div>
+                                            @if ($rekomendasi->diskon >0)
+                                                <div class="price-ratings" style="right: 25% !important; background-color:#95c41f !important; text-align: center !important; bottom:23px !important; padding:0px 10px;">
+                                                    <div class="price">
+                                                        <h6 style="color: white; font-size:15px; color:#000; text-decoration:line-through; padding:3px !important; color:white;">Rp.{{ number_format($rekomendasi->harga_sewa,2) }}</h6>
+                                                        <h6 style="color: white; font-size:15px; color:#000; padding:3px !important; color:white;">Rp.{{ number_format($rekomendasi->harga_sewa - $rekomendasi->diskon,2) }}</h6>
+                                                        
+                                                    </div>
+                                                </div>
+                                                @else
+                                                <div class="price-ratings" style="right: 25% !important; background-color:#95c41f !important; text-align: center !important; bottom:40px !important; padding: 0px 10px !important;">
+                                                    <div class="price">
+                                                        <h6 style="color: white; font-size:15px; color:#000; text-decoration:line-through; color:white;; padding:10px !important; color:white;">Rp.{{ number_format($rekomendasi->harga_sewa,2) }}</h6>
+                                                    </div>
+                                                </div>
+                                            @endif
+    
+                                            <img src="{{ asset('storage/'.$rekomendasi->foto_thumbnail) }}" alt="rp" class="img-responsive">
+                                            <div class="property-overlay">
+                                               
                                             </div>
                                         </div>
-                                        <img src="{{ asset('storage/'.$rekomendasi->foto_thumbnail) }}" alt="rp" class="img-responsive">
-                                        <div class="property-overlay">
-                                           
-                                        </div>
-                                    </div>
+                                    </a>
                                     <!-- content -->
                                     <div class="content">
                                         <!-- title -->
@@ -253,21 +265,21 @@
                 <div class="col-lg-3 col-md-3col-sm-6 col-xs-12 wow fadeInLeft delay-04s">
                     <div class="content">
                         <i class="flaticon-internet"></i>
-                        <h4>Keuntungan Kedua</h4>
+                        <h4>Keunggulan Kedua</h4>
                         <p>Mengembangkan aplikasi untuk membantu mitra kerja untuk melakukan promosi secara online.</P>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3col-sm-6 col-xs-12 wow fadeInRight delay-04s">
                     <div class="content">
                         <i class="flaticon-vehicle"></i>
-                        <h4>Keuntungan Ketiga</h4>
+                        <h4>Keunggulan Ketiga</h4>
                         <p>Memudahkan pemesanan kamar secara cepat dan efisien melalui platform digital</P>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3col-sm-6 col-xs-12 wow fadeInRight delay-04s">
                     <div class="content">
                         <i class="flaticon-symbol"></i>
-                        <h4>Keuntungan Keempat</h4>
+                        <h4>Keunggulan Keempat</h4>
                         <p>Selalu menjaga kualitas kamar yang tersedia serta tetap dengan harga yang terjangkau.</P>
                     </div>
                 </div>
@@ -295,18 +307,30 @@
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12  filtr-item" data-category="{{ $all->jenis_kategori == 'putri' ? '1' : ($all->jenis_kategori == 'putra' ? '2' : '3') }}">
                             <div class="property">
                                 <!-- Property img -->
-                                <div class="property-img">
-                                    <div class="property-tag button alt featured">{{ $all->jenis_kategori == 'putri' ? 'Khusus Putri' : ($all->jenis_kategori == 'putra' ? 'Khusus Putra' : 'Campuran') }}</div>
-                                    <div class="property-tag button sale">{{ $all->nm_kategori }}</div>
-                                    <div class="property-price">
-                                        <a style="color:black; font-size:12px; text-decoration:line-through">Rp.{{ number_format($all->harga_sewa) }}</a>
-                                        <a style="color:black; font-size:12px;">Rp.{{ number_format($all->harga_sewa - $all->diskon) }}</a>
+                                <a href="{{ route('produk.detail',[$all->slug]) }}">
+                                    <div class="property-img">
+                                        <div class="property-tag button alt featured">{{ $all->jenis_kategori == 'putri' ? 'Khusus Putri' : ($all->jenis_kategori == 'putra' ? 'Khusus Putra' : 'Campuran') }}</div>
+                                            @if ($rekomendasi->diskon >0)
+                                                <div class="property-price" style="right: 3% !important; background-color:#95c41f !important; text-align: center !important; bottom:50px !important; padding:0px 10px;">
+                                                    <div class="price">
+                                                        <h6 style="color: white; font-size:15px; color:#000; text-decoration:line-through; padding:3px !important; color:white;">Rp.{{ number_format($rekomendasi->harga_sewa,2) }}</h6>
+                                                        <h6 style="color: white; font-size:15px; color:#000; padding:3px !important; color:white;">Rp.{{ number_format($rekomendasi->harga_sewa - $rekomendasi->diskon,2) }}</h6>
+                                                        
+                                                    </div>
+                                                </div>
+                                                @else
+                                                <div class="property-price" style="right: 3% !important; background-color:#95c41f !important; text-align: center !important; bottom:50px !important; padding: 0px 10px !important;">
+                                                    <div class="price">
+                                                        <h6 style="color: white; font-size:15px; color:#000; text-decoration:line-through; color:white;; padding:10px !important; color:white;">Rp.{{ number_format($rekomendasi->harga_sewa,2) }}</h6>
+                                                    </div>
+                                                </div>
+                                            @endif
+                                        <img src="{{ asset('storage/'.$all->foto_thumbnail) }}" alt="fp" class="img-responsive">
+                                        <div class="property-overlay">
+                                            
+                                        </div>
                                     </div>
-                                    <img src="{{ asset('storage/'.$all->foto_thumbnail) }}" alt="fp" class="img-responsive">
-                                    <div class="property-overlay">
-                                        
-                                    </div>
-                                </div>
+                                </a>
                                 <!-- Property content -->
                                 <div class="property-content">
                                     <!-- title -->

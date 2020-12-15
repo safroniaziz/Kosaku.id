@@ -48,4 +48,20 @@ class ProdukFrontendController extends Controller
                         ->take(4)->get();
         return view('frontend/produk.detail',compact('produk','kerjasama','galeris','rekomendasis'));
     }
+
+    public function cariSemuaProduk(Request $request){
+        $this->validate($request,[
+            'provinsi_id'   =>  'required',
+        ]);
+        if (isset($_GET['cari'])) {
+            if ($_GET['provinsi_id'] != "semua" ) {
+                $produks = DB::table('produks_view')
+                    ->select('id','nm_vendor','jumlah_kamar','diskon','wifi','ac','lahan_parkir','listrik','air','pengamanan','foto_thumbnail','nm_kategori','slug','jenis_kategori','harga_sewa','kamar_kosong','nm_kota','nm_provinsi','nm_kecamatan','nm_kelurahan','created_at',
+                    DB::raw('kamar_kosong / jumlah_kamar * 100 as persentase'))
+                    ->where('status','1')
+                    ->orderBy('jenis_kategori')
+                    ->paginate(4);
+            }
+        }
+    }
 }

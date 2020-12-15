@@ -29,6 +29,7 @@ Auth::routes();
 
 Route::group(['prefix'  => 'produk/'],function(){
     Route::get('/semua', 'ProdukFrontendController@semuaProduk')->name('produk.semua');
+    Route::post('/semua/cari', 'ProdukFrontendController@cariSemuaProduk')->name('produk.semua.cari');
     Route::get('/{slug}','ProdukFrontendController@detail')->name('produk.detail');
 });
 

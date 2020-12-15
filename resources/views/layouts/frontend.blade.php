@@ -102,11 +102,11 @@
                             <i class="fa fa-book"></i>&nbsp; Artikel
                         </a>
 					</li>
-					<li class="dropdown">
+					{{-- <li class="dropdown">
                         <a tabindex="0" href="{{ route('pendaftaran_seminar') }}"  data-submenu="" aria-expanded="false">
                             <i class="fa fa-home"></i>&nbsp;Daftar Seminar
                         </a>
-                    </li>
+                    </li> --}}
                 </ul>
                 <ul class="nav navbar-nav navbar-right rightside-navbar">
                     <li>
