@@ -98,51 +98,45 @@
                                         <div class="properties-condition">
                                     
                                             <div class="row">
-                                                <div class="col-md-4 col-sm-4 col-xs-12">
                                                     <ul class="condition">
-                                                        <li style="{{ $produk->wifi == '0' ? 'color: red; text-decoration: line-through' : '' }}">
-                                                            <i style="color: {{ $produk->wifi == "0" ? 'red' : ''}}" class="{{ $produk->wifi == "1" ? 'fa fa-check-square' : 'fa fa-close' }}"></i>Koneksi Internet
+                                                        <li class="col-md-4 col-sm-4 col-xs-12" style="{{ $produk->wifi == '0' ? 'color: red; display:none; text-decoration: line-through' : '' }}">
+                                                            <i style="color: {{ $produk->wifi == "0" ? 'red; display:none;' : ''}}" class="{{ $produk->wifi == "1" ? 'fa fa-check-square' : 'fa fa-close' }}"></i>Koneksi Internet
                                                         </li>
-                                                        <li style="{{ $produk->ac == '0' ? 'color: red; text-decoration: line-through' : '' }}">
-                                                            <i style="color: {{ $produk->ac == "0" ? 'red' : ''}}" class="{{ $produk->ac == "1" ? 'fa fa-check-square' : 'fa fa-close' }}"></i>Pendingin Ruangan
+                                                        <li class="col-md-4 col-sm-4 col-xs-12" style="{{ $produk->ac == '0' ? 'color: red; display:none; text-decoration: line-through' : '' }}">
+                                                            <i style="color: {{ $produk->ac == "0" ? 'red; display:none;' : ''}}" class="{{ $produk->ac == "1" ? 'fa fa-check-square' : 'fa fa-close' }}"></i>Pendingin Ruangan
                                                         </li>
-                                                        <li style="{{ $produk->kasur == '0' ? 'color: red; text-decoration: line-through' : '' }}">
-                                                            <i style="color: {{ $produk->kasur == "0" ? 'red' : ''}}" class="{{ $produk->kasur == "1" ? 'fa fa-check-square' : 'fa fa-close' }}"></i>Kasur
+                                                        <li class="col-md-4 col-sm-4 col-xs-12" style="{{ $produk->kasur == '0' ? 'color: red; display:none; text-decoration: line-through' : '' }}">
+                                                            <i style="color: {{ $produk->kasur == "0" ? 'red; display:none;' : ''}}" class="{{ $produk->kasur == "1" ? 'fa fa-check-square' : 'fa fa-close' }}"></i>Kasur
                                                         </li>
-                                                        <li style="{{ $produk->air == '0' ? 'color: red; text-decoration: line-through' : '' }}">
-                                                            <i style="color: {{ $produk->air == "0" ? 'red' : ''}}" class="{{ $produk->air == "1" ? 'fa fa-check-square' : 'fa fa-close' }}"></i>Air Bersih
+                                                        <li class="col-md-4 col-sm-4 col-xs-12" style="{{ $produk->air == '0' ? 'color: red; display:none; text-decoration: line-through' : '' }}">
+                                                            <i style="color: {{ $produk->air == "0" ? 'red; display:none;' : ''}}" class="{{ $produk->air == "1" ? 'fa fa-check-square' : 'fa fa-close' }}"></i>Air Bersih
                                                         </li>
                                                     </ul>
-                                                </div>
-                                                <div class="col-md-4 col-sm-4 col-xs-12">
                                                     <ul class="condition">
-                                                        <li style="{{ $produk->kamar_mandi_dalam == '0' ? 'color: red; text-decoration: line-through' : '' }}">
-                                                            <i style="color: {{ $produk->kamar_mandi_dalam == "0" ? 'red' : ''}}" class="{{ $produk->kamar_mandi_dalam == "1" ? 'fa fa-check-square' : 'fa fa-close' }}"></i>Kamar Mandi Dalam
+                                                        <li class="col-md-4 col-sm-4 col-xs-12" style="{{ $produk->kamar_mandi_dalam == '0' ? 'color: red; display:none; text-decoration: line-through' : '' }}">
+                                                            <i style="color: {{ $produk->kamar_mandi_dalam == "0" ? 'red; display:none;' : ''}}" class="{{ $produk->kamar_mandi_dalam == "1" ? 'fa fa-check-square' : 'fa fa-close' }}"></i>Kamar Mandi Dalam
                                                         </li>
-                                                        <li style="{{ $produk->kamar_mandi_umum == '0' ? 'color: red; text-decoration: line-through' : '' }}">
-                                                            <i style="color: {{ $produk->kamar_mandi_umum == "0" ? 'red' : ''}}" class="{{ $produk->kamar_mandi_umum == "1" ? 'fa fa-check-square' : 'fa fa-close' }}"></i>Kamar Mandi Umum
+                                                        <li class="col-md-4 col-sm-4 col-xs-12" style="{{ $produk->kamar_mandi_umum == '0' ? 'color: red; display:none; text-decoration: line-through' : '' }}">
+                                                            <i style="color: {{ $produk->kamar_mandi_umum == "0" ? 'red; display:none;' : ''}}" class="{{ $produk->kamar_mandi_umum == "1" ? 'fa fa-check-square' : 'fa fa-close' }}"></i>Kamar Mandi Umum
                                                         </li>
-                                                        <li style="{{ $produk->lahan_parkir == '0' ? 'color: red; text-decoration: line-through' : '' }}">
-                                                            <i style="color: {{ $produk->lahan_parkir == "0" ? 'red' : ''}}" class="{{ $produk->lahan_parkir == "1" ? 'fa fa-check-square' : 'fa fa-close' }}"></i>Lahan Parkir
+                                                        <li class="col-md-4 col-sm-4 col-xs-12" style="{{ $produk->lahan_parkir == '0' ? 'color: red; display:none; text-decoration: line-through' : '' }}">
+                                                            <i style="color: {{ $produk->lahan_parkir == "0" ? 'red; display:none;' : ''}}" class="{{ $produk->lahan_parkir == "1" ? 'fa fa-check-square' : 'fa fa-close' }}"></i>Lahan Parkir
                                                         </li>
-                                                        <li style="{{ $produk->pengamanan == '0' ? 'color: red; text-decoration: line-through' : '' }}">
-                                                            <i style="color: {{ $produk->pengamanan == "0" ? 'red' : ''}}" class="{{ $produk->pengamanan == "1" ? 'fa fa-check-square' : 'fa fa-close' }}"></i>Pengamanan / Penjaga Kost
+                                                        <li class="col-md-4 col-sm-4 col-xs-12" style="{{ $produk->pengamanan == '0' ? 'color: red; display:none; text-decoration: line-through' : '' }}">
+                                                            <i style="color: {{ $produk->pengamanan == "0" ? 'red; display:none;' : ''}}" class="{{ $produk->pengamanan == "1" ? 'fa fa-check-square' : 'fa fa-close' }}"></i>Pengamanan / Penjaga Kost
                                                         </li>
                                                     </ul>
-                                                </div>
-                                                <div class="col-md-4 col-sm-4 col-xs-12">
                                                     <ul class="condition">
-                                                        <li style="{{ $produk->dapur_umum == '0' ? 'color: red; text-decoration: line-through' : '' }}">
-                                                            <i style="color: {{ $produk->dapur_umum == "0" ? 'red' : ''}}" class="{{ $produk->dapur_umum == "1" ? 'fa fa-check-square' : 'fa fa-close' }}"></i>Dapur Umum
+                                                        <li class="col-md-4 col-sm-4 col-xs-12" style="{{ $produk->dapur_umum == '0' ? 'color: red; display:none; text-decoration: line-through' : '' }}">
+                                                            <i style="color: {{ $produk->dapur_umum == "0" ? 'red; display:none;' : ''}}" class="{{ $produk->dapur_umum == "1" ? 'fa fa-check-square' : 'fa fa-close' }}"></i>Dapur Umum
                                                         </li>
-                                                        <li style="{{ $produk->dapur_dalam == '0' ? 'color: red; text-decoration: line-through' : '' }}">
-                                                            <i style="color: {{ $produk->dapur_dalam == "0" ? 'red' : ''}}" class="{{ $produk->dapur_dalam == "1" ? 'fa fa-check-square' : 'fa fa-close' }}"></i>Dapur Dalam
+                                                        <li class="col-md-4 col-sm-4 col-xs-12" style="{{ $produk->dapur_dalam == '0' ? 'color: red; display:none; text-decoration: line-through' : '' }}">
+                                                            <i style="color: {{ $produk->dapur_dalam == "0" ? 'red; display:none;' : ''}}" class="{{ $produk->dapur_dalam == "1" ? 'fa fa-check-square' : 'fa fa-close' }}"></i>Dapur Dalam
                                                         </li>
-                                                        <li style="{{ $produk->listrik == '0' ? 'color: red; text-decoration: line-through' : '' }}">
-                                                            <i style="color: {{ $produk->listrik == "0" ? 'red' : ''}}" class="{{ $produk->listrik == "1" ? 'fa fa-check-square' : 'fa fa-close' }}"></i>Listrik
+                                                        <li class="col-md-4 col-sm-4 col-xs-12" style="{{ $produk->listrik == '0' ? 'color: red; display:none; text-decoration: line-through' : '' }}">
+                                                            <i style="color: {{ $produk->listrik == "0" ? 'red; display:none;' : ''}}" class="{{ $produk->listrik == "1" ? 'fa fa-check-square' : 'fa fa-close' }}"></i>Listrik
                                                         </li>
                                                     </ul>
-                                                </div>
                                             </div>
                                             <p>
                                                 <a class="btn button-md button-theme" href="https://api.whatsapp.com/send?phone=6285709586249&text=Hallo%20Kosaku%20Saya%20Mau%20Bertanya%20Mengenai%20Kostan%20Yang%20Ada%20Di%20Website%20Nih."><i class="fa fa-whatsapp"></i>&nbsp; Hubungi Kami</a>
