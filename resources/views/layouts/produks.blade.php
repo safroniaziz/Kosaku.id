@@ -102,11 +102,11 @@
                             <i class="fa fa-book"></i>&nbsp; Artikel
                         </a>
 					</li>
-					<li class="dropdown">
+					{{-- <li class="dropdown">
                         <a tabindex="0" href="{{ route('pendaftaran_seminar') }}"  data-submenu="" aria-expanded="false">
                             <i class="fa fa-home"></i>&nbsp;Daftar Seminar
                         </a>
-                    </li>
+                    </li> --}}
                 </ul>
                 <ul class="nav navbar-nav navbar-right rightside-navbar">
                     <li>
@@ -130,7 +130,7 @@
             <div class="breadcrumb-area">
                 <h1>@yield('produk-title')</h1>
                 <ul class="breadcrumbs">
-                    <li><a href="index.html" style="text-transform: uppercase">@yield('second-title')</a></li>
+                    <li><a href="index.html">@yield('second-title')</a></li>
                     <li class="active">@yield('third-title')</li>
                 </ul>
             </div>

@@ -38,6 +38,95 @@
     </div>
     <!-- Banner end -->
 
+    <!-- Search area start -->
+<div class="search-area">
+    <div class="container">
+        <div class="search-area-inner">
+            <div class="search-contents ">
+                <form action="{{ route('produk.semua.cari') }}" method="GET">
+                    {{ csrf_field() }} {{ method_field('GET') }}
+                    <div class="row">
+                        <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                            <select name="provinsi_id" class="form-control search-fields custom-select" style="appearance: auto;" id="provinsi_id">
+                                <option value="semua">Semua Provinsi</option>
+                                @foreach ($provinsis as $provinsi)
+                                    <option value="{{ $provinsi->id }}">{{ $provinsi->nm_provinsi }}</option>
+                                @endforeach
+                            </select>
+                            @if ($errors->has('provinsi_id'))
+                                <small class="form-text text-danger">{{ $errors->first('provinsi_id') }}</small>
+                            @endif
+                        </div>
+                        <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                            <select name="kota_id" id="kota_id" class="form-control search-fields custom-select" style="appearance: auto;">
+                                <option value="semua">Semua Kota</option>
+                            </select>
+                            @if ($errors->has('kota_id'))
+                                <small class="form-text text-danger">{{ $errors->first('kota_id') }}</small>
+                            @endif
+                        </div>
+                        <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                            <select name="kecamatan_id" id="kecamatan_id" class="form-control search-fields custom-select" style="appearance: auto;">
+                                <option value="semua">Semua Kecamatan</option>
+                            </select>
+                            @if ($errors->has('kecamatan_id'))
+                                <small class="form-text text-danger">{{ $errors->first('kecamatan_id') }}</small>
+                            @endif
+                        </div>
+                        <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                            <select name="kelurahan_id" id="kelurahan_id" class="form-control search-fields custom-select" style="appearance: auto;">
+                                <option value="semua">Semua Kelurahan</option>
+                            </select>
+                            @if ($errors->has('kelurahan_id'))
+                                <small class="form-text text-danger">{{ $errors->first('kelurahan_id') }}</small>
+                            @endif
+                        </div>
+
+                        <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                            <select name="jenis" id="jenis" class="form-control search-fields custom-select" style="appearance: auto;">
+                                <option value="semua">Semua Kategori</option>
+                                <option value="pondokan">Pondokan</option>
+                                <option value="kontrakan">Kontrakan</option>
+                            </select>
+                            @if ($errors->has('jenis'))
+                                <small class="form-text text-danger">{{ $errors->first('jenis') }}</small>
+                            @endif
+                        </div>
+
+                        <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                            <select name="jenis" id="jenis" class="form-control search-fields custom-select" style="appearance: auto;">
+                                <option value="semua">Campuran</option>
+                                <option selected value="putri">Khusus Putri</option>
+                                <option value="putra">Khusus Putra</option>
+                            </select>
+                            @if ($errors->has('jenis'))
+                                <small class="form-text text-danger">{{ $errors->first('jenis') }}</small>
+                            @endif
+                        </div>
+
+                        <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                            <select name="jenis" id="jenis" class="form-control search-fields custom-select" style="appearance: auto;">
+                                <option value="semua">Semua Harga</option>
+                                <option value="4">1 - 4 Juta</option>
+                                <option value="7">5-7 Juta</option>
+                                <option value="8">>7 Juta</option>
+                            </select>
+                            @if ($errors->has('jenis'))
+                                <small class="form-text text-danger">{{ $errors->first('jenis') }}</small>
+                            @endif
+                        </div>
+
+                        <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                            <button type="submit" class="search-button">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Search area start -->
+
     <!-- Recently properties start -->
     <div class="mb-50 recently-properties chevron-icon" style="padding-top: 50px !important">
         <div class="container">
@@ -63,24 +152,33 @@
                                 <!-- Property 2 start -->
                                 <div class="property-2">
                                     <!-- Property img -->
-                                    <div class="property-img">
-                                        <div class="featured">
-                                            {{ $rekomendasi->nm_kategori }}
-                                        </div>
-                                        <div class="price-ratings">
-                                            <div class="price">
-                                                <h6 style="color: white; font-size:12px; color:#000; text-decoration:line-through">Rp.{{ number_format($rekomendasi->harga_sewa,2) }}</h6>
-                                                <h6 style="color: white; font-size:12px; color:#000;">Rp.{{ number_format($rekomendasi->harga_sewa - $rekomendasi->diskon,2) }}</h6>
+                                    <a href="{{ route('produk.detail',[$rekomendasi->slug]) }}">
+                                        <div class="property-img">
+                                            <div class="featured">
+                                                {{ $rekomendasi->nm_kategori }}
                                             </div>
-                                            <div class="ratings" style="color: white; text-transform:uppercase;">
-                                                KHUSUS {{ $rekomendasi->jenis_kategori }}
+                                            @if ($rekomendasi->diskon >0)
+                                                <div class="price-ratings" style="right: 25% !important; background-color:#95c41f !important; text-align: center !important; bottom:23px !important; padding:0px 10px;">
+                                                    <div class="price">
+                                                        <h6 style="color: white; font-size:15px; color:#000; text-decoration:line-through; padding:3px !important; color:white;">Rp.{{ number_format($rekomendasi->harga_sewa,2) }}</h6>
+                                                        <h6 style="color: white; font-size:15px; color:#000; padding:3px !important; color:white;">Rp.{{ number_format($rekomendasi->harga_sewa - $rekomendasi->diskon,2) }}</h6>
+                                                        
+                                                    </div>
+                                                </div>
+                                                @else
+                                                <div class="price-ratings" style="right: 25% !important; background-color:#95c41f !important; text-align: center !important; bottom:40px !important; padding: 0px 10px !important;">
+                                                    <div class="price">
+                                                        <h6 style="color: white; font-size:15px; color:#000; text-decoration:line-through; color:white;; padding:10px !important; color:white;">Rp.{{ number_format($rekomendasi->harga_sewa,2) }}</h6>
+                                                    </div>
+                                                </div>
+                                            @endif
+    
+                                            <img src="{{ asset('storage/'.$rekomendasi->foto_thumbnail) }}" alt="rp" class="img-responsive">
+                                            <div class="property-overlay">
+                                               
                                             </div>
                                         </div>
-                                        <img src="{{ asset('storage/'.$rekomendasi->foto_thumbnail) }}" alt="rp" class="img-responsive">
-                                        <div class="property-overlay">
-                                           
-                                        </div>
-                                    </div>
+                                    </a>
                                     <!-- content -->
                                     <div class="content">
                                         <!-- title -->
@@ -167,21 +265,21 @@
                 <div class="col-lg-3 col-md-3col-sm-6 col-xs-12 wow fadeInLeft delay-04s">
                     <div class="content">
                         <i class="flaticon-internet"></i>
-                        <h4>Keuntungan Kedua</h4>
+                        <h4>Keunggulan Kedua</h4>
                         <p>Mengembangkan aplikasi untuk membantu mitra kerja untuk melakukan promosi secara online.</P>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3col-sm-6 col-xs-12 wow fadeInRight delay-04s">
                     <div class="content">
                         <i class="flaticon-vehicle"></i>
-                        <h4>Keuntungan Ketiga</h4>
+                        <h4>Keunggulan Ketiga</h4>
                         <p>Memudahkan pemesanan kamar secara cepat dan efisien melalui platform digital</P>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3col-sm-6 col-xs-12 wow fadeInRight delay-04s">
                     <div class="content">
                         <i class="flaticon-symbol"></i>
-                        <h4>Keuntungan Keempat</h4>
+                        <h4>Keunggulan Keempat</h4>
                         <p>Selalu menjaga kualitas kamar yang tersedia serta tetap dengan harga yang terjangkau.</P>
                     </div>
                 </div>
@@ -209,18 +307,30 @@
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12  filtr-item" data-category="{{ $all->jenis_kategori == 'putri' ? '1' : ($all->jenis_kategori == 'putra' ? '2' : '3') }}">
                             <div class="property">
                                 <!-- Property img -->
-                                <div class="property-img">
-                                    <div class="property-tag button alt featured">{{ $all->jenis_kategori == 'putri' ? 'Khusus Putri' : ($all->jenis_kategori == 'putra' ? 'Khusus Putra' : 'Campuran') }}</div>
-                                    <div class="property-tag button sale">{{ $all->nm_kategori }}</div>
-                                    <div class="property-price">
-                                        <a style="color:black; font-size:12px; text-decoration:line-through">Rp.{{ number_format($all->harga_sewa) }}</a>
-                                        <a style="color:black; font-size:12px;">Rp.{{ number_format($all->harga_sewa - $all->diskon) }}</a>
+                                <a href="{{ route('produk.detail',[$all->slug]) }}">
+                                    <div class="property-img">
+                                        <div class="property-tag button alt featured">{{ $all->jenis_kategori == 'putri' ? 'Khusus Putri' : ($all->jenis_kategori == 'putra' ? 'Khusus Putra' : 'Campuran') }}</div>
+                                            @if ($rekomendasi->diskon >0)
+                                                <div class="property-price" style="right: 3% !important; background-color:#95c41f !important; text-align: center !important; bottom:50px !important; padding:0px 10px;">
+                                                    <div class="price">
+                                                        <h6 style="color: white; font-size:15px; color:#000; text-decoration:line-through; padding:3px !important; color:white;">Rp.{{ number_format($rekomendasi->harga_sewa,2) }}</h6>
+                                                        <h6 style="color: white; font-size:15px; color:#000; padding:3px !important; color:white;">Rp.{{ number_format($rekomendasi->harga_sewa - $rekomendasi->diskon,2) }}</h6>
+                                                        
+                                                    </div>
+                                                </div>
+                                                @else
+                                                <div class="property-price" style="right: 3% !important; background-color:#95c41f !important; text-align: center !important; bottom:50px !important; padding: 0px 10px !important;">
+                                                    <div class="price">
+                                                        <h6 style="color: white; font-size:15px; color:#000; text-decoration:line-through; color:white;; padding:10px !important; color:white;">Rp.{{ number_format($rekomendasi->harga_sewa,2) }}</h6>
+                                                    </div>
+                                                </div>
+                                            @endif
+                                        <img src="{{ asset('storage/'.$all->foto_thumbnail) }}" alt="fp" class="img-responsive">
+                                        <div class="property-overlay">
+                                            
+                                        </div>
                                     </div>
-                                    <img src="{{ asset('storage/'.$all->foto_thumbnail) }}" alt="fp" class="img-responsive">
-                                    <div class="property-overlay">
-                                        
-                                    </div>
-                                </div>
+                                </a>
                                 <!-- Property content -->
                                 <div class="property-content">
                                     <!-- title -->
@@ -819,3 +929,76 @@
     </div>
     <!-- Partners block end -->
 @endsection
+
+@push('scripts')
+<script>
+    $(document).on('change','#provinsi_id',function(){
+        var provinsi_id = $(this).val();
+        var div = $(this).parent().parent();
+        var op=" ";
+        $.ajax({
+        type :'get',
+        url: "{{ url('rumah_kosaku/wilayah/kecamatan/cari_kota') }}",
+        data:{'provinsi_id':provinsi_id},
+            success:function(data){
+                op+='<option value="0" selected disabled>-- pilih kota --</option>';
+                for(var i=0; i<data.length;i++){
+                    // alert(data[i].id);
+                    // alert(data['jenis_publikasi'][i].provinsi_id);
+                    op+='<option value="'+data[i].id+'">'+data[i].nm_kota+'</option>';
+                }
+                div.find('#kota_id').html(" ");
+                div.find('#kota_id').append(op);
+            },
+                error:function(){
+            }
+        });
+    })
+
+    $(document).on('change','#kota_id',function(){
+        var kota_id = $(this).val();
+        var div = $(this).parent().parent();
+        var op=" ";
+        $.ajax({
+        type :'get',
+        url: "{{ url('rumah_kosaku/wilayah/kelurahan/cari_kecamatan') }}",
+        data:{'kota_id':kota_id},
+            success:function(data){
+                // alert(data['prodi'][0].prodiKodeUniv);
+                op+='<option value="0" selected disabled>-- pilih kecamatan --</option>';
+                for(var i=0; i<data.length;i++){
+                    // alert(data['jenis_publikasi'][i].kota_id);
+                    op+='<option value="'+data[i].id+'">'+data[i].nm_kecamatan+'</option>';
+                }
+                div.find('#kecamatan_id').html(" ");
+                div.find('#kecamatan_id').append(op);
+            },
+                error:function(){
+            }
+        });
+    });
+
+    $(document).on('change','#kecamatan_id',function(){
+        var kecamatan_id = $(this).val();
+        var div = $(this).parent().parent();
+        var op=" ";
+        $.ajax({
+        type :'get',
+        url: "{{ url('rumah_kosaku/wilayah/kelurahan/cari_kelurahan') }}",
+        data:{'kecamatan_id':kecamatan_id},
+            success:function(data){
+                // alert(data['prodi'][0].prodiKodeUniv);
+                op+='<option value="0" selected disabled>-- pilih kelurahan --</option>';
+                for(var i=0; i<data.length;i++){
+                    // alert(data['jenis_publikasi'][i].kecamatan_id);
+                    op+='<option value="'+data[i].id+'">'+data[i].nm_kelurahan+'</option>';
+                }
+                div.find('#kelurahan_id').html(" ");
+                div.find('#kelurahan_id').append(op);
+            },
+                error:function(){
+            }
+        });
+    });
+</script>
+@endpush
