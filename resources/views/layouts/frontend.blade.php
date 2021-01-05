@@ -2,6 +2,16 @@
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JE4PMFEZ6W"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JE4PMFEZ6W');
+</script>
+
 	<title>Kosaku.id - Platform Pencarian Kostan </title>
 	<link rel="icon" href="{{ asset('assets/images/logo.png') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
