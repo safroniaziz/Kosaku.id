@@ -60,13 +60,13 @@
 <header class="top-header" id="top">
     <div class="container">
         <div class="row">
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
                 <div class="list-inline">
                     <a class="hidden-xs" href="tel:1-8X0-666-8X88"><i class="fa fa-phone"></i>+6285709586249</a>
                     <a href="tel:info@themevessel.com"><i class="fa fa-envelope"></i>kosakujaya@gmail.com</a>
                 </div>
             </div>
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                 <ul class="top-social-media pull-right">
                     <li>
                         <a href="{{ route('login') }}" class="sign-in"><i class="fa fa-sign-in"></i> Login</a>
