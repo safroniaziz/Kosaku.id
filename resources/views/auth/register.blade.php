@@ -58,30 +58,26 @@
                 </a>
             </div>
             <div class="clearfix"></div>
-            <h3>Create an account</h3>
+            <h3>Buat akun anda disini</h3>
             <form action="index.html" method="GET">
                 <div class="form-group">
-                    <input type="text" name="fullname" class="input-text" placeholder="Full Name">
+                    <input type="text" name="name" class="input-text" placeholder="Nama Lengkap">
                 </div>
                 <div class="form-group">
-                    <input type="email" name="email" class="input-text" placeholder="Email Address">
+                    <input type="email" name="email" class="input-text" placeholder="Alamat Email">
                 </div>
                 <div class="form-group">
-                    <input type="password" name="password" class="input-text" placeholder="Password">
+                    <input type="password" name="password" id="password" class="input-text" placeholder="Password">
                 </div>
-                <div class="form-group">
-                    <input type="password" name="confirm_Password" class="input-text" placeholder="Confirm Password">
+                <div class="form-group" style="margin-bottom: 30px !important;">
+                    <input type="password" name="confirm_password" id="comfirm_password" class="input-text" placeholder="Konfirmasi Password">
+                    <label for="" style="color: red; font-weight:300; float: left;">Password tidak sama</label>
                 </div>
                 <div class="form-group">
                     <button type="submit" class="button-md button-theme btn-block">Signup</button>
                 </div>
             </form>
-            <ul class="social-list clearfix">
-                <li><a href="#" class="facebook-bg"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#" class="google-bg"><i class="fa fa-google-plus"></i></a></li>
-                <li><a href="#" class="linkedin-bg"><i class="fa fa-linkedin"></i></a></li>
-            </ul>
+            
         </div>
         <div class="footer">
                         <span>
@@ -115,6 +111,16 @@
 <script src="{{ asset('assets/frontend/js/ie10-viewport-bug-workaround.js') }}"></script>
 <!-- Custom javascript -->
 <script src="{{ asset('assets/frontend/js/ie10-viewport-bug-workaround.js') }}"></script>
-
+<script>
+    $(document).ready(function(){
+            $("#password, #confirm_password").keyup(function(){
+                var lama = $("#password").val();
+                var baru = $("#confirm_password").val();
+                if (lama != baru) {
+                    alert('gagal');
+                }
+            });
+        });
+</script>
 </body>
 </html>
