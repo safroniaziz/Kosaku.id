@@ -13,7 +13,7 @@
                             <div class="banner-content container banner-content-left">
                                 <h1 data-animation="animated fadeInDown delay-05s"><span>{{ $slider->title }} </span> </h1>
                                 <p data-animation="animated fadeInUp delay-1s">{{ $slider->slogan }}</p>
-                                <a href="" class="btn button-md button-theme" data-animation="animated fadeInUp delay-15s">Download Versi Android</a>
+                                <a href="" class="btn button-md button-theme" data-animation="animated fadeInUp delay-15s">Daftar Menjadi Mitra</a>
                                 <a href="{{ route('produk.semua') }}" class="btn button-md border-button-theme" data-animation="animated fadeInUp delay-15s">Daftar Produk Kostan</a>
                             </div>
                         </div>
@@ -233,8 +233,8 @@
             <div class="row">
                 <div class="col-lg-6 col-sm-8 col-xs-12">
                     <h1>Kami disini akan membantu anda</h1>
-                    <P>Kami berusaha untuk memberikan fitur-fitur yang akan memudahkan pencari kost dan pemilik kost sehingga selalu terhubung secara digital baik melalui website maupun aplikasi mobile (Android & IOS) </P>
-                    <a href="#" class="btn button-sm button-theme">Baca Selengkapnya</a>
+                    <P>Kami berusaha untuk memberikan fitur-fitur yang akan menjadi penghubung antara pencari kost dan pemilik kost secara digital baik melalui website maupun aplikasi mobile yang sedang kami siapkan (Android & IOS) <br>Tertarik untuk menjadi mitra kosaku.id? </P>
+                    <a href="#" class="btn button-sm button-theme" style="margin-bottom: 50px;">Klik Disini</a>
                 </div>
                 <div class="col-lg-offset-3 col-lg-3 col-sm-4 col-xs-12">
                     <div class="contect-agent-photo">

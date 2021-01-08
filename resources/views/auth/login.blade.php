@@ -43,7 +43,10 @@
     <script type="text/javascript" src="js/respond.min.js') }}"></script>
     <![endif]-->
 </head>
-<body>
+<body style="background-image:url({{ asset('assets/images/bg.jpg') }});-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;">
 
 <div class="page_loader"></div>
 
@@ -54,17 +57,18 @@
         <div class="details">
             <div class="logo">
                 <a href="index.html">
-                    <img src="{{ asset('assets/images/logo.png') }}" alt="logo" style="width: 100px; height:auto">
+                    <img src="{{ asset('assets/images/logo.png') }}" alt="logo" style="width: 120px; height:auto">
                 </a>
             </div>
             <div class="clearfix"></div>
             <h3>Masuk untuk melanjutkan</h3>
-            <form action="index.html" method="GET">
+            <form method="post" action="{{ route('login') }}">
+                @csrf
                 <div class="form-group">
                     <input type="email" name="email" class="input-text" placeholder="Email Address">
                 </div>
                 <div class="form-group">
-                    <input type="password" name="Password" class="input-text" placeholder="Password">
+                    <input type="password" name="password" class="input-text" placeholder="Password">
                 </div>
                 <div class="checkbox">
                     <div class="ez-checkbox pull-left">

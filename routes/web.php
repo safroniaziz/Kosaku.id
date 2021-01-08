@@ -27,7 +27,7 @@ Route::get('/kosaku_mart',function(){
 Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
-
+Route::post('register','Auth\LoginController@registerPost')->name('register.post');
 
 Route::group(['prefix'  => 'produk/'],function(){
     Route::get('/semua', 'ProdukFrontendController@semuaProduk')->name('produk.semua');

@@ -60,16 +60,33 @@
 <header class="top-header" id="top">
     <div class="container">
         <div class="row">
-            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                 <div class="list-inline">
-                    <a class="hidden-xs" href="tel:1-8X0-666-8X88"><i class="fa fa-phone"></i>+6285709586249</a>
+                    @if (Auth::check())
+                    <a class="hidden-xs" href="https://api.whatsapp.com/send?phone=6285709586249&text=Hallo%20Kosaku%20Saya%20{{ Auth::user()->name }},%20Saya%20Mau%20Bertanya%20Mengenai%20Kostan%20Yang%20Ada%20Di%20Website%20Nih."><i class="fa fa-whatsapp"></i>+6285709586249</a>
+                    @else
+                    <a class="hidden-xs" href="{{ route('login') }}"><i class="fa fa-whatsapp"></i>+6285709586249</a>
+
+                    @endif
                     <a href="tel:info@themevessel.com"><i class="fa fa-envelope"></i>kosakujaya@gmail.com</a>
                 </div>
             </div>
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                 <ul class="top-social-media pull-right">
                     <li>
+                        @if (Auth::check())
+                        <a style="color: white">Halo, {{ Auth::user()->name }}</a>&nbsp;
+                        <a class="btn btn-danger btn-sm" data-toggle="control-sidebar" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                            <i class="fa fa-power-off"></i>&nbsp; {{ __('Logout') }}
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                        @else
                         <a href="{{ route('login') }}" class="sign-in"><i class="fa fa-sign-in"></i> Login</a>
+                        @endif
                     </li>
                 </ul>
             </div>

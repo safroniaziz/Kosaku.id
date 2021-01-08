@@ -139,7 +139,11 @@
                                                     </ul>
                                             </div>
                                             <p>
-                                                <a class="btn button-md button-theme" href="https://api.whatsapp.com/send?phone=6285709586249&text=Hallo%20Kosaku%20Saya%20Mau%20Bertanya%20Mengenai%20Kostan%20Yang%20Ada%20Di%20Website%20Nih."><i class="fa fa-whatsapp"></i>&nbsp; Hubungi Kami</a>
+                                                @if (Auth::check())
+                                                <a class="btn button-md button-theme" href="https://api.whatsapp.com/send?phone=6285709586249&text=Hallo%20Kosaku%20Saya%20{{ Auth::user()->name }},%20Saya%20Mau%20Bertanya%20Mengenai%20Kostan%20Yang%20Ada%20Di%20Website%20Nih."><i class="fa fa-whatsapp"></i>&nbsp; Hubungi Kami</a>
+                                                @else
+                                                <a href="{{ route('login') }}" class="btn button-md button-theme"><i class="fa fa-sign-in"></i>&nbsp; Login Untuk Booking</a>
+                                                @endif
                                             </p>
                                         </div>
                                     </div>

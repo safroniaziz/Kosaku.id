@@ -43,7 +43,10 @@
     <script type="text/javascript" src="{{ asset('assets/frontend/js/respond.min.js') }}"></script>
     <![endif]-->
 </head>
-<body>
+<body style="background-image:url({{ asset('assets/images/bg.jpg')  }});-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;">
 
 <div class="page_loader"></div>
 
@@ -54,24 +57,32 @@
         <div class="details">
             <div class="logo">
                 <a href="index.html">
-                    <img src="{{ asset('assets/images/logo.png') }}" style="height: auto; width:100px;" alt="logo">
+                    <img src="{{ asset('assets/images/logo.png') }}" style="height: auto; width:120px;" alt="logo">
                 </a>
             </div>
             <div class="clearfix"></div>
-            <h3>Buat akun anda disini</h3>
-            <form action="index.html" method="GET">
+            @if ($message = Session::get('success'))
+                <div class="alert alert-success alert-block">
+                    <button type="button" class="close" data-dismiss="alert">×</button>	
+                    <strong>Berhasil : </strong>{{ $message }}
+                </div>
+                @else 
+                <h3>Buat akun anda disini</h3>
+            @endif
+            <form action="{{ route('register.post') }}" method="POST">
+                @csrf
                 <div class="form-group">
-                    <input type="text" name="name" class="input-text" placeholder="Nama Lengkap">
+                    <input type="text" name="name" class="input-text" required placeholder="Nama Lengkap">
                 </div>
                 <div class="form-group">
-                    <input type="email" name="email" class="input-text" placeholder="Alamat Email">
+                    <input type="email" name="email" class="input-text" required placeholder="Alamat Email">
                 </div>
                 <div class="form-group">
-                    <input type="password" name="password" id="password" class="input-text" placeholder="Password">
+                    <input type="password" name="password" id="password" class="input-text" required placeholder="Password">
                 </div>
                 <div class="form-group" style="margin-bottom: 30px !important;">
-                    <input type="password" name="confirm_password" id="comfirm_password" class="input-text" placeholder="Konfirmasi Password">
-                    <label for="" style="color: red; font-weight:300; float: left;">Password tidak sama</label>
+                    <input type="password" name="confirm_password" id="confirm_password" class="input-text" required placeholder="Konfirmasi Password">
+                    <label id="alert" for="" style="color: red; font-weight:300; float: left; display:none;">Password tidak sama</label>
                 </div>
                 <div class="form-group">
                     <button type="submit" class="button-md button-theme btn-block">Signup</button>
@@ -117,7 +128,10 @@
                 var lama = $("#password").val();
                 var baru = $("#confirm_password").val();
                 if (lama != baru) {
-                    alert('gagal');
+                    $('#alert').show();
+                }
+                else{
+                    $('#alert').hide();
                 }
             });
         });
