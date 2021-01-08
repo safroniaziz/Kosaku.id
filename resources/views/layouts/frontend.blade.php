@@ -57,7 +57,22 @@
 <body>
 
 <div class="page_loader"></div>
-
+<header class="top-header" id="top">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <ul class="top-social-media pull-right">
+                    <li>
+                        <a href="{{ route('login') }}" class="sign-in"><i class="fa fa-sign-in"></i> Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
 <header class="main-header">
     <div class="container">
         <nav class="navbar navbar-default">
@@ -121,15 +136,7 @@
                         </a>
                     </li> --}}
                 </ul>
-                <ul class="nav navbar-nav navbar-right rightside-navbar">
-                    <li>
-                        <a href="submit-property.html" class="button">
-                            Masuk
-                        </a>
-                    </li>
-                    &nbsp;
-                   
-                </ul>
+               
             </div>
         </nav>
     </div>

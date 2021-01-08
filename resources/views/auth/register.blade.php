@@ -1,77 +1,120 @@
-@extends('layouts.app')
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <title>The Nest - Real Estate HTML Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
+    <!-- External CSS libraries -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/frontend/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/frontend/css/animate.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/frontend/css/bootstrap-submenu.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/frontend/css/bootstrap-select.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/leaflet.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/map.css') }}" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/frontend/fonts/font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/frontend/fonts/flaticon/font/flaticon.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/frontend/fonts/linearicons/style.css') }}">
+    <link rel="stylesheet" type="text/css"  href="{{ asset('assets/frontend/css/jquery.mCustomScrollbar.css') }}">
+    <link rel="stylesheet" type="text/css"  href="{{ asset('assets/frontend/css/dropzone.css') }}">
+    <link rel="stylesheet" type="text/css"  href="{{ asset('assets/frontend/css/magnific-popup.css') }}">
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/frontend/css/style.css') }}">
+    <link rel="stylesheet" type="text/css" id="style_sheet" href="{{ asset('assets/frontend/css/skins/default.css') }}">
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" href="{{ asset('assets/frontend/img/favicon.ico') }}" type="image/x-icon" >
 
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+    <!-- Google fonts -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800%7CPlayfair+Display:400,700%7CRoboto:100,300,400,400i,500,700">
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/frontend/css/ie10-viewport-bug-workaround.css') }}">
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script type="text/javascript" src="{{ asset('assets/frontend/js/ie8-responsive-file-warning.js') }}"></script><![endif]-->
+    <script src="{{ asset('assets/frontend/js/ie-emulation-modes-warning.js') }}"></script>
 
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+    <!-- HTML5 shim and Respond.js') }} for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="{{ asset('assets/frontend/js/html5shiv.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/frontend/js/respond.min.js') }}"></script>
+    <![endif]-->
+</head>
+<body>
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+<div class="page_loader"></div>
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+<!-- Login section start -->
+<div class="login-section">
+    <div class="form-content-box">
+        <!-- details -->
+        <div class="details">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="{{ asset('assets/images/logo.png') }}" style="height: auto; width:100px;" alt="logo">
+                </a>
             </div>
+            <div class="clearfix"></div>
+            <h3>Create an account</h3>
+            <form action="index.html" method="GET">
+                <div class="form-group">
+                    <input type="text" name="fullname" class="input-text" placeholder="Full Name">
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" class="input-text" placeholder="Email Address">
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" class="input-text" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <input type="password" name="confirm_Password" class="input-text" placeholder="Confirm Password">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="button-md button-theme btn-block">Signup</button>
+                </div>
+            </form>
+            <ul class="social-list clearfix">
+                <li><a href="#" class="facebook-bg"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#" class="google-bg"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="#" class="linkedin-bg"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+        </div>
+        <div class="footer">
+                        <span>
+                            Sudah memiliki akun? <a href="{{ route('login') }}">Login disini</a>
+                        </span>
         </div>
     </div>
 </div>
-@endsection
+<!-- Login section end -->
+
+<script src="{{ asset('assets/frontend/js/jquery-2.2.0.min.js') }}"></script>
+<script src="{{ asset('assets/frontend/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/frontend/js/bootstrap-submenu.js') }}"></script>
+<script src="{{ asset('assets/frontend/js/rangeslider.js') }}"></script>
+<script src="{{ asset('assets/frontend/js/jquery.mb.YTPlayer.js') }}"></script>
+<script src="{{ asset('assets/frontend/js/wow.min.js') }}"></script>
+<script src="{{ asset('assets/frontend/js/bootstrap-select.min.js') }}"></script>
+<script src="{{ asset('assets/frontend/js/jquery.easing.1.3.js') }}"></script>
+<script src="{{ asset('assets/frontend/js/jquery.scrollUp.js') }}"></script>
+<script src="{{ asset('assets/frontend/js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+<script src="{{ asset('assets/frontend/js/leaflet.js') }}"></script>
+<script src="{{ asset('assets/frontend/js/leaflet-providers.js') }}"></script>
+<script src="{{ asset('assets/frontend/js/leaflet.markercluster.js') }}"></script>
+<script src="{{ asset('assets/frontend/js/dropzone.js') }}"></script>
+<script src="{{ asset('assets/frontend/js/jquery.filterizr.js') }}"></script>
+<script src="{{ asset('assets/frontend/js/jquery.magnific-popup.min.js') }}"></script>
+<script src="{{ asset('assets/frontend/js/maps.js') }}"></script>
+<script src="{{ asset('assets/frontend/js/app.js') }}"></script>
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="{{ asset('assets/frontend/js/ie10-viewport-bug-workaround.js') }}"></script>
+<!-- Custom javascript -->
+<script src="{{ asset('assets/frontend/js/ie10-viewport-bug-workaround.js') }}"></script>
+
+</body>
+</html>
