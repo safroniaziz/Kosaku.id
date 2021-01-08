@@ -46,7 +46,7 @@ class FrontendController extends Controller
     }
 
     public function pendaftaranSeminar(){
-        $seminars = Seminar::all();
+        $seminars = Seminar::where('id',3)->get();
         return view('frontend/pendaftaran_seminar',compact('seminars'));
     }
 

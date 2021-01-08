@@ -134,7 +134,8 @@
             <div class="breadcrumb-area">
                 <h1>PENDAFTARAN SEMINAR BEASISWA KOSAKU.ID</h1>
                 <ul class="breadcrumbs">
-                    <li><a href="index.html" style="text-transform: uppercase">Sabtu, 21 November 2020</a></li>
+                    <li><a href="index.html" style="text-transform: uppercase"
+                    >Selasa, 01 Desember 2020</a></li>
                     <li class="active">ZOOM VIDEO CONFERENCE</li>
                 </ul>
             </div>
