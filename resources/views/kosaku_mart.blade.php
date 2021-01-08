@@ -65,9 +65,7 @@
           <div class="error-message"></div>
           <div class="sent-message">Your notification request was sent. Thank you!</div>
         </div>
-        <div class="text-center"><button type="submit">
-            <a style="color: white" href="{{ route('home') }}">Kembali Ke Website Kosaku.ID</a></button></div>
-      </form>
+        <a href="{{ route('home') }}" class="btn btn-primary"><i class="fa fa-arrow-left"></i>&nbsp; Kembali Ke Website</a>
     </div>
   </section><!-- End Hero -->
 
