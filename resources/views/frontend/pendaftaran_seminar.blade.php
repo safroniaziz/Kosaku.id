@@ -98,8 +98,8 @@
                     </li>
 
                     <li class="dropdown">
-                        <a tabindex="0" href="#" data-toggle="dropdown" data-submenu="" aria-expanded="false">
-                            <i class="fa fa-book"></i>&nbsp; Artikel
+                        <a tabindex="0" href="{{ route('kosaku.mart') }}" data-toggle="dropdown" data-submenu="" aria-expanded="false">
+                            <i class="fa fa-shopping-cart"></i>&nbsp; Kosaku Mart
                         </a>
 					</li>
                     {{-- <li class="dropdown active">
