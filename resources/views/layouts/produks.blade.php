@@ -143,15 +143,6 @@
                         </a>
                     </li> --}}
                 </ul>
-                <ul class="nav navbar-nav navbar-right rightside-navbar">
-                    <li>
-                        <a href="submit-property.html" class="button">
-                            Masuk
-                        </a>
-                    </li>
-                    &nbsp;
-                   
-                </ul>
             </div>
         </nav>
     </div>
