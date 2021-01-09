@@ -55,9 +55,8 @@
                     @if (Auth::check())
                     @else
                     <a class="hidden-xs" href="{{ route('login') }}"><i class="fa fa-whatsapp"></i>+6285709586249</a>
-
-                    @endif
                     <a href=""><i class="fa fa-envelope"></i>kosakujaya@gmail.com</a>
+                    @endif
                 </div>
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
