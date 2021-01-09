@@ -63,12 +63,11 @@
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                 <div class="list-inline">
                     @if (Auth::check())
-                    <a class="hidden-xs" href="https://api.whatsapp.com/send?phone=6285709586249&text=Hallo%20Kosaku%20Saya%20{{ Auth::user()->name }},%20Saya%20Mau%20Bertanya%20Mengenai%20Kostan%20Yang%20Ada%20Di%20Website%20Nih."><i class="fa fa-whatsapp"></i>+6285709586249</a>
                     @else
                     <a class="hidden-xs" href="{{ route('login') }}"><i class="fa fa-whatsapp"></i>+6285709586249</a>
 
                     @endif
-                    <a href="tel:info@themevessel.com"><i class="fa fa-envelope"></i>kosakujaya@gmail.com</a>
+                    <a href=""><i class="fa fa-envelope"></i>kosakujaya@gmail.com</a>
                 </div>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
@@ -138,18 +137,18 @@
                     </li> --}}
 
                     <li class="dropdown">
+                        <a href="{{ route('kosaku.mart') }}"><i class="fa fa-shopping-cart"></i>&nbsp;Kosaku Mart</a>
+                    </li>
+
+                    <li class="dropdown">
                         <a tabindex="0" href="#" data-toggle="dropdown" data-submenu="" aria-expanded="false">
-                            <i class="fa fa-list"></i> Kosaku<span class="caret"></span>
+                            <i class="fa fa-info-circle"></i> Informasi<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="agent-listing-row-sidebar.html">Tentang Kami</a></li>
                             <li><a href="agent-single.html">Kontak Kami</a></li>
                         </ul>
                     </li>
-
-                    <li class="dropdown">
-                        <a href="{{ route('kosaku.mart') }}"><i class="fa fa-shopping-cart"></i>&nbsp;Kosaku Mart</a>
-					</li>
 					{{-- <li class="dropdown">
                         <a tabindex="0" href="{{ route('pendaftaran_seminar') }}"  data-submenu="" aria-expanded="false">
                             <i class="fa fa-home"></i>&nbsp;Daftar Seminar
