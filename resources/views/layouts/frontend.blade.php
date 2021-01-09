@@ -60,34 +60,46 @@
 <header class="top-header" id="top">
     <div class="container">
         <div class="row">
-            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                <div class="list-inline">
-                    @if (Auth::check())
-                    @else
-                    <a class="hidden-xs" href="{{ route('login') }}"><i class="fa fa-whatsapp"></i>+6285709586249</a>
-                    <a href=""><i class="fa fa-envelope"></i>kosakujaya@gmail.com</a>
-                    @endif
+            @if (Auth::check())
+
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                    <div class="list-inline">
+                        
+                    </div>
                 </div>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                <ul class="top-social-media pull-right">
-                    <li>
-                        @if (Auth::check())
-                        <a style="color: white">Halo, {{ Auth::user()->name }}</a>&nbsp;
-                        <a class="btn btn-danger btn-sm" data-toggle="control-sidebar" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();">
-                            <i class="fa fa-power-off"></i>&nbsp; {{ __('Logout') }}
-                        </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                        @else
-                        <a href="{{ route('login') }}" class="sign-in"><i class="fa fa-sign-in"></i> Login</a>
-                        @endif
-                    </li>
-                </ul>
-            </div>
+                @else
+                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                    <div class="list-inline">
+                        <a class="hidden-xs" href="{{ route('login') }}"><i class="fa fa-whatsapp"></i>+6285709586249</a>
+                        <a href=""><i class="fa fa-envelope"></i>kosakujaya@gmail.com</a>
+                    </div>
+                </div>
+            @endif
+            @if (Auth::check())
+                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                    <ul class="top-social-media pull-right">
+                        <li>
+                            <a style="color: white">Halo, {{ Auth::user()->name }}</a>&nbsp;
+                            <a class="btn btn-danger btn-sm" data-toggle="control-sidebar" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                <i class="fa fa-power-off"></i>&nbsp; {{ __('Logout') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            @else
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <ul class="top-social-media pull-right">
+                        <li>
+                            <a href="{{ route('login') }}" class="sign-in"><i class="fa fa-sign-in"></i> Login</a>
+                        </li>
+                    </ul>
+                </div>
+            @endif
         </div>
     </div>
 </header>

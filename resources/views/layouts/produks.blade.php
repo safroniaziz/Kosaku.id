@@ -62,7 +62,19 @@
             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                 <ul class="top-social-media pull-right">
                     <li>
+                        @if (Auth::check())
+                        <a style="color: white">Halo, {{ Auth::user()->name }}</a>&nbsp;
+                        <a class="btn btn-danger btn-sm" data-toggle="control-sidebar" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                            <i class="fa fa-power-off"></i>&nbsp; {{ __('Logout') }}
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                        @else
                         <a href="{{ route('login') }}" class="sign-in"><i class="fa fa-sign-in"></i> Login</a>
+                        @endif
                     </li>
                 </ul>
             </div>
