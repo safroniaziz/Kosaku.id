@@ -8,7 +8,7 @@
             <div class="carousel-inner" role="listbox">
                 @foreach ($sliders as $index=>$slider)
                     <div class="item @if($index == '1') {{ 'active' }} @endif item-100vh">
-                        <img src="{{ asset('storage/'.$slider->gambar) }}" alt="banner-slider-1">
+                        <img src="{{ asset('storage/'.$slider->gambar) }}" alt="banner-slider-1" style="filter: brightness(50%)">
                         <div class="carousel-caption banner-slider-inner">
                             <div class="banner-content container banner-content-left">
                                 <h1 data-animation="animated fadeInDown delay-05s"><span>{{ $slider->title }} </span> </h1>
